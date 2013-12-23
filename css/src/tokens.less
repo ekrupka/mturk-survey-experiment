@@ -1,0 +1,46 @@
+.you-own-tokens, .taking-tokens {
+	color: @purple;
+}
+
+.other-own-tokens, .giving-tokens{
+	color: @yellow;
+}
+
+.you-own-tokens, .other-own-tokens {
+	border-bottom: 2px solid @dark-grey;
+	font-size: 1.3em;
+}
+
+
+.token-slider-wrapper {
+	height: 65px;
+	.pad-top-bottom( 1em; 1em; );
+
+	[class^="col-md"], [class^="col-sm"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.token-slider-text {
+	font-weight: 300;
+	position: relative;
+}
+
+// edits of default token styles
+.token-slider {
+	position: relative;
+	z-index: 10;
+
+	&.noUi-background {
+		background-color: @purple;
+	}
+
+	.noUi-origin {
+		background-color: @yellow;
+	}
+
+	&[disabled] .noUi-origin {
+		background-color: @dark-grey;
+	}
+}

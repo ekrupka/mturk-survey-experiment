@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+  <link rel="stylesheet" href="/css/bin/style.css">
+  <!-- <link rel="stylesheet" href="https://googledrive.com/host/0B3xp5m4ZxljjOUswQjJMVGpPTk0"> -->
+  <script src="https://googledrive.com/host/0B3xp5m4ZxljjZ3pfX3lKT0tSYUU"></script>
+ </head>
+ <body>
+  <nav class="container">
+    <div class="page-number row">
+      <span data-current-page>0</span>/30
+    </div>
+  </nav>
+  <main class="container">
+    
+    <button class="button col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" type="button" data-next="question">Next</button>
+  </main>
+
+  <form class="container" name='mturk_form' method='post' id='mturk_form' action='http://workersandbox.mturk.com/mturk/externalSubmit'>
+    <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+
+  </form>
+  <script language='Javascript'>turkSetAssignmentID();</script>
+
+  <!-- handlebars.js -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+
+  <!-- jQuery -->
+  <!--[if lt IE 9]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <![endif]-->
+  <!--[if gte IE 9]><!-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <!--<![endif]-->
+
+  <!-- handlebar templates -->
+
+  <!-- intro Template -->
+  <script id="intro-template" type="text/x-handlebars-template">
+    <header class="row">
+      <h1 class="header col-xs-12 col-sm-12 col-md-12">{{header}}</h1>
+    </header>
+    <section class="intro row">
+      <article class="intro-desc col-xs-12 col-sm-12 col-md-12">
+        {{#each desc}}
+          <h2>{{{this}}}</h2>
+        {{/each}}  
+      </article>
+    </section>
+  </script>
+
+  <!-- queston template -->
+  <script id="question-template" type="text/x-handlebars-template">
+    <section class="question row">
+      <h2 class="intro-desc col-sm-12 col-md-12">{{question}}</h2>
+    </section>
+  </script>
+
+  <!-- 2 picture template -->
+  <script id="two-pic-template" type="text/x-handlebars-template">
+    <section class="question-content row">
+      {{#randomPol photos}} 
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+            <img class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" src="{{src}}" alt="{{alt}}">
+          </div>
+          <div class="radio-option center">
+            <input class="" type="radio" name="{{name}}" value="{{value}}" id="{{id}}" data-indx="{{indx}}" data-error='{{../error}}' >
+            <label class="radio-label" for="{{id}}">{{label}}</label>
+          </div>
+        </div>
+      {{/randomPol}}
+    </section>
+    <h3 class="error col-xs-12 col-sm-12 col-md-12 center" data-error="{{error}}" data-error-text="{{errorText}}"></h3>
+  </script>  
+
+  <!-- One Pic Template -->
+  <script id="one-pic-template" type="text/x-handlebars-template">
+    <section class="question-content row">
+      {{#randomItem states}}
+        <h2 class="state-header col-xs-12 col-sm-12 col-md-12">{{state}}</h2>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <img src="{{src}}" class="img-width" alt="{{alt}}" data-name="{{name}}" >
+        </div>
+      {{/randomItem}}
+    </section>
+  </script>
+
+  <!-- Radio Options for One Pic Template. Options are randomly distributed -->
+  <script id="one-pic-input-template" type="text/x-handlebars-template">
+    <div class="clearfix visible-xs"></div>
+    <div class="row">
+      {{#randomInput options}}
+        <div class="radio-option col-xs-12 col-sm-6 col-md-6" data-index="0">
+          <input class="" type="radio" name="{{name}}" value="{{value}}" id="{{id}}" data-indx="{{indx}}" data-error="{{../error}}" >
+          <label class="radio-label" for="{{id}}">{{text}}</label>
+        </div>
+      {{/randomInput}}
+    </div>
+    <h3 class="error col-xs-12 col-sm-12 col-md-12 center" data-error="{{error}}" data-error-text="{{errorText}}"></h3>
+  </script>
+
+  <!-- Token Template 1-9 Tokens -->
+  <script id="token-template" type="text/x-handlebars-template">
+    <h2>
+      You have the opportunity to give any amount of your <span class="you-own-tokens">{{getYourToken}}</span> {{ getYourTokenText }} to the other person or to take any amount of the <span class="other-own-tokens">{{getOtherToken}}</span> {{ getOtherTokenText }} from the other person for yourself.  If this decision is selected for payment this will determine how many tokens each person gets.
+    </h2>
+  </script>
+
+  <!-- Token Template 10 tokens -->
+  <script id="token-template-ten" type="text/x-handlebars-template">
+    <h2>
+      You have the opportunity to give any amount of your <span class="you-own-tokens">{{getYourToken}}</span> tokens to the other person. If this decision is selected for payment this it will determine how many tokens each person gets.
+    </h2  >
+  </script>
+
+  <!-- Token Template 0 tokens -->
+  <script id="token-template-zero" type="text/x-handlebars-template">
+    <h2>
+      You have the opportunity to take any amount of the <span class="other-own-tokens">{{getOtherToken}}</span> tokens from the other person. If this decision is selected for payment this it will determine how many tokens each person gets.
+    </h2>
+  </script>
+
+  <!-- Token Template -->
+  <script id="token-base" type="text/x-handlebars-template">
+    <section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} data-default-slider-moved=false >
+      <h2 class="token-header">
+        For this decision you own <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and the other person owns <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}
+      </h2>
+
+      <h2>Use the slider to indicate how many tokens you wish to take or give:</h2>
+
+      <div class="row overflow-hidden">
+        <p class="token-slider-text col-md-12">Make a decision by moving the slider</p>
+      </div>
+
+      <div class="token-slider-wrapper" data-side="{{setSliderSide}}">
+        {{generateSliderDivs}}
+      </div>
+
+      <h2>
+        To confirm, your earnings for this decision will be <span class="you-own-tokens" data-dynamic>{{getYourToken}}</span> <span data-tokens="you">{{ getYourTokenText }}</span>
+      </h2>
+
+      <h2>
+        To confirm, the other person's earnings for this decision will be <span class="other-own-tokens" data-dynamic>{{getOtherToken}}</span> <span data-tokens="other">{{ getOtherTokenText }}</span>
+      </h2>
+
+    </section>
+  </script>'
+
+  <!-- survey template -->
+  <script id="survey-template" type="text/x-handlebars-template">
+    <section class="question survey">
+      <ol class="row">
+        <li class="col-md-12 survey-list-item">
+          <p class="survey-question">{{politics.question}}</p>
+          {{#each politics.inputs}}
+            <div class="row">
+              <input class="survey-input" type="radio" name="{{../politics.name}}" id="{{id}}" value="{{@index}}" data-error="{{../politics.error}}" >
+              <label class="survey-label" for="{{id}}">{{label}}</label>
+            </div>
+          {{/each}}
+          <div class="row">
+            <h3 class="error col-xs-12 col-sm-12 col-md-12" data-error="{{politics.error}}" data-error-text="{{politics.errorText}}"></h3>
+          </div>
+        </li>
+        <li class="col-md-12 survey-list-item">
+          <p class="survey-question">What is your age?</p>
+          <input class="survey-input-number col-xs-12 col-sm-12 col-md-12" type="number" name="age" placeholder="e.g. 18" min="18" max="120" data-error="{{age.error}}" >
+          <h3 class="error col-xs-12 col-sm-12 col-md-12" data-error="{{age.error}}" data-error-text="{{errorText}}"></h3>
+        </li>
+        <li class="col-md-12 survey-list-item">
+          <p class="survey-question col-md-12">{{gender.question}}</p>
+          {{#each gender.inputs}}
+            <div class="row">
+              <input class="survey-input" type="radio" name="{{../gender.name}}" id="{{id}}" value="{{@index}}" data-error="{{../gender.error}}" >
+              <label class="survey-label" for="{{id}}">{{label}}</label>
+            </div>
+          {{/each}}
+          <h3 class="error col-xs-12 col-sm-12 col-md-12" data-error="{{gender.error}}" data-error-text="{{gender.errorText}}"></h3>
+        </li>
+        <li class="col-md-12 survey-list-item">
+          <p class="survey-question">{{race.question}}</p>
+          {{#each race.inputs}}
+            <div class="row">
+              <input class="survey-input" type="radio" name="{{../race.name}}" id="{{id}}" value="{{@index}}" data-error="{{../race.error}}" >
+              <label class="survey-label" for="{{id}}">{{label}}</label>
+            </div>
+          {{/each}}
+          <div class="row">
+            <input class="survey-input" type="radio" name="{{race.name}}" id="{{race.other.id}}" value="5" data-error="{{race.error}}" >
+            <label class="survey-label-2" for="{{race.other.id}}">{{race.other.label}}</label>
+            <input class="survey-input-text" type="text" name="{{race.name}}" id="{{race.other.idText}}" >
+          </div>
+          <h3 class="error col-xs-12 col-sm-12 col-md-12" data-error="{{race.error}}" data-error-text="{{race.errorText}}"></h3>
+          
+        </li>
+        <li class="col-md-12 survey-list-item">
+          <p class="survey-question">{{voted.question}}</p>
+          {{#each voted.inputs}}
+            <div class="row">
+              <input class="survey-input" type="radio" name="{{../voted.name}}" id="{{id}}" value="{{@index}}" data-error="{{../voted.error}}" >
+              <label class="survey-label" for="{{id}}">{{label}}</label>
+            </div>
+          {{/each}}
+          <h3 class="error col-xs-12 col-sm-12 col-md-12" data-error="{{voted.error}}" data-error-text="{{voted.errorText}}"></h3>
+        </li>
+      </ol>
+    </section>
+  </script>  
+
+  <script src="/js/bin/mturk.js"></script>
+  <!-- // <script src="https://googledrive.com/host/0B3xp5m4ZxljjNF8zTHI5VndQWGs"></script> -->
+
+ </body>
+</html>
