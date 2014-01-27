@@ -1,7 +1,7 @@
 Mturk Experiment Survey
 ================================
 
-This site uses Handlebar templates and is a JavaScript single page app. It is used in an Amazon Mechanical Turk Survey via the Mturk HTML Question structure. The HTML Question is hosted on Amazon and therefore Google Drive is used to serve the JS, CSS, and Handlebar templates in order to not have a distinct server for this project.
+This site is a site used for a study on Amazon Mechanical Turk. It uses the Mturk HTML Question structure which is hosted by Amazon. The website is a single page app driven by JavaScript and utilized Handlebar templates. The project uses Grunt to watch the LESS and JavaScript files and concatonates them. Google Drive is used to serve the JS, CSS, and images for the site. 
 
 The survey has 5 categories of questions. The study follows these 5 categorizes in order, but within each category the order of the questions are randomized. Only one question is displayed to the user at a time - except for the survey question at the conclusion of the study.
 
