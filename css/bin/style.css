@@ -987,9 +987,9 @@ hr {
 .pull-left {
   float: left !important;
 }
-.hide {
+/*.hide {
   display: none !important;
-}
+}*/
 .show {
   display: block !important;
 }
@@ -1504,10 +1504,12 @@ input::-webkit-outer-spin-button {
   color: #f69220;
   font-size: 1.6em;
   font-weight: 300;
-  display: none;
 }
 .display {
   display: block;
+}
+.hide {
+  display: none;
 }
 .center {
   text-align: center;

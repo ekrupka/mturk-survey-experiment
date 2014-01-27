@@ -1,0 +1,10 @@
+<!-- Radio Options for One Pic Template. Options are randomly distributed -->
+<div class="clearfix visible-xs"></div>
+<div class="row">
+  {{#randomInput options}}
+    <div class="radio-option col-xs-12 col-sm-6 col-md-6" data-index="0">
+      <input class="" type="radio" name="{{name}}" value="{{value}}" id="{{id}}" data-indx="{{indx}}" data-error="{{../errorText}}" >
+      <label class="radio-label" for="{{id}}">{{text}}</label>
+    </div>
+  {{/randomInput}}
+</div>

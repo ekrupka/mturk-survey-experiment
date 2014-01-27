@@ -1,0 +1,14 @@
+<!-- 2 picture template -->
+<section class="question-content row">
+  {{#randomPol photos}} 
+    <div class="col-sm-6 col-md-6">
+      <div class="row">
+        <img class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" src="{{src}}" alt="{{alt}}">
+      </div>
+      <div class="radio-option center">
+        <input class="" type="radio" name="{{name}}" value="{{value}}" id="{{id}}" data-indx="{{indx}}" data-error='{{../errorText}}' >
+        <label class="radio-label" for="{{id}}">{{label}}</label>
+      </div>
+    </div>
+  {{/randomPol}}
+</section>
