@@ -11,10 +11,10 @@ The second category asks the user to identify which voting line they think is lo
 
 The third category asks the user to identify who won the election of a State in 2012 Obama or Romney. The side on which the radio input for the Obama or Romney is displayed is randomly chosen when a user first reaches this section and stays on that respective side for the duration of these questions.
 
-The fourth category asks the user to distribute tokens. This category uses the [jQuery NoUiSlider plugin]('https://github.com/leongersen/noUiSlider') as a way to allow users to distribute tokens. The token order is randomly chosen from four possible token orders.
+The fourth category asks the user to distribute tokens. This category uses the [jQuery NoUiSlider plugin](https://github.com/leongersen/noUiSlider) as a way to allow users to distribute tokens. The token order is randomly chosen from four possible token orders.
 
 The fifth category is a survey questionnaire. 
 
 Throughout the study when a user clicks to see the next question, the inputs they entered are grabbed and append to the Mturk form that is used by Amazon Mechanical Turk. There are input validations throughout the survey.
 
-Feel free to check out the [site]('http://sdalezman.github.io/mturk-survey-expirment/').
+Feel free to check out the [site](http://sdalezman.github.io/mturk-survey-expirment/).
