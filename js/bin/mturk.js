@@ -1454,7 +1454,7 @@
 			if ( $inpts.length !== 0 || $tokens.length !== 0 ) {	
 				// if the politician and voting line aren't finished displaying 
 				// add the input for two pics
-				if ( ( pageNum >= 4 && pageNum <= 8 ) || pageNum === 9 ) {
+				if ( ( pageNum >= 4 && pageNum <= 8 ) || pageNum === 10 ) {
 					this.twoPics();
 				} else if ( pageNum >= 12 && pageNum <= 15 ) {
 					this.onePic();
@@ -1510,7 +1510,7 @@
 			var sliderSide = $tokens.data( 'side' ), 
 				tokenStart = $( this.questionContent ).data('you-own-tokens'),//number of tokens started with
 				yourTokenVal = parseInt( $( this.tokenSlider).val() ), // tokens selected 
-				tokenOrder = parseInt( this.$pageNumber.text() ) - 17, // starts at 1, 1st token at page 18
+				tokenOrder = parseInt( this.$pageNumber.text() ) - 18, // starts at 1, 1st token at page 18
 				sideInp = this.generateHiddenInput( tokenStart + '_slider_L', sliderSide  ), //create hidden input for default slider side
 				keepInp = this.generateHiddenInput( tokenStart + '_keep', yourTokenVal ), // create hiddne input for token amount
 				orderInp = this.generateHiddenInput( tokenStart + '_order', tokenOrder ); // create hidden input for token order
@@ -1909,7 +1909,7 @@ var contextTokenIntro = {
 			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
 			'Taxes are a way to redistribute money between citizens.',
 			'You can determine the tax transfer between you and another participant in this study with whom you have been matched.',
-			'You will be shown a situation .  In the situation one of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
+			'You will be shown a situation.  In the situation one or more of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
 		],
 		[
 			'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
@@ -2028,7 +2028,7 @@ var contextThankYou = {
 	header: 'Thank You',
 
 	desc: [
-		'Thank You for Participating in our study.' 
+		'Thank you for participating in our study.' 
 	]
 }
 
@@ -2354,6 +2354,7 @@ $(function() {
 		this.noUiOrigin = '.noUi-origin';
 		this.noUiHandle = '.noUi-handle';
 		this.err = '.error';
+		this.tokenStringSlider = '.token-string-slider';
 
 		// elements used in Tokens class
 		this.$tokens = $( elt ); //
@@ -2383,7 +2384,7 @@ $(function() {
 		this.tokenSliderText = 'You are transferring ';
 		this.takingEndText = ' to yourself';
 		this.givingEndText = 'to your match';
-		this.tokenEndText = '</span> tokens';
+		this.tokenEndText = '</span> <span class="token-string-slider">tokens</span> ';
 		this.nothingText = 'You are making no transfers';
 
 		// used to calculate moving slider text
@@ -2478,6 +2479,7 @@ $(function() {
 
 		// update token text for one token or multiple tokens
 		updateTokensText: function( tokenVal, $elt ) {
+			console.log( $elt )
 			if ( tokenVal === 1 ) {
 				$elt.text( 'token' );
 			} else {
@@ -2497,14 +2499,15 @@ $(function() {
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text = this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
+				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
 			} else {
-				text = this.nothingText;
+				text += this.tokenSpanTaking + '0' + this.tokenEndText;
 			}
 
 			// empty the slider text and append current val text
 			this.$sliderText.empty();
 			this.$sliderText.append( text );
+			this.updateTokensText( tokens, $( this.tokenStringSlider ) );
 		},
 
 		// move the slider text with the slider
@@ -2536,7 +2539,7 @@ $(function() {
 				this.$sliderText.removeClass( 'float-right' );
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
-				} else if ( marginLeft < 700 ) {
+				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
 					// console.log('adjusting left of text');
 				} else {
@@ -2566,6 +2569,9 @@ $(function() {
 		this.dataError = '.error[data-error="';
 		this.dataErrorEnd = '"]';
 
+		this.dataErrorName = '[data-error-name="';
+		this.dataErrorNameEnd = '"]';
+
 		this.numberErrorText = 'Please enter a valid number';
 
 		// number regular expression
@@ -2586,7 +2592,7 @@ $(function() {
 		this.errorMessageClose = '</h3>';
 	}
 
-	ValidateForm.prototype = {
+ValidateForm.prototype = {
 		validate: function() {
 			this.validateRadio();
 			this.validateNumber();

@@ -10,6 +10,9 @@
 		this.dataError = '.error[data-error="';
 		this.dataErrorEnd = '"]';
 
+		this.dataErrorName = '[data-error-name="';
+		this.dataErrorNameEnd = '"]';
+
 		this.numberErrorText = 'Please enter a valid number';
 
 		// number regular expression
@@ -30,7 +33,7 @@
 		this.errorMessageClose = '</h3>';
 	}
 
-	ValidateForm.prototype = {
+ValidateForm.prototype = {
 		validate: function() {
 			this.validateRadio();
 			this.validateNumber();

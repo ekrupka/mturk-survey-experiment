@@ -10,6 +10,7 @@
 		this.noUiOrigin = '.noUi-origin';
 		this.noUiHandle = '.noUi-handle';
 		this.err = '.error';
+		this.tokenStringSlider = '.token-string-slider';
 
 		// elements used in Tokens class
 		this.$tokens = $( elt ); //
@@ -39,7 +40,7 @@
 		this.tokenSliderText = 'You are transferring ';
 		this.takingEndText = ' to yourself';
 		this.givingEndText = 'to your match';
-		this.tokenEndText = '</span> tokens';
+		this.tokenEndText = '</span> <span class="token-string-slider">tokens</span> ';
 		this.nothingText = 'You are making no transfers';
 
 		// used to calculate moving slider text
@@ -134,6 +135,7 @@
 
 		// update token text for one token or multiple tokens
 		updateTokensText: function( tokenVal, $elt ) {
+			console.log( $elt )
 			if ( tokenVal === 1 ) {
 				$elt.text( 'token' );
 			} else {
@@ -153,14 +155,15 @@
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text = this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
+				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
 			} else {
-				text = this.nothingText;
+				text += this.tokenSpanTaking + '0' + this.tokenEndText;
 			}
 
 			// empty the slider text and append current val text
 			this.$sliderText.empty();
 			this.$sliderText.append( text );
+			this.updateTokensText( tokens, $( this.tokenStringSlider ) );
 		},
 
 		// move the slider text with the slider
@@ -192,7 +195,7 @@
 				this.$sliderText.removeClass( 'float-right' );
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
-				} else if ( marginLeft < 700 ) {
+				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
 					// console.log('adjusting left of text');
 				} else {

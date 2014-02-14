@@ -26,7 +26,7 @@
 			if ( $inpts.length !== 0 || $tokens.length !== 0 ) {	
 				// if the politician and voting line aren't finished displaying 
 				// add the input for two pics
-				if ( ( pageNum >= 4 && pageNum <= 8 ) || pageNum === 9 ) {
+				if ( ( pageNum >= 4 && pageNum <= 8 ) || pageNum === 10 ) {
 					this.twoPics();
 				} else if ( pageNum >= 12 && pageNum <= 15 ) {
 					this.onePic();
@@ -82,7 +82,7 @@
 			var sliderSide = $tokens.data( 'side' ), 
 				tokenStart = $( this.questionContent ).data('you-own-tokens'),//number of tokens started with
 				yourTokenVal = parseInt( $( this.tokenSlider).val() ), // tokens selected 
-				tokenOrder = parseInt( this.$pageNumber.text() ) - 17, // starts at 1, 1st token at page 18
+				tokenOrder = parseInt( this.$pageNumber.text() ) - 18, // starts at 1, 1st token at page 18
 				sideInp = this.generateHiddenInput( tokenStart + '_slider_L', sliderSide  ), //create hidden input for default slider side
 				keepInp = this.generateHiddenInput( tokenStart + '_keep', yourTokenVal ), // create hiddne input for token amount
 				orderInp = this.generateHiddenInput( tokenStart + '_order', tokenOrder ); // create hidden input for token order

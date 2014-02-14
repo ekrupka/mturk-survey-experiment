@@ -1,13 +1,10 @@
 module.exports = function(grunt) {
 	var SRC_CSS = 'css/src/',
 			SRC_CSS_VENDOR = SRC_CSS + 'vendor/'
-			SRC_V1_JS = 'v1/js/src/',
-			SRC_V1_JS_VENDOR = SRC_V1_JS + 'vendor/',
-			SRC_V2_JS = 'v2/js/src/',
-			SRC_V2_JS_VENDOR = SRC_V2_JS + 'vendor/',
+			SRC_JS = 'js/src/',
+			SRC_JS_VENDOR = SRC_JS + 'vendor/',
 			BUILD_CSS = 'css/bin/',
-			BUILD_V1_JS = 'v1/js/bin/',
-			BUILD_V2_JS = 'v2/js/bin/';
+			BUILD_JS = 'js/bin/';
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -30,7 +27,7 @@ module.exports = function(grunt) {
 				tasks: ['concat:less', 'less', 'concat:css']
 			},
 			js: {
-				files: [SRC_V1_JS + '*.js', SRC_V1_JS_VENDOR + '*.js', SRC_V2_JS + '*.js', SRC_V2_JS_VENDOR + '*.js'],
+				files: [SRC_JS + '*.js', SRC_JS_VENDOR + '*.js'],
 				tasks: ['concat:js', 'concat:jsv2']
 			}
 		},
@@ -48,15 +45,9 @@ module.exports = function(grunt) {
 		  js: {
 		  	options: {
 		  	},
-		  	src: [SRC_V1_JS_VENDOR + 'nouislider.js', SRC_V1_JS + '*.js', ],
-		  	dest: BUILD_V1_JS + 'mturk.js'
+		  	src: [SRC_JS_VENDOR + 'nouislider.js', SRC_JS + '*.js', ],
+		  	dest: BUILD_JS + 'mturk.js'
 		  },
-		  jsv2: {
-		  	options: {
-		  	},
-		  	src: [SRC_V2_JS_VENDOR + 'nouislider.js', SRC_V2_JS + '*.js', ],
-		  	dest: BUILD_V2_JS + 'mturk.js'
-		  }
 		}
 	});
 

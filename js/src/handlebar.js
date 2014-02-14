@@ -356,7 +356,7 @@ var contextTokenIntro = {
 			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
 			'Taxes are a way to redistribute money between citizens.',
 			'You can determine the tax transfer between you and another participant in this study with whom you have been matched.',
-			'You will be shown a situation .  In the situation one of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
+			'You will be shown a situation.  In the situation one or more of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
 		],
 		[
 			'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
@@ -475,7 +475,7 @@ var contextThankYou = {
 	header: 'Thank You',
 
 	desc: [
-		'Thank You for Participating in our study.' 
+		'Thank you for participating in our study.' 
 	]
 }
 
