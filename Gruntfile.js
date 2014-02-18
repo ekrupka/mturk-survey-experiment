@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [SRC_JS + '*.js', SRC_JS_VENDOR + '*.js'],
-				tasks: ['concat:js', 'concat:jsv2']
+				tasks: ['concat:js']
 			}
 		},
 		concat: {

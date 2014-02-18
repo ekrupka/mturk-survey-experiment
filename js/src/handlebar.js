@@ -118,6 +118,7 @@ function RandomSlider() {
 }
 
 /* DATA OPTIONS FOR DIFFERENT TEMPLATES */	
+// intro for templates
 var contextIntro = {
 	header: 'Overview of tasks',
 
@@ -131,6 +132,7 @@ var contextIntro = {
 	]
 }
 
+// politician intro
 var contextPolIntro = {
 	header: 'Tell us what you think',
 
@@ -139,6 +141,7 @@ var contextPolIntro = {
 	]
 }
 
+// politician data
 var contextPol = {
 	question: 'Please indicate which politician in each pair you find more attractive',
 
@@ -248,6 +251,7 @@ var contextPol = {
 	]
 }
 
+// voting line intro
 var contextVotingLineIntro = {
 	header: 'Tell us what you think',
 
@@ -256,6 +260,7 @@ var contextVotingLineIntro = {
 	]
 }
 
+// voting line data
 var contextVotingLine = {
 	validateType: 'radio',
 
@@ -287,6 +292,7 @@ var contextVotingLine = {
 	]
 }
 
+// state questions intro
 var contextStatesIntro = {
 	header: 'Tell us what you think',
 
@@ -295,6 +301,7 @@ var contextStatesIntro = {
 	]
 }
 
+// states data intro
 var contextStates = {
 	validateType: 'radio',
 
@@ -345,6 +352,7 @@ var contextStates = {
 	]
 }
 
+// token intro
 var contextTokenIntro = {
 	header: "Bonus Task",
 
@@ -353,10 +361,8 @@ var contextTokenIntro = {
 			'For the following task, you will be randomly paired with another person, whom we will call your match.  The match will be randomly selected from the other workers.',
 		],
 		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'You can determine the tax transfer between you and another participant in this study with whom you have been matched.',
-			'You will be shown a situation.  In the situation one or more of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
+			'In our economy one way the government uses taxes is to generate revenue from its citizens’ earnings to redistribute wealth. The government’s role in redistributing this wealth can be large or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+			'You have the opportunity to tell the government if it should get involved in wealth redistribution between you and your match and, if so, how large or small the redistribution should be.  If your decision is selected for payment, it will determine how many tokens each person gets paid in this task.'
 		],
 		[
 			'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
@@ -364,6 +370,7 @@ var contextTokenIntro = {
 	]
 }
 
+// potential order of tokens
 var contextTokens = [
 	[10,9,8,7,6,5,4,3,2,1,0],
 	[0,1,2,3,4,5,6,7,8,9,10],
@@ -371,6 +378,7 @@ var contextTokens = [
 	[5,0,1,2,3,4,6,7,8,9,10]
 ];
 
+// survey intro
 var contextSurveyIntro = {
 	header: 'Tell us about yourself',
 
@@ -379,6 +387,7 @@ var contextSurveyIntro = {
 	]
 }
 
+// survey data
 var contextSurvey = {
 	politics: {
 		question: 'In politics, as of today, do you consider yourself:',

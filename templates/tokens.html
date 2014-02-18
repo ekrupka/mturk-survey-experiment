@@ -1,17 +1,11 @@
 <!-- Token Template -->
 <section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} data-default-slider-moved=false >
   <h2>
-    Sometimes people earn lots in our economy and sometimes people earn little in our economy.  In this economy there are a total of 10 tokens that can be earned. 
-  <h2>
-  <h2>
-    You have earned  <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and your match has earned <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}.
+    In this economy your wealth is <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and your match’s wealth is <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}.
   </h2>
-
   <h2>
-    You have the opportunity to determine the tax transfer between you and your match.  If this decision is selected for payment, it will determine how many tokens each person gets paid for in this task.
-  </h2> 
-
-  <h2>Use the slider to indicate how many tokens you wish to take or give:</h2>
+    Use the slider to indicate whether you want the government involved and how large or small the redistribution should be.
+  </h2>
 
   <div class="row overflow-hidden">
     <p class="token-slider-text col-md-12">Make a decision by moving the slider</p>
@@ -22,11 +16,11 @@
   </div>
 
   <h2>
-    To confirm, your post-tax earnings for this decision are <span class="you-own-tokens" data-dynamic>{{getYourToken}}</span> <span data-tokens="you">{{ getYourTokenText }}</span>
+    To confirm, your post-tax wealth for this decision is <span class="you-own-tokens" data-dynamic>{{getYourToken}}</span> <span data-tokens="you">{{ getYourTokenText }}</span>
   </h2>
 
   <h2>
-   To confirm, your match's post-tax earnings for this decision are <span class="other-own-tokens" data-dynamic>{{getOtherToken}}</span> <span data-tokens="other">{{ getOtherTokenText }}</span>
+    To confirm, your match's post-tax wealth for this decision is <span class="other-own-tokens" data-dynamic>{{getOtherToken}}</span> <span data-tokens="other">{{ getOtherTokenText }}</span>
   </h2>
 
 </section>

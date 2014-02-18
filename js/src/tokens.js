@@ -37,14 +37,14 @@
 		// html strings used for moving slider text
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
-		this.tokenSliderText = 'You are transferring ';
-		this.takingEndText = ' to yourself';
-		this.givingEndText = 'to your match';
-		this.tokenEndText = '</span> <span class="token-string-slider">tokens</span> ';
-		this.nothingText = 'You are making no transfers';
+		this.tokenSliderText = 'Involve the government and transfer ';
+		this.takingEndText = ' to myself';
+		this.givingEndText = 'to my match';
+		this.tokenEndText = '</span> ';
+		this.nothingText = 'Do not involve the government and make no transfers';
 
 		// used to calculate moving slider text
-		this.sliderTextWidth = 295;
+		this.sliderTextWidth = 452;
 	};
 
 	Tokens.prototype = {
@@ -157,13 +157,13 @@
 				tokens = this.numTokensYouOwn - yourTokenVal;
 				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
 			} else {
-				text += this.tokenSpanTaking + '0' + this.tokenEndText;
+				text = this.nothingText;
 			}
 
 			// empty the slider text and append current val text
 			this.$sliderText.empty();
 			this.$sliderText.append( text );
-			this.updateTokensText( tokens, $( this.tokenStringSlider ) );
+			// this.updateTokensText( tokens, $( this.tokenStringSlider ) );
 		},
 
 		// move the slider text with the slider
@@ -173,15 +173,19 @@
 				handleWidth = parseInt( this.$noUiTokenHandle.width() ),
 				marginLeft = 0;  
 
+			/*(console.log('left toke slider ' + leftTokenSlider);
+			console.log('default width ' + defaultWidth);
+			console.log('handle width ' + handleWidth );*/
+
 			if ( this.defaultSliderSide === 0 ) {
 				// console.log( 'in left side' );
 				marginLeft = leftTokenSlider - defaultWidth + handleWidth/2;
-				// console.log(marginLeft);
+				// console.log('margin left '+ marginLeft);
 				this.$sliderText.removeClass( 'float-right' );
 
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
-				} else if ( marginLeft < 700 ) {
+				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
 					// console.log('adjusting left of text');
 				} else {

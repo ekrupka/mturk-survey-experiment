@@ -1671,6 +1671,7 @@ function RandomSlider() {
 }
 
 /* DATA OPTIONS FOR DIFFERENT TEMPLATES */	
+// intro for templates
 var contextIntro = {
 	header: 'Overview of tasks',
 
@@ -1684,6 +1685,7 @@ var contextIntro = {
 	]
 }
 
+// politician intro
 var contextPolIntro = {
 	header: 'Tell us what you think',
 
@@ -1692,6 +1694,7 @@ var contextPolIntro = {
 	]
 }
 
+// politician data
 var contextPol = {
 	question: 'Please indicate which politician in each pair you find more attractive',
 
@@ -1801,6 +1804,7 @@ var contextPol = {
 	]
 }
 
+// voting line intro
 var contextVotingLineIntro = {
 	header: 'Tell us what you think',
 
@@ -1809,6 +1813,7 @@ var contextVotingLineIntro = {
 	]
 }
 
+// voting line data
 var contextVotingLine = {
 	validateType: 'radio',
 
@@ -1840,6 +1845,7 @@ var contextVotingLine = {
 	]
 }
 
+// state questions intro
 var contextStatesIntro = {
 	header: 'Tell us what you think',
 
@@ -1848,6 +1854,7 @@ var contextStatesIntro = {
 	]
 }
 
+// states data intro
 var contextStates = {
 	validateType: 'radio',
 
@@ -1898,6 +1905,7 @@ var contextStates = {
 	]
 }
 
+// token intro
 var contextTokenIntro = {
 	header: "Bonus Task",
 
@@ -1906,10 +1914,8 @@ var contextTokenIntro = {
 			'For the following task, you will be randomly paired with another person, whom we will call your match.  The match will be randomly selected from the other workers.',
 		],
 		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'You can determine the tax transfer between you and another participant in this study with whom you have been matched.',
-			'You will be shown a situation.  In the situation one or more of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
+			'In our economy one way the government uses taxes is to generate revenue from its citizens’ earnings to redistribute wealth. The government’s role in redistributing this wealth can be large or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+			'You have the opportunity to tell the government if it should get involved in wealth redistribution between you and your match and, if so, how large or small the redistribution should be.  If your decision is selected for payment, it will determine how many tokens each person gets paid in this task.'
 		],
 		[
 			'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
@@ -1917,6 +1923,7 @@ var contextTokenIntro = {
 	]
 }
 
+// potential order of tokens
 var contextTokens = [
 	[10,9,8,7,6,5,4,3,2,1,0],
 	[0,1,2,3,4,5,6,7,8,9,10],
@@ -1924,6 +1931,7 @@ var contextTokens = [
 	[5,0,1,2,3,4,6,7,8,9,10]
 ];
 
+// survey intro
 var contextSurveyIntro = {
 	header: 'Tell us about yourself',
 
@@ -1932,6 +1940,7 @@ var contextSurveyIntro = {
 	]
 }
 
+// survey data
 var contextSurvey = {
 	politics: {
 		question: 'In politics, as of today, do you consider yourself:',
@@ -2148,7 +2157,7 @@ $(function() {
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjM280Q2ZhYmpidVk/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -2292,7 +2301,7 @@ $(function() {
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				// this.$mturkForm.submit();
+				this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
@@ -2381,14 +2390,14 @@ $(function() {
 		// html strings used for moving slider text
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
-		this.tokenSliderText = 'You are transferring ';
-		this.takingEndText = ' to yourself';
-		this.givingEndText = 'to your match';
-		this.tokenEndText = '</span> <span class="token-string-slider">tokens</span> ';
-		this.nothingText = 'You are making no transfers';
+		this.tokenSliderText = 'Involve the government and transfer ';
+		this.takingEndText = ' to myself';
+		this.givingEndText = 'to my match';
+		this.tokenEndText = '</span> ';
+		this.nothingText = 'Do not involve the government and make no transfers';
 
 		// used to calculate moving slider text
-		this.sliderTextWidth = 295;
+		this.sliderTextWidth = 452;
 	};
 
 	Tokens.prototype = {
@@ -2501,13 +2510,13 @@ $(function() {
 				tokens = this.numTokensYouOwn - yourTokenVal;
 				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
 			} else {
-				text += this.tokenSpanTaking + '0' + this.tokenEndText;
+				text = this.nothingText;
 			}
 
 			// empty the slider text and append current val text
 			this.$sliderText.empty();
 			this.$sliderText.append( text );
-			this.updateTokensText( tokens, $( this.tokenStringSlider ) );
+			// this.updateTokensText( tokens, $( this.tokenStringSlider ) );
 		},
 
 		// move the slider text with the slider
@@ -2517,15 +2526,19 @@ $(function() {
 				handleWidth = parseInt( this.$noUiTokenHandle.width() ),
 				marginLeft = 0;  
 
+			/*(console.log('left toke slider ' + leftTokenSlider);
+			console.log('default width ' + defaultWidth);
+			console.log('handle width ' + handleWidth );*/
+
 			if ( this.defaultSliderSide === 0 ) {
 				// console.log( 'in left side' );
 				marginLeft = leftTokenSlider - defaultWidth + handleWidth/2;
-				// console.log(marginLeft);
+				// console.log('margin left '+ marginLeft);
 				this.$sliderText.removeClass( 'float-right' );
 
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
-				} else if ( marginLeft < 700 ) {
+				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
 					// console.log('adjusting left of text');
 				} else {
