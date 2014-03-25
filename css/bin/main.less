@@ -307,7 +307,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 .survey-input-text {
 	width: 87%;
 }
-.you-own-tokens, .taking-tokens {
+/*.you-own-tokens, .taking-tokens {
 	color: @purple;
 }
 
@@ -352,7 +352,38 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
 	&[disabled] .noUi-origin {
 		background-color: @dark-grey;
 	}
+}*/
+
+.question-table {
+	label {
+		border: 2px solid @purple;
+		border-right: 1px solid @purple;
+		border-left: 1px solid @purple;
+		text-transform: capitalize;
+		text-align: center;
+		font-weight: 300;
+		font-size: 1.4em;
+		height: 114px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		display: inline-block;
+
+		&:first-child {
+			border-left: 2px solid @purple;
+		}
+
+		&:last-child {
+			border-right: 2px solid @purple;
+		}
+
+		input {
+			display: block;
+			margin: 0 auto;
+		}
+	}
 }
+
+
 // green
 @green: #8cc63e;
 

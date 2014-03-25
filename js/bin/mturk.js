@@ -1551,125 +1551,6 @@
 		return inpts;
 	}
 })(window.jQuery);
-// get a random group of politician 
-// and place one of the sets of politicians on a random side of the page (left, right)
-Handlebars.registerHelper('randomPol', function( context, options ) {
-	var contextLen = context.length, 
-		contextRan = Math.floor( Math.random() * contextLen ), // get random item
-		out = '',
-		imgs = context[contextRan].images,
-		imgsLen = imgs.length,
-		imgsRand = Math.floor( Math.random() * imgsLen ),
-		imgInfo = null;
-
-	while ( imgsLen != 0 ) {
-		imgInfo = imgs[imgsRand];
-		// indx 1 = left side of page, indx 0 = right
-		imgInfo.indx = imgsLen - 1;
-		out += options.fn( imgInfo ); // get random image context
-		imgs.splice( imgsRand, 1 );
-		imgsLen = imgs.length;
-		imgsRand = Math.floor( Math.random() * imgsLen ); 
-	}
-
-	context.splice( contextRan, 1 );
-	return out;
-});
-
-// get random item from context
-Handlebars.registerHelper('randomItem', function(context, options) {
-	var item = randomItem( context );
-	return options.fn( item );
-});
-
-// random input for one pic with two input options
-Handlebars.registerHelper('randomInput', function(context, options) {
-	var out = '';
-
-	for ( var contextLen = context.length; contextLen != 0; contextLen = context.length ) {
-		var item = randomItem( context );
-		item.indx = contextLen - 1;
-		out += options.fn( item );
-	}
-	return out;
-});
-
-// get a random item from the context list and delete it from the list
-function randomItem( context ) {
-	var contextLen = context.length, 
-		contextRan = Math.floor( Math.random() * contextLen ), // get random item
-		contextItem = context[contextRan];
-
-	context.splice( contextRan, 1);
-	return contextItem;
-}	
-
-// set random token value and function to token value and corresponding text
-(function() {
-	var yourTokenVal = null,
-		otherTokenVal = null,
-		randomTokenList = null; //get random token order
-
-	Handlebars.registerHelper('setRandomToken', function( context ) {
-		if ( !randomTokenList ) {
-			randomTokenList = randomItem( context );
-		} 
-		yourTokenVal = randomTokenList[0];
-		otherTokenVal = Math.abs( yourTokenVal - 10 ); // assign other token
-		randomTokenList.splice( 0, 1 ); //delete the first item from the random token list to not recieve it again
-		return yourTokenVal;
-	});
-
-	Handlebars.registerHelper('getYourToken', function() {
-		return yourTokenVal;
-	});
-
-	Handlebars.registerHelper('getOtherToken', function() {
-		return otherTokenVal;
-	});
-
-	// get text function to return 'tokens' if more than 1 token or 'token' if else
-	Handlebars.registerHelper('getYourTokenText', function() {
-		return yourTokenVal === 1 ? 'token' : 'tokens';
-	});
-
-	Handlebars.registerHelper('getOtherTokenText', function() {
-		return otherTokenVal === 1 ? 'token' : 'tokens';
-	});
-})();
-
-// create the random slider side
-function RandomSlider() {
-	// left = 0, right = 1 for neutral
-	var sliderSide = null,
-		neutralSlider = '<div class="col-sm-1 col-md-1"><div class="token-default-slider"></div></div>',
-		tokenSlider = '<div class="col-sm-11 col-md-11"><div class="token-slider"></div></div>',
-		tokenFiller = '<div class="token-filler"></div>';
-
-	Handlebars.registerHelper('setSliderSide', function() {
-		// left = 0, right = 1 for neutral
-		sliderSide = Math.floor( Math.random() * 2 );
-
-		return sliderSide;
-	});
-
-	Handlebars.registerHelper('generateSliderDivs', function(context, options) {
-		var out = '';
-		
-		if ( sliderSide ) {
-			out += tokenSlider;
-			out += tokenFiller;
-			out += neutralSlider;
-		} else {
-			out += neutralSlider;
-			out += tokenFiller;
-			out += tokenSlider;
-		}
-
-		 return new Handlebars.SafeString( out );
-	});
-}
-
 /* DATA OPTIONS FOR DIFFERENT TEMPLATES */	
 var contextIntro = {
 	header: 'Overview of tasks',
@@ -1917,12 +1798,40 @@ var contextTokenIntro = {
 	]
 }
 
-var contextTokens = [
-	[10,9,8,7,6,5,4,3,2,1,0],
-	[0,1,2,3,4,5,6,7,8,9,10],
-	[5,10,9,8,7,6,4,3,2,1,0],
-	[5,0,1,2,3,4,6,7,8,9,10]
-];
+var contextTokens = {
+	tokens: [
+		[10,9,8,7,6,5,4,3,2,1,0],
+		[0,1,2,3,4,5,6,7,8,9,10],
+		[5,10,9,8,7,6,4,3,2,1,0],
+		[5,0,1,2,3,4,6,7,8,9,10]
+	],
+	tokenLabel: [
+		{
+			text: 'very socially appropriate',
+			id: 'very-socially-appropriate'
+		},
+		{
+			text: 'socially appropriate',
+			id: 'socially-appropriate'
+		},
+		{
+			text: 'somewhat socially appropriate',
+			id: 'somewhat-socially-appropriate'
+		},
+		{
+			text: 'somewhat socially inappropriate',
+			id: 'somewhat-socially-inappropriate'
+		},
+		{
+			text: 'socially inappropriate',
+			id: 'socially-inappropriate'
+		},
+		{
+			text: 'very socially inappropriate',
+			id: 'very-socially-inappropriate'
+		},
+	]
+}
 
 var contextSurveyIntro = {
 	header: 'Tell us about yourself',
@@ -2031,6 +1940,126 @@ var contextThankYou = {
 		'Thank you for participating in our study.' 
 	]
 }
+// get a random group of politician 
+// and place one of the sets of politicians on a random side of the page (left, right)
+Handlebars.registerHelper('randomPol', function( context, options ) {
+	var contextLen = context.length, 
+		contextRan = Math.floor( Math.random() * contextLen ), // get random item
+		out = '',
+		imgs = context[contextRan].images,
+		imgsLen = imgs.length,
+		imgsRand = Math.floor( Math.random() * imgsLen ),
+		imgInfo = null;
+
+	while ( imgsLen != 0 ) {
+		imgInfo = imgs[imgsRand];
+		// indx 1 = left side of page, indx 0 = right
+		imgInfo.indx = imgsLen - 1;
+		out += options.fn( imgInfo ); // get random image context
+		imgs.splice( imgsRand, 1 );
+		imgsLen = imgs.length;
+		imgsRand = Math.floor( Math.random() * imgsLen ); 
+	}
+
+	context.splice( contextRan, 1 );
+	return out;
+});
+
+// get random item from context
+Handlebars.registerHelper('randomItem', function(context, options) {
+	var item = randomItem( context );
+	return options.fn( item );
+});
+
+// random input for one pic with two input options
+Handlebars.registerHelper('randomInput', function(context, options) {
+	var out = '';
+
+	for ( var contextLen = context.length; contextLen != 0; contextLen = context.length ) {
+		var item = randomItem( context );
+		item.indx = contextLen - 1;
+		out += options.fn( item );
+	}
+	return out;
+});
+
+// get a random item from the context list and delete it from the list
+function randomItem( context ) {
+	var contextLen = context.length, 
+		contextRan = Math.floor( Math.random() * contextLen ), // get random item
+		contextItem = context[contextRan];
+
+	context.splice( contextRan, 1);
+	return contextItem;
+}	
+
+// set random token value and function to token value and corresponding text
+(function() {
+	var yourTokenVal = null,
+		otherTokenVal = null,
+		randomTokenList = null; //get random token order
+
+	Handlebars.registerHelper('setRandomToken', function( context ) {
+		if ( !randomTokenList ) {
+			randomTokenList = randomItem( context );
+		} 
+		yourTokenVal = randomTokenList[0];
+		otherTokenVal = Math.abs( yourTokenVal - 10 ); // assign other token
+		randomTokenList.splice( 0, 1 ); //delete the first item from the random token list to not recieve it again
+		return yourTokenVal;
+	});
+
+	Handlebars.registerHelper('getYourToken', function() {
+		return yourTokenVal;
+	});
+
+	Handlebars.registerHelper('getOtherToken', function() {
+		return otherTokenVal;
+	});
+
+	// get text function to return 'tokens' if more than 1 token or 'token' if else
+	Handlebars.registerHelper('getYourTokenText', function() {
+		return yourTokenVal === 1 ? 'token' : 'tokens';
+	});
+
+	Handlebars.registerHelper('getOtherTokenText', function() {
+		return otherTokenVal === 1 ? 'token' : 'tokens';
+	});
+})();
+
+// create the random slider side
+function RandomSlider() {
+	// left = 0, right = 1 for neutral
+	var sliderSide = null,
+		neutralSlider = '<div class="col-sm-1 col-md-1"><div class="token-default-slider"></div></div>',
+		tokenSlider = '<div class="col-sm-11 col-md-11"><div class="token-slider"></div></div>',
+		tokenFiller = '<div class="token-filler"></div>';
+
+	Handlebars.registerHelper('setSliderSide', function() {
+		// left = 0, right = 1 for neutral
+		sliderSide = Math.floor( Math.random() * 2 );
+
+		return sliderSide;
+	});
+
+	Handlebars.registerHelper('generateSliderDivs', function(context, options) {
+		var out = '';
+		
+		if ( sliderSide ) {
+			out += tokenSlider;
+			out += tokenFiller;
+			out += neutralSlider;
+		} else {
+			out += neutralSlider;
+			out += tokenFiller;
+			out += tokenSlider;
+		}
+
+		 return new Handlebars.SafeString( out );
+	});
+}
+
+
 
 
 
@@ -2148,7 +2177,7 @@ $(function() {
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -2199,7 +2228,7 @@ $(function() {
 			var that = this;
 			// call randomSlider
 			// consider moving to init Function
-			new RandomSlider();
+			// new RandomSlider();
 
 			this.$nextButton.on('click', function(){
 				that.nextButtonClicked();
@@ -2227,7 +2256,7 @@ $(function() {
 		// driver for the order of questions displayed
 		// pageNum determines which template/data to use
 		nextQuestionDriver: function( pageNum ) {
-			if ( pageNum === 1 ) {
+			/*if ( pageNum === 1 ) {
 				this.addHeader( contextIntro );
 			} else if ( pageNum === 2 ) {
 				this.addHeader( contextPolIntro );
@@ -2265,7 +2294,7 @@ $(function() {
 				
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum >= 15 && pageNum <= 17 ) {
+			} else*/ if ( pageNum >= 1 && pageNum <= 3 ) {
 				// this is done to show the desc on three seperate pages
 				var desc = contextTokenIntro.descAll[0];
 				contextTokenIntro.desc = []
@@ -2275,11 +2304,11 @@ $(function() {
 				}
 				contextTokenIntro.descAll.splice(0, 1);
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 18 && pageNum <= 28 ) {
+			} else if ( pageNum >= 4 && pageNum <= 28 ) {
 				// add the token base 
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
 				// token class to deal with everything for the tokens
-				$( this.tokens ).tokens();
+				// $( this.tokens ).tokens();
 			} else if ( pageNum === 29 ) {
 				this.addHeader( contextSurveyIntro );
 			} else if ( pageNum === 30 ) {

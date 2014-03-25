@@ -245,12 +245,40 @@ var contextTokenIntro = {
 	]
 }
 
-var contextTokens = [
-	[10,9,8,7,6,5,4,3,2,1,0],
-	[0,1,2,3,4,5,6,7,8,9,10],
-	[5,10,9,8,7,6,4,3,2,1,0],
-	[5,0,1,2,3,4,6,7,8,9,10]
-];
+var contextTokens = {
+	tokens: [
+		[10,9,8,7,6,5,4,3,2,1,0],
+		[0,1,2,3,4,5,6,7,8,9,10],
+		[5,10,9,8,7,6,4,3,2,1,0],
+		[5,0,1,2,3,4,6,7,8,9,10]
+	],
+	tokenLabel: [
+		{
+			text: 'very socially appropriate',
+			id: 'very-socially-appropriate'
+		},
+		{
+			text: 'socially appropriate',
+			id: 'socially-appropriate'
+		},
+		{
+			text: 'somewhat socially appropriate',
+			id: 'somewhat-socially-appropriate'
+		},
+		{
+			text: 'somewhat socially inappropriate',
+			id: 'somewhat-socially-inappropriate'
+		},
+		{
+			text: 'socially inappropriate',
+			id: 'socially-inappropriate'
+		},
+		{
+			text: 'very socially inappropriate',
+			id: 'very-socially-inappropriate'
+		},
+	]
+}
 
 var contextSurveyIntro = {
 	header: 'Tell us about yourself',

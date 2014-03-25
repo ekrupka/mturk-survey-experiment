@@ -40,7 +40,7 @@
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -91,7 +91,7 @@
 			var that = this;
 			// call randomSlider
 			// consider moving to init Function
-			new RandomSlider();
+			// new RandomSlider();
 
 			this.$nextButton.on('click', function(){
 				that.nextButtonClicked();
@@ -119,7 +119,7 @@
 		// driver for the order of questions displayed
 		// pageNum determines which template/data to use
 		nextQuestionDriver: function( pageNum ) {
-			if ( pageNum === 1 ) {
+			/*if ( pageNum === 1 ) {
 				this.addHeader( contextIntro );
 			} else if ( pageNum === 2 ) {
 				this.addHeader( contextPolIntro );
@@ -157,7 +157,7 @@
 				
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum >= 15 && pageNum <= 17 ) {
+			} else*/ if ( pageNum >= 1 && pageNum <= 3 ) {
 				// this is done to show the desc on three seperate pages
 				var desc = contextTokenIntro.descAll[0];
 				contextTokenIntro.desc = []
@@ -167,11 +167,11 @@
 				}
 				contextTokenIntro.descAll.splice(0, 1);
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 18 && pageNum <= 28 ) {
+			} else if ( pageNum >= 4 && pageNum <= 28 ) {
 				// add the token base 
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
 				// token class to deal with everything for the tokens
-				$( this.tokens ).tokens();
+				// $( this.tokens ).tokens();
 			} else if ( pageNum === 29 ) {
 				this.addHeader( contextSurveyIntro );
 			} else if ( pageNum === 30 ) {

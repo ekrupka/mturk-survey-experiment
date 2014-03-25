@@ -1643,45 +1643,74 @@ input::-webkit-outer-spin-button {
   font-size: 2.5em;
   margin-top: 0;
 }
-.you-own-tokens,
-.taking-tokens {
-  color: #5f48a5;
+/*.you-own-tokens, .taking-tokens {
+	color: @purple;
 }
-.other-own-tokens,
-.giving-tokens {
-  color: #f2d423;
+
+.other-own-tokens, .giving-tokens{
+	color: @yellow;
 }
-.you-own-tokens,
-.other-own-tokens {
-  border-bottom: 2px solid #434343;
-  font-size: 1.3em;
+
+.you-own-tokens, .other-own-tokens {
+	border-bottom: 2px solid @dark-grey;
+	font-size: 1.3em;
 }
+
+
 .token-slider-wrapper {
-  height: 65px;
-  padding-top: 1em;
-  padding-bottom: 1em;
+	height: 65px;
+	.pad-top-bottom( 1em; 1em; );
+
+	[class^="col-md"], [class^="col-sm"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
-.token-slider-wrapper [class^="col-md"],
-.token-slider-wrapper [class^="col-sm"] {
-  padding-left: 0;
-  padding-right: 0;
-}
+
 .token-slider-text {
-  font-weight: 300;
-  position: relative;
+	font-weight: 300;
+	position: relative;
 }
+
+// edits of default token styles
 .token-slider {
-  position: relative;
-  z-index: 10;
+	position: relative;
+	z-index: 10;
+
+	&.noUi-background {
+		background-color: @purple;
+	}
+
+	.noUi-origin {
+		background-color: @yellow;
+	}
+
+	&[disabled] .noUi-origin {
+		background-color: @dark-grey;
+	}
+}*/
+.question-table label {
+  border: 2px solid #5f48a5;
+  border-right: 1px solid #5f48a5;
+  border-left: 1px solid #5f48a5;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.4em;
+  height: 114px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: inline-block;
 }
-.token-slider.noUi-background {
-  background-color: #5f48a5;
+.question-table label:first-child {
+  border-left: 2px solid #5f48a5;
 }
-.token-slider .noUi-origin {
-  background-color: #f2d423;
+.question-table label:last-child {
+  border-right: 2px solid #5f48a5;
 }
-.token-slider[disabled] .noUi-origin {
-  background-color: #434343;
+.question-table label input {
+  display: block;
+  margin: 0 auto;
 }
 .survey-list-item {
   padding-bottom: 1em;
