@@ -1,28 +1,27 @@
 <!-- Token Template -->
-<section class="question-content tokens row" >
+<section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} >
   <h2>
-    Sometimes people earn lots in our economy and sometimes people earn little in our economy.  In this economy there are a total of 10 tokens that can be earned. 
+    Sometimes people earn lots in our economy and sometimes people earn little in our economy.  In this economy there were a total of 10 tokens.
   <h2>
 
   <h2>
-    You have the opportunity to determine the tax transfer between you and your match.  If this decision is selected for payment, it will determine how many tokens each person gets paid for in this task.
-  </h2> 
+    The Mturker who took this Hit earned  <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and his match earned <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}.
+  </h2>
 
-  <!-- <h2>Use the slider to indicate how many tokens you wish to take or give:</h2> -->
+  <h2>
+    The Mturker had the opportunity to determine the tax transfer between himself and his match and he {{{transferText}}}.
+  </h2>
 
-  <!-- <div class="row overflow-hidden">
-    <p class="token-slider-text col-md-12">Make a decision by moving the slider</p>
-  </div> -->
-
-  <div class="question-table">
-    <div class="row">
+  <h2>
+    TASK: Your task is to rate the Mturker's tax transfer decision based on your guess of whether another Mturker like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".
+    <br>
+    <br>
+    Use the drop down menu to tell us what your guess is by completing this sentence:  I think that another Mturker like me would rate this tax transfer as
+    <select name="{{selectName}}">
       {{#each tokenLabel}}
-        <label class="col-md-2" for="{{id}}">
-          {{text}}
-          <input class="col-md-2" type="radio" id="{{id}}" >
-        </label>
+        <option value="{{val}}">{{text}}</option>
       {{/each}}
-    </div>
-  </div>
+    </select>
+  </h2>
 
 </section>

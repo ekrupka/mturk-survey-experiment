@@ -7,6 +7,7 @@
 		this.inpNum = 'input[type="number"]';
 		this.inpText = 'input[type="text"]';
 		this.check = ':checked';
+		this.select = 'select';
 		this.questionContent = '.question-content';
 		this.tokenSliderWrapper = '.token-slider-wrapper';
 		this.tokenSlider = '.token-slider';
@@ -19,20 +20,20 @@
 		// driver to decide which method of addInpts to call
 		updateInputs: function( pageNum ) {
 			var $inpts = this.$main.find( this.inp ),
-				$tokens = $( this.tokenSliderWrapper );
+				$select = this.$main.find( this.select );
 
 			// only calls add inputs if there are inputs or tokens on the page
 			// other wise the page is a intro title page and should not have inputs added
-			if ( $inpts.length !== 0 || $tokens.length !== 0 ) {	
-				// if the politician and voting line aren't finished displaying 
+			if ( $inpts.length !== 0 || $select.length !== 0 ) {
+				// if the politician and voting line aren't finished displaying
 				// add the input for two pics
-				if ( ( pageNum >= 4 && pageNum <= 8 ) || pageNum === 10 ) {
+				if ( ( pageNum >= 8 && pageNum <= 12 ) || pageNum === 14 ) {
 					this.twoPics();
-				} else if ( pageNum >= 12 && pageNum <= 15 ) {
+				} else if ( pageNum >= 16 && pageNum <= 19 ) {
 					this.onePic();
-				} else if ( pageNum >= 19 && pageNum <= 29 ) {
-					this.token( $tokens );
-				} else if ( pageNum === 31 ) {
+				} else if ( pageNum >= 21 && pageNum <= 53 ) {
+					this.token( $select, pageNum );
+				} else if ( pageNum === 55 ) {
 					this.appendAll();
 				}
 			}
@@ -77,24 +78,33 @@
 		},
 
 		// append inputs for tokens
-		token: function( $tokens ) {
-			// get default slider side
-			var sliderSide = $tokens.data( 'side' ), 
-				tokenStart = $( this.questionContent ).data('you-own-tokens'),//number of tokens started with
-				yourTokenVal = parseInt( $( this.tokenSlider).val() ), // tokens selected 
-				tokenOrder = parseInt( this.$pageNumber.text() ) - 18, // starts at 1, 1st token at page 18
-				sideInp = this.generateHiddenInput( tokenStart + '_slider_L', sliderSide  ), //create hidden input for default slider side
-				keepInp = this.generateHiddenInput( tokenStart + '_keep', yourTokenVal ), // create hiddne input for token amount
-				orderInp = this.generateHiddenInput( tokenStart + '_order', tokenOrder ); // create hidden input for token order
+		token: function( $select, pageNum ) {
+			var val = $select.val(),
+				name = $select.attr('name'),
+				inpt = this.generateHiddenInput( name, val ),
+				orderName = '',
+				orderInp = null;
 
-			this.$mturkForm.append( sideInp, keepInp, orderInp );
+			if ( pageNum === 21 ) {
+				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
+				orderInp = this.generateHiddenInput( orderName, 1 );
+			} else if ( pageNum === 32 ) {
+				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
+				orderInp = this.generateHiddenInput( orderName, 2 );
+			} else if ( pageNum === 43 ) {
+				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
+				orderInp = this.generateHiddenInput( orderName, 3 );
+			}
+
+			// append to mturk
+			this.$mturkForm.append( inpt, orderInp );
 		},
 
 		// append all check inputs, text inputs with a length > 1
 		// and number inputs to the mturk Form
 		appendAll: function() {
 			// get input that was clicked
-			var $inpts = this.$main.find( this.inp + this.check ), 
+			var $inpts = this.$main.find( this.inp + this.check ),
 				$numInpts = this.$main.find( this.inpNum ),
 				$textInpts = this.$main.find( this.inpText );
 

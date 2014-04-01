@@ -40,7 +40,7 @@
 				dataName: 'onePicInput'
 			},
 			{
-				url: '/templates/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjTWJNREZEcDN5NUE/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -49,7 +49,7 @@
 			}
 		];
 
-		// other classes 
+		// other classes
 		this.misc = $( 'main' ).misscelanious();
 		this.addInpts = $( 'main' ).addInputs( this.$mturkForm );
 	}
@@ -89,9 +89,6 @@
 		// bind for next button click driver
 		bind: function() {
 			var that = this;
-			// call randomSlider
-			// consider moving to init Function
-			// new RandomSlider();
 
 			this.$nextButton.on('click', function(){
 				that.nextButtonClicked();
@@ -119,30 +116,39 @@
 		// driver for the order of questions displayed
 		// pageNum determines which template/data to use
 		nextQuestionDriver: function( pageNum ) {
-			/*if ( pageNum === 1 ) {
+			if ( pageNum >= 1 && pageNum <= 5 ) {
+				// this is done to show the desc on three seperate pages
+				var desc = contextIntro.descAll[0];
+				contextIntro.desc = []
+				// contextIntro.desc.desc;
+				for (var i = 0; i < desc.length; i++) {
+					contextIntro.desc[i] = desc[i];
+				}
+				contextIntro.descAll.splice(0, 1);
+				// this.addHeader( contextIntro );
 				this.addHeader( contextIntro );
-			} else if ( pageNum === 2 ) {
+			} else if ( pageNum === 6 ) {
 				this.addHeader( contextPolIntro );
-			} else if ( pageNum >= 3 && pageNum <= 7 ) {
+			} else if ( pageNum >= 7 && pageNum <= 11 ) {
 				// there are still politician photos to add
-				if ( pageNum === 3 ) {
+				if ( pageNum === 7 ) {
 					this.addQuestionDesc( contextPol );
 				}
 				this.addQuestion( this.templates.twoPic, contextPol );
-			} else if ( pageNum === 8 ) {
+			} else if ( pageNum === 12 ) {
 				this.addHeader( contextVotingLineIntro );
-			} else if ( pageNum === 9 ) {
+			} else if ( pageNum === 13 ) {
 				// add question
 				this.addQuestionDesc( contextVotingLine );
 				this.addQuestion( this.templates.twoPic, contextVotingLine );
-			} else if ( pageNum === 10 ) {
+			} else if ( pageNum === 14 ) {
 				this.addHeader( contextStatesIntro );
-			} else if ( pageNum >= 11 && pageNum <= 14 ) {	
-				if ( pageNum === 11 ) {
+			} else if ( pageNum >= 15 && pageNum <= 18 ) {
+				if ( pageNum === 15 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
-				// clear checked values from previous input state 
+				// clear checked values from previous input state
 				// this done because the input fields are not removed from the page
 				// but just copied to mturk form
 				// input labels shouldn't change sides so instead of removing input from page to page it is just renamed
@@ -151,30 +157,30 @@
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 11 ) {
+				if ( pageNum === 15 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
 				}
-				
+
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else*/ if ( pageNum >= 1 && pageNum <= 3 ) {
+			} else if ( pageNum === 19 ) {
 				// this is done to show the desc on three seperate pages
 				var desc = contextTokenIntro.descAll[0];
-				contextTokenIntro.desc = []
+				contextTokenIntro.desc = [];
 				// contextTokenIntro.desc.desc;
 				for (var i = 0; i < desc.length; i++) {
 					contextTokenIntro.desc[i] = desc[i];
 				}
 				contextTokenIntro.descAll.splice(0, 1);
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 4 && pageNum <= 28 ) {
-				// add the token base 
+			} else if ( pageNum >= 20 && pageNum <= 52 ) {
+				// add the token base
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
 				// token class to deal with everything for the tokens
 				// $( this.tokens ).tokens();
-			} else if ( pageNum === 29 ) {
+			} else if ( pageNum === 53 ) {
 				this.addHeader( contextSurveyIntro );
-			} else if ( pageNum === 30 ) {
+			} else if ( pageNum === 54 ) {
 				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
 				this.$nextButton.text( 'Submit Answers' );
 				this.misc.radioOther();
@@ -184,7 +190,7 @@
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				// this.$mturkForm.submit();
+				this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
@@ -200,9 +206,9 @@
 		// add question description
 		addQuestionDesc: function( context ) {
 			this.appendAfter( this.header, this.templates.question, context );
-		},	
+		},
 
-		// adds 
+		// adds
 		addQuestion: function( template, context ) {
 			this.$main.find( this.introDesc ).after( template(context) );
 		},
@@ -213,7 +219,7 @@
 		},
 
 		// remove all html elts that are associated with a question
-		removeQuestion: function() {		
+		removeQuestion: function() {
 			// tokens, intro template, errors, and actual question content
 			$( this.tokens ).remove();
 			$( this.introTemp ).remove();

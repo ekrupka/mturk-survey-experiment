@@ -1,14 +1,38 @@
-/* DATA OPTIONS FOR DIFFERENT TEMPLATES */	
+/* DATA OPTIONS FOR DIFFERENT TEMPLATES */
 var contextIntro = {
 	header: 'Overview of tasks',
 
-	desc: [
-		'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
-		'In the first part, we will ask you to tell us what you think about various images.',
-		'In the second part, you will have a chance to earn a bonus.  Your earnings for the second part will be in tokens, which will be converted to money.  Every 10 tokens you earn is worth $1 to you.  Your earnings will depend on the decisions you make and on the decisions that the other worker you are paired with will make.',
-		'In the final third part, we will ask you to tell us about yourself.',
-		'You will be paid the base plus the bonus within 3 days after you complete this task.',
-		'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
+	descAll: [
+		[
+			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
+			'In the first part, we will ask you to tell us about yourself.'
+			'In the second part, we will ask you to tell us what you think about various images.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
+			'You will be paid the base plus the bonus within 3 days after you complete this task.',
+			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
+		],
+		[
+			[PUT SURVEY HERE]
+			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+		],
+		[
+			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
+			'Taxes are a way to redistribute money between citizens.',
+			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
+			'The Mturker faced several different situations in which they had to decide what they wanted to tax transfer to be between themselves and another Mturker.'
+		],
+		[
+			'Your job is to rate the Mturker\'s tax transfer decision based on whether you think the tax transfer decision was',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
+				'<h2 class="col-md-12 heavy center">and</h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think the Mturker OUGHT to transfer".</span></h2>',
+			'That sounds simple, but it is only half the story!',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker who is like you.',
+			'To pick a match who is like you, we will match you with another Mturker whow is also another [XXXX Democrate/Republic]. To increases the chances that you earn the bonus, you should try to imagine what another Mturker who is a [XXX REP or DEM] would say.',
+		],
+		[
+			'We are ready to start!'
+		]
 	]
 }
 
@@ -31,7 +55,7 @@ var contextPol = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/BillClinton.jpg',
 					alt: 'Bill Clinton photo',
-					id: 'bill-clinton', 
+					id: 'bill-clinton',
 					label: 'Bill Clinton',
 					name: 'ex-presidents',
 					value: '0'
@@ -51,7 +75,7 @@ var contextPol = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MitchMcConnell.jpg',
 					alt: 'Mitch McConnell photo',
-					id: 'mitch-mcconnell', 
+					id: 'mitch-mcconnell',
 					label: 'Mitch McConnell',
 					name: 'senators',
 					value: '1'
@@ -71,7 +95,7 @@ var contextPol = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JanBrewer.jpg',
 					alt: 'Jan Brewer photo',
-					id: 'jan-brewer', 
+					id: 'jan-brewer',
 					label: 'Jan Brewer',
 					name: 'governors',
 					value: '1'
@@ -91,7 +115,7 @@ var contextPol = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MicheleBachmann.jpg',
 					alt: 'Michelle Bachmann photo',
-					id: 'michelle-bachmann', 
+					id: 'michelle-bachmann',
 					label: 'Michelle Bachmann',
 					name: 'house-reps',
 					value: '1'
@@ -111,7 +135,7 @@ var contextPol = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JoeBiden.jpg',
 					alt: 'Joe Biden photo',
-					id: 'joe-biden', 
+					id: 'joe-biden',
 					label: 'Joe Biden',
 					name: 'vice-presidents',
 					value: '0'
@@ -150,7 +174,7 @@ var contextVotingLine = {
 				{
 					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine1.jpg',
 					alt: 'Voting line photo',
-					id: 'voting-line-1', 
+					id: 'voting-line-1',
 					label: 'I think this voting line is longest',
 					name: 'voting-line',
 					value: 0
@@ -231,51 +255,50 @@ var contextTokenIntro = {
 
 	descAll: [
 		[
-			'For the following task, you will be randomly paired with another person, whom we will call your match.  The match will be randomly selected from the other workers.',
-		],
-		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'You can determine the tax transfer between you and another participant in this study with whom you have been matched.',
-			'You will be shown a situation.  In the situation one or more of you will be holding some number of tokens.  You will then decide what you want the tax transfer to be between you and your match.'
-		],
-		[
-			'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
+			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+			'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
+	'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
 		]
 	]
 }
 
 var contextTokens = {
-	tokens: [
-		[10,9,8,7,6,5,4,3,2,1,0],
-		[0,1,2,3,4,5,6,7,8,9,10],
-		[5,10,9,8,7,6,4,3,2,1,0],
-		[5,0,1,2,3,4,6,7,8,9,10]
-	],
+	tokensEarned: [10,5,0],
+
+	tokens: {
+		10: [0,1,2,3,4,5,6,7,8,9,10],
+		5: [5,4,3,2,1,0,1,2,3,4,5],
+		0: [10,9,8,7,6,5,4,3,2,1,0]
+	},
+
 	tokenLabel: [
 		{
+			text: 'make a decision',
+			val: ''
+		},
+		{
 			text: 'very socially appropriate',
-			id: 'very-socially-appropriate'
+			val: '6'
 		},
 		{
 			text: 'socially appropriate',
-			id: 'socially-appropriate'
+			val: '5'
 		},
 		{
 			text: 'somewhat socially appropriate',
-			id: 'somewhat-socially-appropriate'
+			val: '4'
 		},
 		{
 			text: 'somewhat socially inappropriate',
-			id: 'somewhat-socially-inappropriate'
+			val: '3'
 		},
 		{
 			text: 'socially inappropriate',
-			id: 'socially-inappropriate'
+			val: '2'
 		},
 		{
 			text: 'very socially inappropriate',
-			id: 'very-socially-inappropriate'
+			val: '1'
 		},
 	]
 }
@@ -284,7 +307,7 @@ var contextSurveyIntro = {
 	header: 'Tell us about yourself',
 
 	desc: [
-		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.' 
+		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.'
 	]
 }
 
@@ -384,6 +407,6 @@ var contextThankYou = {
 	header: 'Thank You',
 
 	desc: [
-		'Thank you for participating in our study.' 
+		'Thank you for participating in our study.'
 	]
 }

@@ -1,4 +1,4 @@
-/*.you-own-tokens, .taking-tokens {
+.you-own-tokens, .taking-tokens {
 	color: @purple;
 }
 
@@ -11,66 +11,6 @@
 	font-size: 1.3em;
 }
 
-
-.token-slider-wrapper {
-	height: 65px;
-	.pad-top-bottom( 1em; 1em; );
-
-	[class^="col-md"], [class^="col-sm"] {
-		padding-left: 0;
-		padding-right: 0;
-	}
+select {
+	text-transform: capitalize;
 }
-
-.token-slider-text {
-	font-weight: 300;
-	position: relative;
-}
-
-// edits of default token styles
-.token-slider {
-	position: relative;
-	z-index: 10;
-
-	&.noUi-background {
-		background-color: @purple;
-	}
-
-	.noUi-origin {
-		background-color: @yellow;
-	}
-
-	&[disabled] .noUi-origin {
-		background-color: @dark-grey;
-	}
-}*/
-
-.question-table {
-	label {
-		border: 2px solid @purple;
-		border-right: 1px solid @purple;
-		border-left: 1px solid @purple;
-		text-transform: capitalize;
-		text-align: center;
-		font-weight: 300;
-		font-size: 1.4em;
-		height: 114px;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		display: inline-block;
-
-		&:first-child {
-			border-left: 2px solid @purple;
-		}
-
-		&:last-child {
-			border-right: 2px solid @purple;
-		}
-
-		input {
-			display: block;
-			margin: 0 auto;
-		}
-	}
-}
-

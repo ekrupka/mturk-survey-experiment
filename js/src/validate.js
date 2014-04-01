@@ -3,6 +3,7 @@
 		this.$validate = $elt;
 		this.$question = $( '.question' );
 		this.$survey = $( '.survey' );
+		this.$questionContent = $( '.question-content' );
 		this.radioInputs = 'input[type="radio"]';
 		this.numberInputs = 'input[type="number"]';
 
@@ -19,13 +20,10 @@
 		this.reNum = /^\d+$/;
 
 		// tokens
-		this.$tokens = $( '.tokens' );
-		this.$tokenSliderWrapper = $( '.token-slider-wrapper' );
+		this.$select = $( 'select' );
 		this.$err = $( '.error' );
-		this.sliderMoved = null;
-		// data attr
-		this.dataDefaultSliderMoved = 'defaultSliderMoved';
-		this.tokenErrorString = ' <h3 class="error display col-xs-12 col-sm-12 col-md-12 center">Please make a decision by moving the slider</h3>';
+
+		this.tokenErrorString = ' <h3 class="error display col-xs-12 col-sm-12 col-md-12 center">Please use the dropdown above to make a decision</h3>';
 
 		this.invalid = true;
 
@@ -43,13 +41,10 @@ ValidateForm.prototype = {
 
 		// validates default slider was moved
 		validateTokens: function() {
-			if ( this.$tokens.length > 0 ) {
-				// check to see if default slider was moved 
-				// token plugin updates data attr when default slider is moved
-				this.sliderMoved = this.$tokens.data( this.dataDefaultSliderMoved );
-				if ( !this.sliderMoved ) {
-					this.tokenError();
+			if ( this.$select.length > 0 ) {
+				if ( this.$select.val() === '' ) {
 					this.invalid = false;
+					this.tokenError();
 				}
 			}
 		},
@@ -87,7 +82,7 @@ ValidateForm.prototype = {
 
 					// if input is checked, value in radio names is true
 					// if input isn't checked and not in radio names value in radio names is false
-					// 
+					//
 					if ( isChecked ) {
 						radioNames[this.name] = true;
 					} else if ( !isChecked && !( name in radioNames ) ) {
@@ -105,14 +100,12 @@ ValidateForm.prototype = {
 						this.invalid = false;
 						this.radioError( radioErrors[key] );
 					}
-				}	
+				}
 			}
 		},
 
 		// display radio error
 		radioError: function( error ) {
-
-			console.log( 'in radio errors' )
 
 			// used to display errors on survey page
 			// errors currently are hidden and displayed when needed
@@ -126,7 +119,7 @@ ValidateForm.prototype = {
 				if ( !dataText ) {
 					dataText = 'Please select one of the ' + $err.data( 'error' ) + ' above';
 				}
-				console.log(dataText);
+				// console.log(dataText);
 				$err.text( dataText );
 				$err.show();
 			}
@@ -135,7 +128,7 @@ ValidateForm.prototype = {
 		// adds the token error to the slider
 		tokenError: function() {
 			if ( this.$err.length === 0 ) {
-				this.$tokenSliderWrapper.before( this.tokenErrorString );
+				this.$questionContent.append( this.tokenErrorString );
 			}
 		}
 	}

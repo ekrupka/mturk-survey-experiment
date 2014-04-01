@@ -1,7 +1,7 @@
-// get a random group of politician 
+// get a random group of politician
 // and place one of the sets of politicians on a random side of the page (left, right)
 Handlebars.registerHelper('randomPol', function( context, options ) {
-	var contextLen = context.length, 
+	var contextLen = context.length,
 		contextRan = Math.floor( Math.random() * contextLen ), // get random item
 		out = '',
 		imgs = context[contextRan].images,
@@ -16,7 +16,7 @@ Handlebars.registerHelper('randomPol', function( context, options ) {
 		out += options.fn( imgInfo ); // get random image context
 		imgs.splice( imgsRand, 1 );
 		imgsLen = imgs.length;
-		imgsRand = Math.floor( Math.random() * imgsLen ); 
+		imgsRand = Math.floor( Math.random() * imgsLen );
 	}
 
 	context.splice( contextRan, 1 );
@@ -43,27 +43,39 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 
 // get a random item from the context list and delete it from the list
 function randomItem( context ) {
-	var contextLen = context.length, 
+	var contextLen = context.length,
 		contextRan = Math.floor( Math.random() * contextLen ), // get random item
 		contextItem = context[contextRan];
 
 	context.splice( contextRan, 1);
 	return contextItem;
-}	
+}
 
 // set random token value and function to token value and corresponding text
 (function() {
 	var yourTokenVal = null,
 		otherTokenVal = null,
-		randomTokenList = null; //get random token order
+		tokenList = null,
+		order = null,
+		choseText = 'choose to '
+		taxTrans = ' a tax transfer of '
+		makeTrans = choseText + 'make' + taxTrans,
+		takeTrans = choseText + 'take' + taxTrans,
+		makeTransEnd = ' to his match',
+		takeTransEnd = ' for himself',
+		nothing = 'chose NOT to take or make a tax transfer.',
+		spanBold = '<span class="heavy border-bottom">',
+		spanEnd = '</span>',
+		count = 0,
+		curToken = null;// keep track of where we are in 5 list
 
 	Handlebars.registerHelper('setRandomToken', function( context ) {
-		if ( !randomTokenList ) {
-			randomTokenList = randomItem( context );
-		} 
-		yourTokenVal = randomTokenList[0];
-		otherTokenVal = Math.abs( yourTokenVal - 10 ); // assign other token
-		randomTokenList.splice( 0, 1 ); //delete the first item from the random token list to not recieve it again
+		if ( !tokenList || tokenList.length === 0 ) {
+			yourTokenVal = randomItem( context.tokensEarned );
+			otherTokenVal = Math.abs( yourTokenVal - 10 ); // assign other token
+			tokenList = context.tokens[yourTokenVal];
+		}
+
 		return yourTokenVal;
 	});
 
@@ -75,50 +87,38 @@ function randomItem( context ) {
 		return otherTokenVal;
 	});
 
-	// get text function to return 'tokens' if more than 1 token or 'token' if else
-	Handlebars.registerHelper('getYourTokenText', function() {
-		return yourTokenVal === 1 ? 'token' : 'tokens';
+	Handlebars.registerHelper('transferText', function() {
+		var out = '';
+		curToken = tokenList[0];
+		if ( yourTokenVal === 10 ) {
+			out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
+		} else if ( yourTokenVal === 5 ) {
+			if ( count < 5 ) {
+				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
+			} else if ( count === 5 ) {
+				out += nothing;
+			} else {
+				out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
+			}
+			count++;
+		} else {
+			if ( yourTokenVal === 0 && curToken === 0 ) {
+				out += nothing;
+			} else {
+				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
+			}
+		}
+		tokenList.splice(0, 1);
+		return out;
 	});
 
-	Handlebars.registerHelper('getOtherTokenText', function() {
-		return otherTokenVal === 1 ? 'token' : 'tokens';
+	Handlebars.registerHelper('selectName', function() {
+		var name = '';
+		if ( yourTokenVal === 5 ) {
+			name = yourTokenVal + '_norm_' + (10 - count + 1);
+		} else {
+			name = yourTokenVal + '_norm_' + curToken;
+		}
+		return name;
 	});
 })();
-
-// create the random slider side
-function RandomSlider() {
-	// left = 0, right = 1 for neutral
-	var sliderSide = null,
-		neutralSlider = '<div class="col-sm-1 col-md-1"><div class="token-default-slider"></div></div>',
-		tokenSlider = '<div class="col-sm-11 col-md-11"><div class="token-slider"></div></div>',
-		tokenFiller = '<div class="token-filler"></div>';
-
-	Handlebars.registerHelper('setSliderSide', function() {
-		// left = 0, right = 1 for neutral
-		sliderSide = Math.floor( Math.random() * 2 );
-
-		return sliderSide;
-	});
-
-	Handlebars.registerHelper('generateSliderDivs', function(context, options) {
-		var out = '';
-		
-		if ( sliderSide ) {
-			out += tokenSlider;
-			out += tokenFiller;
-			out += neutralSlider;
-		} else {
-			out += neutralSlider;
-			out += tokenFiller;
-			out += tokenSlider;
-		}
-
-		 return new Handlebars.SafeString( out );
-	});
-}
-
-
-
-
-
-
