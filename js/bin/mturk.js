@@ -27,13 +27,13 @@
 			if ( $inpts.length !== 0 || $select.length !== 0 ) {
 				// if the politician and voting line aren't finished displaying
 				// add the input for two pics
-				if ( ( pageNum >= 8 && pageNum <= 12 ) || pageNum === 14 ) {
+				if ( ( pageNum >= 10 && pageNum <= 14 ) || pageNum === 16 ) {
 					this.twoPics();
-				} else if ( pageNum >= 16 && pageNum <= 19 ) {
+				} else if ( pageNum >= 18 && pageNum <= 21 ) {
 					this.onePic();
-				} else if ( pageNum >= 21 && pageNum <= 53 ) {
+				} else if ( pageNum >= 24 && pageNum <= 56 ) {
 					this.token( $select, pageNum );
-				} else if ( pageNum === 55 ) {
+				} else if ( pageNum === 4 ) {
 					this.appendAll();
 				}
 			}
@@ -138,17 +138,21 @@
 var contextIntro = {
 	header: 'Overview of tasks',
 
-	descAll: [
-		[
+	desc: [
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
-			'In the first part, we will ask you to tell us about yourself.'
+			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
 			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
-		],
+	]
+}
+
+var contextPolIntro = {
+	header: 'Tell us what you think',
+
+	descAll: [
 		[
-			[PUT SURVEY HERE]
 			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
 		],
 		[
@@ -168,15 +172,8 @@ var contextIntro = {
 		],
 		[
 			'We are ready to start!'
-		]
-	]
-}
-
-var contextPolIntro = {
-	header: 'Tell us what you think',
-
-	desc: [
-		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+		],
+		['You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.']
 	]
 }
 
@@ -389,12 +386,10 @@ var contextStates = {
 var contextTokenIntro = {
 	header: "Bonus Task",
 
-	descAll: [
-		[
-			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-			'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
-	'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
-		]
+	desc: [
+		'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+		'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
+'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
 	]
 }
 
@@ -860,35 +855,45 @@ $(function() {
 		// driver for the order of questions displayed
 		// pageNum determines which template/data to use
 		nextQuestionDriver: function( pageNum ) {
-			if ( pageNum >= 1 && pageNum <= 5 ) {
-				// this is done to show the desc on three seperate pages
-				var desc = contextIntro.descAll[0];
-				contextIntro.desc = []
+			if ( pageNum === 1 ) {
+				this.addHeader( contextIntro );
+			} else if ( pageNum === 2 ) {
+// 				survey intro
+				this.addHeader( contextSurveyIntro );
+			} else if ( pageNum === 3 ) {
+// 				survey
+				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
+				this.misc.radioOther();
+			} else if ( pageNum >= 4  && pageNum <= 8 ) {
+// 				intro and pol intro
+				// this is done to show the desc on seperate pages
+				var desc = contextPolIntro.descAll[0];
+				contextPolIntro.desc = []
 				// contextIntro.desc.desc;
 				for (var i = 0; i < desc.length; i++) {
-					contextIntro.desc[i] = desc[i];
+					contextPolIntro.desc[i] = desc[i];
 				}
-				contextIntro.descAll.splice(0, 1);
-				// this.addHeader( contextIntro );
-				this.addHeader( contextIntro );
-			} else if ( pageNum === 6 ) {
+				contextPolIntro.descAll.splice(0, 1);
 				this.addHeader( contextPolIntro );
-			} else if ( pageNum >= 7 && pageNum <= 11 ) {
-				// there are still politician photos to add
-				if ( pageNum === 7 ) {
+			} else if ( pageNum >= 9 && pageNum <= 13 ) {
+				// poltician photos
+				if ( pageNum === 9 ) {
 					this.addQuestionDesc( contextPol );
 				}
 				this.addQuestion( this.templates.twoPic, contextPol );
-			} else if ( pageNum === 12 ) {
+			} else if ( pageNum === 14 ) {
+				// voting line intro
 				this.addHeader( contextVotingLineIntro );
-			} else if ( pageNum === 13 ) {
-				// add question
+			} else if ( pageNum === 15 ) {
+				// voting line question
 				this.addQuestionDesc( contextVotingLine );
 				this.addQuestion( this.templates.twoPic, contextVotingLine );
-			} else if ( pageNum === 14 ) {
+			} else if ( pageNum === 16 ) {
+				// obama, romney, state intro
 				this.addHeader( contextStatesIntro );
-			} else if ( pageNum >= 15 && pageNum <= 18 ) {
-				if ( pageNum === 15 ) {
+			} else if ( pageNum >= 17 && pageNum <= 20 ) {
+				// obama, romney, state dedc
+				if ( pageNum === 17 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
@@ -901,40 +906,31 @@ $(function() {
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 15 ) {
+				if ( pageNum === 17 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
 				}
 
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum === 19 ) {
-				// this is done to show the desc on three seperate pages
-				var desc = contextTokenIntro.descAll[0];
-				contextTokenIntro.desc = [];
-				// contextTokenIntro.desc.desc;
-				for (var i = 0; i < desc.length; i++) {
-					contextTokenIntro.desc[i] = desc[i];
-				}
-				contextTokenIntro.descAll.splice(0, 1);
+			} else if ( pageNum === 21 ) {
+				// token intro
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 20 && pageNum <= 52 ) {
+			} else if ( pageNum >= 22 && pageNum <= 54 ) {
+				// token questions
 				// add the token base
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
-				// token class to deal with everything for the tokens
-				// $( this.tokens ).tokens();
-			} else if ( pageNum === 53 ) {
-				this.addHeader( contextSurveyIntro );
-			} else if ( pageNum === 54 ) {
-				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
-				this.$nextButton.text( 'Submit Answers' );
-				this.misc.radioOther();
+
+				// last question add submit button
+				if ( pageNum === 54 ) {
+					this.$nextButton.text( 'Submit Answers' );
+				}
 			} else {
 				// thank the user and remove paegnumber counter
 				this.misc.removePageNumber();
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+				// this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added

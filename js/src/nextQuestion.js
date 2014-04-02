@@ -116,35 +116,45 @@
 		// driver for the order of questions displayed
 		// pageNum determines which template/data to use
 		nextQuestionDriver: function( pageNum ) {
-			if ( pageNum >= 1 && pageNum <= 5 ) {
-				// this is done to show the desc on three seperate pages
-				var desc = contextIntro.descAll[0];
-				contextIntro.desc = []
+			if ( pageNum === 1 ) {
+				this.addHeader( contextIntro );
+			} else if ( pageNum === 2 ) {
+// 				survey intro
+				this.addHeader( contextSurveyIntro );
+			} else if ( pageNum === 3 ) {
+// 				survey
+				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
+				this.misc.radioOther();
+			} else if ( pageNum >= 4  && pageNum <= 8 ) {
+// 				intro and pol intro
+				// this is done to show the desc on seperate pages
+				var desc = contextPolIntro.descAll[0];
+				contextPolIntro.desc = []
 				// contextIntro.desc.desc;
 				for (var i = 0; i < desc.length; i++) {
-					contextIntro.desc[i] = desc[i];
+					contextPolIntro.desc[i] = desc[i];
 				}
-				contextIntro.descAll.splice(0, 1);
-				// this.addHeader( contextIntro );
-				this.addHeader( contextIntro );
-			} else if ( pageNum === 6 ) {
+				contextPolIntro.descAll.splice(0, 1);
 				this.addHeader( contextPolIntro );
-			} else if ( pageNum >= 7 && pageNum <= 11 ) {
-				// there are still politician photos to add
-				if ( pageNum === 7 ) {
+			} else if ( pageNum >= 9 && pageNum <= 13 ) {
+				// poltician photos
+				if ( pageNum === 9 ) {
 					this.addQuestionDesc( contextPol );
 				}
 				this.addQuestion( this.templates.twoPic, contextPol );
-			} else if ( pageNum === 12 ) {
+			} else if ( pageNum === 14 ) {
+				// voting line intro
 				this.addHeader( contextVotingLineIntro );
-			} else if ( pageNum === 13 ) {
-				// add question
+			} else if ( pageNum === 15 ) {
+				// voting line question
 				this.addQuestionDesc( contextVotingLine );
 				this.addQuestion( this.templates.twoPic, contextVotingLine );
-			} else if ( pageNum === 14 ) {
+			} else if ( pageNum === 16 ) {
+				// obama, romney, state intro
 				this.addHeader( contextStatesIntro );
-			} else if ( pageNum >= 15 && pageNum <= 18 ) {
-				if ( pageNum === 15 ) {
+			} else if ( pageNum >= 17 && pageNum <= 20 ) {
+				// obama, romney, state dedc
+				if ( pageNum === 17 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
@@ -157,40 +167,31 @@
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 15 ) {
+				if ( pageNum === 17 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
 				}
 
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum === 19 ) {
-				// this is done to show the desc on three seperate pages
-				var desc = contextTokenIntro.descAll[0];
-				contextTokenIntro.desc = [];
-				// contextTokenIntro.desc.desc;
-				for (var i = 0; i < desc.length; i++) {
-					contextTokenIntro.desc[i] = desc[i];
-				}
-				contextTokenIntro.descAll.splice(0, 1);
+			} else if ( pageNum === 21 ) {
+				// token intro
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 20 && pageNum <= 52 ) {
+			} else if ( pageNum >= 22 && pageNum <= 54 ) {
+				// token questions
 				// add the token base
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
-				// token class to deal with everything for the tokens
-				// $( this.tokens ).tokens();
-			} else if ( pageNum === 53 ) {
-				this.addHeader( contextSurveyIntro );
-			} else if ( pageNum === 54 ) {
-				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
-				this.$nextButton.text( 'Submit Answers' );
-				this.misc.radioOther();
+
+				// last question add submit button
+				if ( pageNum === 54 ) {
+					this.$nextButton.text( 'Submit Answers' );
+				}
 			} else {
 				// thank the user and remove paegnumber counter
 				this.misc.removePageNumber();
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+				// this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added

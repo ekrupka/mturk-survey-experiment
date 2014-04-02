@@ -27,13 +27,13 @@
 			if ( $inpts.length !== 0 || $select.length !== 0 ) {
 				// if the politician and voting line aren't finished displaying
 				// add the input for two pics
-				if ( ( pageNum >= 8 && pageNum <= 12 ) || pageNum === 14 ) {
+				if ( ( pageNum >= 10 && pageNum <= 14 ) || pageNum === 16 ) {
 					this.twoPics();
-				} else if ( pageNum >= 16 && pageNum <= 19 ) {
+				} else if ( pageNum >= 18 && pageNum <= 21 ) {
 					this.onePic();
-				} else if ( pageNum >= 21 && pageNum <= 53 ) {
+				} else if ( pageNum >= 24 && pageNum <= 56 ) {
 					this.token( $select, pageNum );
-				} else if ( pageNum === 55 ) {
+				} else if ( pageNum === 4 ) {
 					this.appendAll();
 				}
 			}

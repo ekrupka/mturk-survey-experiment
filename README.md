@@ -1,7 +1,7 @@
 Mturk Experiment Survey
 ================================
 
-This site is used for a study on Amazon Mechanical Turk, and utilizes the Mturk HTML Question structure. The website is a single-page JavaScript and utilizes Handlebar templates. The project employs Grunt for task management of LESS and JS files, and utilizes Google Drive as a means to serve the JS, CSS, and images for the site. 
+This is the norms site for a study on Amazon Mechanical Turk, and utilizes the Mturk HTML Question structure. The website is a single-page JavaScript and utilizes Handlebar templates. The project employs Grunt for task management of LESS and JS files, and utilizes Google Drive as a means to serve the JS, CSS, and images for the site. 
 
 The survey has five categories of questions. The study follows these five categories in order, but within each category, the order of the questions are randomized. Additionally, only one question is displayed to the user at a time, except for the survey questions at the conclusion of the study.
 
@@ -13,7 +13,7 @@ The third category asks the user to identify which presidential candidate won a 
 
 The fourth category asks the user to distribute tokens. This category uses the [jQuery NoUiSlider plugin](https://github.com/leongersen/noUiSlider) as a way to allow users to distribute tokens. The token order is randomly chosen from four possible token orders.
 
-The fifth category is a survey questionnaire. 
+The fifth category is a survey questionnaire.
 
 When a user advances to the next question their answers to the current question are grabbed and appended to the Mturk form for submission to Amazon. There are also input validations throughout the survey.
 

@@ -2,17 +2,21 @@
 var contextIntro = {
 	header: 'Overview of tasks',
 
-	descAll: [
-		[
+	desc: [
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
-			'In the first part, we will ask you to tell us about yourself.'
+			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
 			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
-		],
+	]
+}
+
+var contextPolIntro = {
+	header: 'Tell us what you think',
+
+	descAll: [
 		[
-			[PUT SURVEY HERE]
 			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
 		],
 		[
@@ -32,15 +36,8 @@ var contextIntro = {
 		],
 		[
 			'We are ready to start!'
-		]
-	]
-}
-
-var contextPolIntro = {
-	header: 'Tell us what you think',
-
-	desc: [
-		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+		],
+		['You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.']
 	]
 }
 
@@ -253,12 +250,10 @@ var contextStates = {
 var contextTokenIntro = {
 	header: "Bonus Task",
 
-	descAll: [
-		[
-			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-			'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
-	'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
-		]
+	desc: [
+		'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+		'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
+'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
 	]
 }
 
