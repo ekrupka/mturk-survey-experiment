@@ -1,7 +1,7 @@
 Mturk Experiment Survey
 ================================
 
-This is the norms site for a study on Amazon Mechanical Turk, and utilizes the Mturk HTML Question structure. The website is a single-page JavaScript and utilizes Handlebar templates. The project employs Grunt for task management of LESS and JS files, and utilizes Google Drive as a means to serve the JS, CSS, and images for the site. 
+This is the baseline norms site for a study on Amazon Mechanical Turk, and utilizes the Mturk HTML Question structure. The website is a single-page JavaScript and utilizes Handlebar templates. The project employs Grunt for task management of LESS and JS files, and utilizes Google Drive as a means to serve the JS, CSS, and images for the site. 
 
 The survey has five categories of questions. The study follows these five categories in order, but within each category, the order of the questions are randomized. Additionally, only one question is displayed to the user at a time, except for the survey questions at the conclusion of the study.
 

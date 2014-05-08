@@ -1,13 +1,20 @@
 // methods that don't seem to logically fit in other classes go here
 !(function($) {
-	function Misc( $elt ) {
+	function Misc( $elt, $mturkForm ) {
 		this.$main = $elt;
+		this.$mturkForm = $mturkForm;
 		this.$pageNumber = $( '.page-number [data-current-page]' );
 		this.image = 'img';
+		this.polInpSelector = 'input[name="pol-classification"]';
+		this.polClassSelector = '.pol-class'
 		this.inp = 'input';
 
 		// data attr selectors
 		this.dataName = 'data-name';
+
+		this.dem = 'Democrat';
+		this.rep = 'Republican';
+		this.polClass = null;
 
 		return this;
 	};
@@ -40,7 +47,7 @@
 			});
 		},
 
-		
+
 		clearCheckedValues: function() {
 			$( this.inp ).prop('checked', false);
 		},
@@ -57,11 +64,31 @@
 					$( 'input[type="text"][id="other-text"]' ).prop('disabled', true);
 				}
 			});
+		},
+
+		// add the political classification text of the study participant
+		fixPolClass: function() {
+			var $polClass = $( this.polClassSelector );
+				polClassVal = null;
+
+			// if we don't currently have the policitical classification of
+			// the individual get it
+			if ( !this.polClass ) {
+				polClassVal = parseInt( this.$mturkForm.find( this.polInpSelector ).val() );
+				if ( polClassVal === 1 || polClassVal === 2 ) {
+					this.polClass = this.dem;
+				} else {
+					this.polClass = this.rep;
+				}
+			}
+
+			$polClass.text( this.polClass );
+
 		}
 	};
 
-	$.fn.misscelanious = function() {
-		var msc = new Misc( this );
+	$.fn.misscelanious = function( $mturkForm ) {
+		var msc = new Misc( this, $mturkForm );
 		return msc;
 	}
 })(window.jQuery);

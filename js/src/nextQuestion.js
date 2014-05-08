@@ -4,6 +4,7 @@
 		this.$main = $elt;
 		this.$nextButton = this.$main.find('.button[data-next="question"]');
 		this.$mturkForm = $( '#mturk_form' );
+		this.$select = $( 'select' );
 		// strings for selectors
 		this.header = 'header';
 		this.inp = 'input';
@@ -32,15 +33,11 @@
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjWE94aHpkZ2E0MUE/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic-radio-opts.html',
-				dataName: 'onePicInput'
-			},
-			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjTWJNREZEcDN5NUE/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -50,7 +47,7 @@
 		];
 
 		// other classes
-		this.misc = $( 'main' ).misscelanious();
+		this.misc = $( 'main' ).misscelanious( this.$mturkForm );
 		this.addInpts = $( 'main' ).addInputs( this.$mturkForm );
 	}
 
@@ -93,6 +90,14 @@
 			this.$nextButton.on('click', function(){
 				that.nextButtonClicked();
 			});
+
+			$(document).on('change', '.select-appropriate', function() {
+				if ( this.value !== 0 ) {
+					that.enableNextButton();
+				} else {
+					that.disableNextButton();
+				}
+			});
 		},
 
 		// driver for whether to continue to next question or not
@@ -119,42 +124,55 @@
 			if ( pageNum === 1 ) {
 				this.addHeader( contextIntro );
 			} else if ( pageNum === 2 ) {
+				this.addHeader( contextPartOne )
+			} else if ( pageNum === 3 ) {
 // 				survey intro
 				this.addHeader( contextSurveyIntro );
-			} else if ( pageNum === 3 ) {
+			} else if ( pageNum === 4 ) {
 // 				survey
 				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
 				this.misc.radioOther();
-			} else if ( pageNum >= 4  && pageNum <= 8 ) {
+			} else if ( pageNum === 5 ) {
+				this.addHeader( contextNextSteps );
+			} else if ( pageNum >= 6  && pageNum <= 8 ) {
 // 				intro and pol intro
 				// this is done to show the desc on seperate pages
-				var desc = contextPolIntro.descAll[0];
-				contextPolIntro.desc = []
+
+				var desc = contextExplain.descAll[0];
+				contextExplain.desc = []
 				// contextIntro.desc.desc;
 				for (var i = 0; i < desc.length; i++) {
-					contextPolIntro.desc[i] = desc[i];
+					contextExplain.desc[i] = desc[i];
 				}
-				contextPolIntro.descAll.splice(0, 1);
+				contextExplain.descAll.splice(0, 1);
+
+				this.addHeader( contextExplain );
+				// some of the intro's require knowing whether a person is a dem or rep
+				// since strings from the data file is used, can't call a handlebar function and must alter via jQuery
+				this.findPolClass( pageNum );
+			} else if ( pageNum === 9 ) {
+				this.addHeader( contextPartTwo );
+			} else if ( pageNum === 10 ) {
 				this.addHeader( contextPolIntro );
-			} else if ( pageNum >= 9 && pageNum <= 13 ) {
+			} else if ( pageNum >= 11 && pageNum <= 15 ) {
 				// poltician photos
-				if ( pageNum === 9 ) {
+				if ( pageNum === 11 ) {
 					this.addQuestionDesc( contextPol );
 				}
 				this.addQuestion( this.templates.twoPic, contextPol );
-			} else if ( pageNum === 14 ) {
+			} else if ( pageNum === 16 ) {
 				// voting line intro
 				this.addHeader( contextVotingLineIntro );
-			} else if ( pageNum === 15 ) {
+			} else if ( pageNum === 17 ) {
 				// voting line question
 				this.addQuestionDesc( contextVotingLine );
 				this.addQuestion( this.templates.twoPic, contextVotingLine );
-			} else if ( pageNum === 16 ) {
+			} else if ( pageNum === 18 ) {
 				// obama, romney, state intro
 				this.addHeader( contextStatesIntro );
-			} else if ( pageNum >= 17 && pageNum <= 20 ) {
+			} else if ( pageNum >= 19 && pageNum <= 22 ) {
 				// obama, romney, state dedc
-				if ( pageNum === 17 ) {
+				if ( pageNum === 19 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
@@ -167,22 +185,26 @@
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 17 ) {
+				/*if ( pageNum === 19 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
-				}
+				}*/
 
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum === 21 ) {
+			} else if ( pageNum === 23 ) {
+				this.addHeader( contextPartThree );
+ 		} else if ( pageNum === 24 ) {
 				// token intro
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 22 && pageNum <= 54 ) {
+				this.findPolClass( pageNum );
+			} else if ( pageNum >= 25 && pageNum <= 57 ) {
 				// token questions
 				// add the token base
+				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
 
 				// last question add submit button
-				if ( pageNum === 54 ) {
+				if ( pageNum === 57 ) {
 					this.$nextButton.text( 'Submit Answers' );
 				}
 			} else {
@@ -191,7 +213,7 @@
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				// this.$mturkForm.submit();
+				this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
@@ -232,6 +254,24 @@
 		removeHeader: function() {
 			$( this.header ).remove();
 			$( this.question ).remove();
+		},
+
+		changeHeader: function( text ) {
+			$( this.header ).text( text );
+		},
+
+		findPolClass: function( pageNum ) {
+			// if ( pageNum === 8 || pageNum === 21 ) {
+			this.misc.fixPolClass();
+		},
+
+		disableNextButton: function() {
+			this.$nextButton.addClass( 'disable' );
+		},
+
+		enableNextButton: function() {
+			$( this.err ).remove();
+			this.$nextButton.removeClass( 'disable' );
 		}
 	}
 

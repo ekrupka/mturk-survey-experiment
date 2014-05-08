@@ -6,295 +6,17 @@ var contextIntro = {
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
 			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
-			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with makes. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
 	]
 }
 
-var contextPolIntro = {
-	header: 'Tell us what you think',
-
-	descAll: [
-		[
-			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-		],
-		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted to tax transfer to be between themselves and another Mturker.'
-		],
-		[
-			'Your job is to rate the Mturker\'s tax transfer decision based on whether you think the tax transfer decision was',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
-				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think the Mturker OUGHT to transfer".</span></h2>',
-			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker who is like you.',
-			'To pick a match who is like you, we will match you with another Mturker whow is also another [XXXX Democrate/Republic]. To increases the chances that you earn the bonus, you should try to imagine what another Mturker who is a [XXX REP or DEM] would say.',
-		],
-		[
-			'We are ready to start!'
-		],
-		['You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.']
-	]
-}
-
-var contextPol = {
-	question: 'Please indicate which politician in each pair you find more attractive',
-
-	errorText: 'Please select one of the politicians above',
-
-	photos: [
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/BillClinton.jpg',
-					alt: 'Bill Clinton photo',
-					id: 'bill-clinton',
-					label: 'Bill Clinton',
-					name: 'ex-presidents',
-					value: '0'
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/RonaldReagan.jpg',
-					alt: 'Ronald Reagan Photo',
-					id: 'ronald-reagan',
-					label: 'Ronald Reagan',
-					name: 'ex-presidents',
-					value: '1'
-				}
-			]
-		},
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MitchMcConnell.jpg',
-					alt: 'Mitch McConnell photo',
-					id: 'mitch-mcconnell',
-					label: 'Mitch McConnell',
-					name: 'senators',
-					value: '1'
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/HarryReid.jpg',
-					alt: 'Harry Reid Photo',
-					id: 'harry-reid',
-					label: 'Harry Reid',
-					name: 'senators',
-					value: '0'
-				}
-			]
-		},
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JanBrewer.jpg',
-					alt: 'Jan Brewer photo',
-					id: 'jan-brewer',
-					label: 'Jan Brewer',
-					name: 'governors',
-					value: '1'
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/KathleenSebelius.jpg',
-					alt: 'Kathleen Sebelius Photo',
-					id: 'kathleen-sebelius',
-					label: 'Kathleen Sebelius',
-					name: 'governors',
-					value: '0'
-				}
-			]
-		},
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MicheleBachmann.jpg',
-					alt: 'Michelle Bachmann photo',
-					id: 'michelle-bachmann',
-					label: 'Michelle Bachmann',
-					name: 'house-reps',
-					value: '1'
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/NancyPelosi.jpg',
-					alt: 'Nancy Pelosi  Photo',
-					id: 'nancy-pelosi',
-					label: ' Nancy Pelosi',
-					name: 'house-reps',
-					value: '0'
-				}
-			]
-		},
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JoeBiden.jpg',
-					alt: 'Joe Biden photo',
-					id: 'joe-biden',
-					label: 'Joe Biden',
-					name: 'vice-presidents',
-					value: '0'
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/DickCheney.jpg',
-					alt: 'Dick Cheney Photo',
-					id: 'Dick-Cheney',
-					label: 'Dick Cheney',
-					name: 'vice-presidents',
-					value: '1'
-				}
-			]
-		}
-	]
-}
-
-var contextVotingLineIntro = {
-	header: 'Tell us what you think',
+var contextPartOne = {
+	header: 'Ready to start part one!',
 
 	desc: [
-		'On the next screen you will see two images of voting lines.  Please indicate which voting line you think is the longest.'
-	]
-}
-
-var contextVotingLine = {
-	validateType: 'radio',
-
-	question: 'Please indicate which voting line you think is longest.',
-
-	errorText: 'Please select one of the voting lines above',
-
-	photos: [
-		{
-			images: [
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine1.jpg',
-					alt: 'Voting line photo',
-					id: 'voting-line-1',
-					label: 'I think this voting line is longest',
-					name: 'voting-line',
-					value: 0
-				},
-				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine2.jpg',
-					alt: 'Voting Line Photo',
-					id: 'voting-line-2',
-					label: 'I think this voting line is longest',
-					name: 'voting-line',
-					value: 1
-				}
-			]
-		}
-	]
-}
-
-var contextStatesIntro = {
-	header: 'Tell us what you think',
-
-	desc: [
-		'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
-	]
-}
-
-var contextStates = {
-	validateType: 'radio',
-
-	question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
-
-	errorText: 'Please select one of the presdential candidates above',
-
-	states: [
-		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/NorthCarolina.png',
-			alt: 'North Carolina photo',
-			name: 'north-carolina',
-			state: 'North Carolina'
-		},
-		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Georgia.png',
-			alt: 'Georgia photo',
-			name: 'georgia',
-			state: 'Georgia'
-		},
-		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Florida.png',
-			alt: 'Florida photo',
-			name: 'florida',
-			state: 'Florida'
-		},
-		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Ohio.png',
-			alt: 'Ohio photo',
-			name: 'ohio',
-			state: 'Ohio'
-		}
-	],
-
-	options: [
-		{
-			name: 'obama',
-			id: 'obama',
-			text: 'Barack Obama',
-			value: 0
-		},
-		{
-			name: 'obama',
-			id: 'Romney',
-			text: 'Mitt Romney',
-			value: 1
-		}
-	]
-}
-
-var contextTokenIntro = {
-	header: "Bonus Task",
-
-	desc: [
-		'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-		'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
-'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
-	]
-}
-
-var contextTokens = {
-	tokensEarned: [10,5,0],
-
-	tokens: {
-		10: [0,1,2,3,4,5,6,7,8,9,10],
-		5: [5,4,3,2,1,0,1,2,3,4,5],
-		0: [10,9,8,7,6,5,4,3,2,1,0]
-	},
-
-	tokenLabel: [
-		{
-			text: 'make a decision',
-			val: ''
-		},
-		{
-			text: 'very socially appropriate',
-			val: '6'
-		},
-		{
-			text: 'socially appropriate',
-			val: '5'
-		},
-		{
-			text: 'somewhat socially appropriate',
-			val: '4'
-		},
-		{
-			text: 'somewhat socially inappropriate',
-			val: '3'
-		},
-		{
-			text: 'socially inappropriate',
-			val: '2'
-		},
-		{
-			text: 'very socially inappropriate',
-			val: '1'
-		},
+		'We are ready to start the first part: This is where you tell us about yourself.'
 	]
 }
 
@@ -396,6 +118,370 @@ var contextSurvey = {
 		],
 		error: 'selections'
 	}
+}
+
+var contextNextSteps = {
+	header: 'Next Steps',
+
+	desc: [
+		'You have completed the first part!',
+		'For the second part of the study, we will ask you to tell us what you think about various images.',
+		'For the third part of the study, you have a chance to earn a bonus.  We will describe the bonus task and how you get paid and then you will complete parts two and three.',
+	]
+}
+
+var contextExplain = {
+	header: 'Explaining how you will earn money in the bonus task',
+
+	descAll: [
+		[
+			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
+		],
+		[
+			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
+			'Taxes are a way to redistribute money between citizens.',
+			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
+			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
+		],
+		[
+			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
+				'<h2 class="col-md-12 heavy center">and</h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
+			'That sounds simple, but it is only half the story!',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker “your match."',
+			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+		]
+	]
+}
+
+var contextPartTwo = {
+	header: 'Ready to start part two!',
+
+	desc: [
+		'We are ready to start the second part of the study where we will ask you to tell us what you think about various images.'
+	]
+}
+
+var contextPolIntro = {
+	header: 'tell us what you think',
+
+	desc: [
+		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+	]
+}
+
+var contextPol = {
+	question: 'Please indicate which person in each pair you find more attractive',
+
+	errorText: 'Please select which person you think is more attractive',
+
+	photos: [
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjSi03Z3BWeUM1T2M',
+					alt: 'male photo',
+					id: 'male1',
+					label: 'I think this person is more attractive',
+					name: 'ex-presidents',
+					value: '0'
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjQk5zb2VDeFBTTEE',
+					alt: 'male Photo',
+					id: 'male2',
+					label: 'I think this person is more attractive',
+					name: 'ex-presidents',
+					value: '1'
+				}
+			]
+		},
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjbEV3V3UxTVFURHc',
+					alt: 'male photo',
+					id: 'male3',
+					label: 'I think this person is more attractive',
+					name: 'senators',
+					value: '1'
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjNUUxdkdIajNrLW8',
+					alt: 'Male Photo',
+					id: 'male4',
+					label: 'I think this person is more attractive',
+					name: 'senators',
+					value: '0'
+				}
+			]
+		},
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjZTRxSUR0eXZ5STA',
+					alt: 'female photo',
+					id: 'female1',
+					label: 'I think this person is more attractive',
+					name: 'governors',
+					value: '1'
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjcXRzTHE3YnA5ZHM',
+					alt: 'female Photo',
+					id: 'female2',
+					label: 'I think this person is more attractive',
+					name: 'governors',
+					value: '0'
+				}
+			]
+		},
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjS1hLUmEtYU9kUUE',
+					alt: 'female photo',
+					id: 'female3',
+					label: 'I think this person is more attractive',
+					name: 'house-reps',
+					value: '1'
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjWVU3R1RkS1NJLXc',
+					alt: 'female Photo',
+					id: 'female4',
+					label: 'I think this person is more attractive',
+					name: 'house-reps',
+					value: '0'
+				}
+			]
+		},
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjdjlsVi1QdXFETHc',
+					alt: 'male photo',
+					id: 'male5',
+					label: 'I think this person is more attractive',
+					name: 'vice-presidents',
+					value: '0'
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjTWtyc01PRDNmTEE',
+					alt: 'male Photo',
+					id: 'male6',
+					label: 'I think this person is more attractive',
+					name: 'vice-presidents',
+					value: '1'
+				}
+			]
+		}
+	]
+}
+
+var contextVotingLineIntro = {
+	header: 'Tell us what you think',
+
+	desc: [
+		'On the next screen you will see two images of voting lines.  Please indicate which voting line you think is the longest.'
+	]
+}
+
+var contextVotingLine = {
+	validateType: 'radio',
+
+	question: 'Please indicate which voting line you think is longest.',
+
+	errorText: 'Please select one of the voting lines above',
+
+	photos: [
+		{
+			images: [
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjWHZ1VkFqRzJaZ3c',
+					alt: 'Voting line photo',
+					id: 'voting-line-1',
+					label: 'I think this line is longest',
+					name: 'voting-line',
+					value: 0
+				},
+				{
+					src: 'https://googledrive.com/host/0B3xp5m4ZxljjRDdmZHR3cEhnOHc',
+					alt: 'Voting Line Photo',
+					id: 'voting-line-2',
+					label: 'I think this line is longest',
+					name: 'voting-line',
+					value: 1
+				}
+			]
+		}
+	]
+}
+
+var contextStatesIntro = {
+	header: 'Tell us what you think',
+
+	desc: [
+		'You will now be shown several states.  For each state, please answer the following question: What was the state’s average temperature in 2013?',
+	]
+}
+
+var contextStates = {
+	validateType: 'radio',
+
+	question: 'What was the state’s average temperature in 2013?',
+
+	errorText: 'Please select one of the temperatures above',
+
+	states: [
+		{
+			src: 'https://googledrive.com/host/0B3xp5m4ZxljjWXRlaXR1UEZLbUU',
+			alt: 'North Carolina photo',
+			name: 'north-carolina',
+			state: 'North Carolina'
+		},
+		{
+			src: 'https://googledrive.com/host/0B3xp5m4ZxljjdGNqcUc4SkRadTQ',
+			alt: 'Georgia photo',
+			name: 'georgia',
+			state: 'Georgia'
+		},
+		{
+			src: 'https://googledrive.com/host/0B3xp5m4ZxljjbFpYMEEwUjB5azg',
+			alt: 'Florida photo',
+			name: 'florida',
+			state: 'Florida'
+		},
+		{
+			src: 'https://googledrive.com/host/0B3xp5m4ZxljjRGpxV21EVGhPNjg',
+			alt: 'Ohio photo',
+			name: 'ohio',
+			state: 'Ohio'
+		}
+	],
+
+	statesTemp: {
+		'north-carolina': [
+			{
+				name: 'north-carolina',
+				text: '59.77',
+				value: '1',
+				id: 'avg'
+			},
+			{
+				name: 'north-carolina',
+				std: 0.73,
+				value: 0,
+				avg: 59.77,
+				id: 'std'
+			}
+		],
+		'georgia': [
+			{
+				name: 'georgia',
+				text: '63.99',
+				value: '1',
+				id: 'avg'
+			},
+			{
+				name: 'georgia',
+				std: 0.88,
+				value: 0,
+				avg: 63.99,
+				id: 'std'
+			}
+		],
+		'florida': [
+			{
+				name: 'florida',
+				text: '71.04',
+				value: '1',
+				id: 'avg'
+			},
+			{
+				name: 'florida',
+				std: 0.77,
+				value: 0,
+				avg: 71.04,
+				id: 'std'
+			}
+		],
+		'ohio': [
+			{
+				name: 'ohio',
+				text: '51.85',
+				value: '1',
+				id: 'avg'
+			},
+			{
+				name: 'ohio',
+				std: 1.12,
+				value: 0,
+				avg: 51.85,
+				id: 'std'
+			}
+		]
+	}
+}
+
+var contextPartThree = {
+	header: 'Ready to start part three- the Bonus Task!',
+
+	desc: [
+		'We are ready to start part three: This is where you can earn a bonus!'
+	]
+}
+
+var contextTokenIntro = {
+	header: "Bonus Task",
+
+	desc: [
+		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
+	]
+}
+
+var contextTokens = {
+	tokensEarned: [10,5,0],
+
+	tokens: {
+		10: [0,1,2,3,4,5,6,7,8,9,10],
+		5: [5,4,3,2,1,0,1,2,3,4,5],
+		0: [10,9,8,7,6,5,4,3,2,1,0]
+	},
+
+	tokenLabel: [
+		{
+			text: 'make a decision',
+			val: ''
+		},
+		{
+			text: 'very socially appropriate',
+			val: '6'
+		},
+		{
+			text: 'socially appropriate',
+			val: '5'
+		},
+		{
+			text: 'somewhat socially appropriate',
+			val: '4'
+		},
+		{
+			text: 'somewhat socially inappropriate',
+			val: '3'
+		},
+		{
+			text: 'socially inappropriate',
+			val: '2'
+		},
+		{
+			text: 'very socially inappropriate',
+			val: '1'
+		},
+	]
 }
 
 var contextThankYou = {

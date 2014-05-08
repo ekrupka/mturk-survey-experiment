@@ -21,6 +21,10 @@ button:hover,
   background-color: #6a51b7;
   color: #fff;
 }
+button.disable,
+.button.disable {
+  opacity: 0.5;
+}
 h1 {
   font-size: 3.5em;
   text-transform: capitalize;
@@ -104,6 +108,9 @@ input::-webkit-outer-spin-button {
 }
 .border-bottom {
   border-bottom: 2px solid #434343;
+}
+.big-text {
+  font-size: 1.7em;
 }
 .state-header {
   text-align: center;
