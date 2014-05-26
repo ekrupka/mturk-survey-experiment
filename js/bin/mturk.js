@@ -271,9 +271,8 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
+			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth.  The government\'s role is redistributing this wealth can be larger or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+			'Mturkers in a previous HIT were asked to determine the tax transfer between themselves and another Mturker.',
 			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
 		],
 		[
