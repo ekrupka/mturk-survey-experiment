@@ -1,3 +1,16 @@
+function randomInt( min, max ) {
+	return Math.floor( Math.random() * ( max - min ) + min );
+}
+
+// get a random item from the context list and delete it from the list
+function randomItem( context ) {
+	var contextRan = randomInt( 0, context.length ), // get random item
+		contextItem = context[contextRan];
+
+	context.splice( contextRan, 1);
+	return contextItem;
+}
+
 // get a random group of politician
 // and place one of the sets of politicians on a random side of the page (left, right)
 Handlebars.registerHelper('randomPol', function( context, options ) {
@@ -41,31 +54,34 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 	return out;
 });
 
-// get a random item from the context list and delete it from the list
-function randomItem( context ) {
-	var contextLen = context.length,
-		contextRan = Math.floor( Math.random() * contextLen ), // get random item
-		contextItem = context[contextRan];
-
-	context.splice( contextRan, 1);
-	return contextItem;
-}
-
 // set random token value and function to token value and corresponding text
 (function() {
 	var yourTokenVal = null,
 		otherTokenVal = null,
 		tokenList = null,
 		order = null,
-		choseText = 'choose to '
+		take = 'take ',
+		make = 'make ',
+
+		// text for transfer range
+		beginRange = 'Worker A was able to ',
+		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
+		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
+		endRangeTo = ' to worker B',
+		endRangeFrom = ' from worker B',
+
+		// transform text
+		spanBold = '<span class="heavy taking-tokens">',
+		govtInvolved = 'got the government involved',
+		govtNotInvolved = 'did not want the government involved',
+		choseText = ' and chose to ',
 		taxTrans = ' a tax transfer of '
-		makeTrans = choseText + 'make' + taxTrans,
-		takeTrans = choseText + 'take' + taxTrans,
-		makeTransEnd = ' to his match',
-		takeTransEnd = ' for himself',
-		nothing = 'chose NOT to take or make a tax transfer.',
-		spanBold = '<span class="heavy border-bottom">',
+		takeTrans = choseText + spanBold + take + taxTrans,
+		makeTrans = choseText + spanBold + make + taxTrans,
+		transEnd = ' worker B.',
+		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
+
 		count = 0,
 		curToken = null;// keep track of where we are in 5 list
 
@@ -87,27 +103,64 @@ function randomItem( context ) {
 		return otherTokenVal;
 	});
 
-	Handlebars.registerHelper('transferText', function() {
-		var out = '';
-		curToken = tokenList[0];
+	Handlebars.registerHelper('getYourPostTax', function() {
+		if ( yourTokenVal === 5 && count < 5 ) {
+			return yourTokenVal + curToken;
+		}
+		return Math.abs( yourTokenVal - curToken );
+	});
+
+	Handlebars.registerHelper('getOtherPostTax', function() {
+		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
+			return otherTokenVal + curToken;
+		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
+			console.log( 'count is less than 5' );
+			return otherTokenVal - curToken;
+		}
+
+	});
+
+	Handlebars.registerHelper('transferRange', function() {
+		var out = beginRange;
+
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
-		} else if ( yourTokenVal === 5 ) {
-			if ( count < 5 ) {
-				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
-			} else if ( count === 5 ) {
-				out += nothing;
-			} else {
-				out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
-			}
-			count++;
+			out += make + zeroTenRange + endRangeTo;
+		} else if ( yourTokenVal === 0 ) {
+			out += take + zeroTenRange + endRangeFrom;
 		} else {
-			if ( yourTokenVal === 0 && curToken === 0 ) {
-				out += nothing;
+			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
+		}
+
+		out += '.'
+
+		return out;
+	});
+
+	Handlebars.registerHelper('transferText', function() {
+		var out = 'Worker A ';
+		curToken = tokenList[0];
+
+		if ( curToken === 0 ) {
+			out += govtNotInvolved;
+		} else {
+			out += govtInvolved;
+		}
+
+		if ( yourTokenVal === 10 ) {
+			out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+		} else if ( yourTokenVal === 0 ) {
+			out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+		} else {
+			if ( count >= 5 ) {
+				out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
+				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
+
+		console.log( yourTokenVal );
+
+		out += transEnd;
 		tokenList.splice(0, 1);
 		return out;
 	});
@@ -115,10 +168,12 @@ function randomItem( context ) {
 	Handlebars.registerHelper('selectName', function() {
 		var name = '';
 		if ( yourTokenVal === 5 ) {
-			name = yourTokenVal + '_norm_' + (10 - count + 1);
+			name = yourTokenVal + '_norm_' + (10 - count);
+			count++;
 		} else {
 			name = yourTokenVal + '_norm_' + curToken;
 		}
+
 		return name;
 	});
 })();

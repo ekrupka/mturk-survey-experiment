@@ -9,8 +9,6 @@
 		this.check = ':checked';
 		this.select = 'select';
 		this.questionContent = '.question-content';
-		this.tokenSliderWrapper = '.token-slider-wrapper';
-		this.tokenSlider = '.token-slider';
 
 		// onePic has not been called before
 		this.onePicCalled = false;
@@ -27,13 +25,13 @@
 			if ( $inpts.length !== 0 || $select.length !== 0 ) {
 				// if the politician and voting line aren't finished displaying
 				// add the input for two pics
-				if ( ( pageNum >= 10 && pageNum <= 14 ) || pageNum === 16 ) {
+				if ( ( pageNum >= 12 && pageNum <= 16 ) || pageNum === 18 ) {
 					this.twoPics();
-				} else if ( pageNum >= 18 && pageNum <= 21 ) {
+				} else if ( pageNum >= 20 && pageNum <= 23 ) {
 					this.onePic();
-				} else if ( pageNum >= 24 && pageNum <= 56 ) {
+				} else if ( pageNum >= 26 && pageNum <= 58 ) {
 					this.token( $select, pageNum );
-				} else if ( pageNum === 4 ) {
+				} else if ( pageNum === 5 ) {
 					this.appendAll();
 				}
 			}
@@ -85,13 +83,13 @@
 				orderName = '',
 				orderInp = null;
 
-			if ( pageNum === 21 ) {
+			if ( pageNum === 26 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 1 );
-			} else if ( pageNum === 32 ) {
+			} else if ( pageNum === 37 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 2 );
-			} else if ( pageNum === 43 ) {
+			} else if ( pageNum === 48 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 3 );
 			}

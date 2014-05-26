@@ -9,8 +9,6 @@
 		this.check = ':checked';
 		this.select = 'select';
 		this.questionContent = '.question-content';
-		this.tokenSliderWrapper = '.token-slider-wrapper';
-		this.tokenSlider = '.token-slider';
 
 		// onePic has not been called before
 		this.onePicCalled = false;
@@ -27,13 +25,13 @@
 			if ( $inpts.length !== 0 || $select.length !== 0 ) {
 				// if the politician and voting line aren't finished displaying
 				// add the input for two pics
-				if ( ( pageNum >= 10 && pageNum <= 14 ) || pageNum === 16 ) {
+				if ( ( pageNum >= 12 && pageNum <= 16 ) || pageNum === 18 ) {
 					this.twoPics();
-				} else if ( pageNum >= 18 && pageNum <= 21 ) {
+				} else if ( pageNum >= 20 && pageNum <= 23 ) {
 					this.onePic();
-				} else if ( pageNum >= 24 && pageNum <= 56 ) {
+				} else if ( pageNum >= 26 && pageNum <= 58 ) {
 					this.token( $select, pageNum );
-				} else if ( pageNum === 4 ) {
+				} else if ( pageNum === 5 ) {
 					this.appendAll();
 				}
 			}
@@ -85,13 +83,13 @@
 				orderName = '',
 				orderInp = null;
 
-			if ( pageNum === 21 ) {
+			if ( pageNum === 26 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 1 );
-			} else if ( pageNum === 32 ) {
+			} else if ( pageNum === 37 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 2 );
-			} else if ( pageNum === 43 ) {
+			} else if ( pageNum === 48 ) {
 				orderName = 'en_order' + $( this.questionContent ).attr( 'data-you-own-tokens' );
 				orderInp = this.generateHiddenInput( orderName, 3 );
 			}
@@ -133,7 +131,6 @@
 		return inpts;
 	}
 })(window.jQuery);
-
 /* DATA OPTIONS FOR DIFFERENT TEMPLATES */
 var contextIntro = {
 	header: 'Overview of tasks',
@@ -142,38 +139,168 @@ var contextIntro = {
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
 			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
-			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with makes. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
 	]
 }
 
-var contextPolIntro = {
-	header: 'Tell us what you think',
+var contextPartOne = {
+	header: 'Ready to start part one!',
+
+	desc: [
+		'We are ready to start the first part: This is where you tell us about yourself.'
+	]
+}
+
+var contextSurveyIntro = {
+	header: 'Tell us about yourself',
+
+	desc: [
+		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.'
+	]
+}
+
+var contextSurvey = {
+	politics: {
+		question: 'In politics, as of today, do you consider yourself:',
+		name: 'pol-classification',
+		error: 'political classifications',
+		inputs: [
+			{
+				id: 'republican',
+				label: 'a Republican'
+			},
+			{
+				id: 'democrat',
+				label: 'a Democrat'
+			},
+			{
+				id: 'democratish',
+				label: 'leaning more towards the Democratic party'
+			},
+			{
+				id: 'republicanish',
+				label: 'leaning more towards the Republican party'
+			}
+		]
+	},
+
+	age: {
+		error: 'age'
+	},
+
+	gender: {
+		question: 'What is your gender?',
+		name: 'gender',
+		inputs: [
+			{
+				id: 'male',
+				label: 'male'
+			},
+			{
+				id: 'female',
+				label: 'female'
+			}
+		],
+		error: 'genders'
+	},
+
+	race: {
+		question: 'Which of the following best describes your racial or ethnic background?',
+		name: 'race',
+		inputs: [
+			{
+				id: 'asian',
+				label: 'Asian/Pacific Islander'
+			},
+			{
+				id: 'black',
+				label: 'Black'
+			},
+			{
+				id: 'latino',
+				label: 'Hispanic/Latino'
+			},
+			{
+				id: 'white',
+				label: 'white'
+			}
+		],
+		other: {
+			id: 'other',
+			label: 'other',
+			use: {},
+			idText: 'other-text'
+		},
+		error: 'ethnicities'
+	},
+
+	voted: {
+		question: 'Have you ever voted in a government election?',
+		name: 'voted',
+		inputs: [
+			{
+				id: 'yes',
+				label: 'yes'
+			},
+			{
+				id: 'no',
+				label: 'no'
+			}
+		],
+		error: 'selections'
+	}
+}
+
+var contextNextSteps = {
+	header: 'Next Steps',
+
+	desc: [
+		'You have completed the first part!',
+		'For the second part of the study, we will ask you to tell us what you think about various images.',
+		'For the third part of the study, you have a chance to earn a bonus.  We will describe the bonus task and how you get paid and then you will complete parts two and three.',
+	]
+}
+
+var contextExplain = {
+	header: 'Explaining how you will earn money in the bonus task',
 
 	descAll: [
 		[
-			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
+			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
 			'Taxes are a way to redistribute money between citizens.',
 			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted to tax transfer to be between themselves and another Mturker.'
+			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
 		],
 		[
-			'Your job is to rate the Mturker\'s tax transfer decision based on whether you think the tax transfer decision was',
+			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think the Mturker OUGHT to transfer".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker who is like you.',
-			'To pick a match who is like you, we will match you with another Mturker whow is also another [XXXX Democrate/Republic]. To increases the chances that you earn the bonus, you should try to imagine what another Mturker who is a [XXX REP or DEM] would say.',
-		],
-		[
-			'We are ready to start!'
-		],
-		['You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.']
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker "your match."',
+			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+		]
+	]
+}
+
+var contextPartTwo = {
+	header: 'Ready to start part two!',
+
+	desc: [
+		'We are ready to start the second part of the study where we will ask you to tell us what you think about various images.'
+	]
+}
+
+var contextPolIntro = {
+	header: 'tell us what you think',
+
+	desc: [
+		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
 	]
 }
 
@@ -329,16 +456,16 @@ var contextStatesIntro = {
 	header: 'Tell us what you think',
 
 	desc: [
-		'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+		'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state\'s electoral votes in the 2012 presidential election?',
 	]
 }
 
 var contextStates = {
 	validateType: 'radio',
 
-	question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+	question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state\'s electoral votes in the 2012 presidential election?',
 
-	errorText: 'Please select one of the presdential candidates above',
+	errorText: 'Please select one of the presidential candidates above',
 
 	states: [
 		{
@@ -383,13 +510,21 @@ var contextStates = {
 	]
 }
 
+var contextPartThree = {
+	header: 'Ready to start part three- the Bonus Task!',
+
+	desc: [
+		'We are ready to start part three: This is where you can earn a bonus!'
+	]
+}
+
 var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-		'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
-'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
+		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
@@ -434,112 +569,24 @@ var contextTokens = {
 	]
 }
 
-var contextSurveyIntro = {
-	header: 'Tell us about yourself',
-
-	desc: [
-		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.'
-	]
-}
-
-var contextSurvey = {
-	politics: {
-		question: 'In politics, as of today, do you consider yourself:',
-		name: 'pol-classification',
-		error: 'political classifications',
-		inputs: [
-			{
-				id: 'republican',
-				label: 'a Republican'
-			},
-			{
-				id: 'democrat',
-				label: 'a Democrat'
-			},
-			{
-				id: 'democratish',
-				label: 'leaning more towards the Democratic party'
-			},
-			{
-				id: 'republicanish',
-				label: 'leaning more towards the Republican party'
-			}
-		]
-	},
-
-	age: {
-		error: 'age'
-	},
-
-	gender: {
-		question: 'What is your gender?',
-		name: 'gender',
-		inputs: [
-			{
-				id: 'male',
-				label: 'male'
-			},
-			{
-				id: 'female',
-				label: 'female'
-			}
-		],
-		error: 'genders'
-	},
-
-	race: {
-		question: 'Which of the following best describes your racial or ethnic background?',
-		name: 'race',
-		inputs: [
-			{
-				id: 'asian',
-				label: 'Asian/Pacific Islander'
-			},
-			{
-				id: 'black',
-				label: 'Black'
-			},
-			{
-				id: 'latino',
-				label: 'Hispanic/Latino'
-			},
-			{
-				id: 'white',
-				label: 'white'
-			}
-		],
-		other: {
-			id: 'other',
-			label: 'other',
-			use: {},
-			idText: 'other-text'
-		},
-		error: 'ethnicities'
-	},
-
-	voted: {
-		question: 'Have you ever voted in a government election?',
-		name: 'voted',
-		inputs: [
-			{
-				id: 'yes',
-				label: 'yes'
-			},
-			{
-				id: 'no',
-				label: 'no'
-			}
-		],
-		error: 'selections'
-	}
-}
-
 var contextThankYou = {
 	header: 'Thank You',
 
 	desc: [
 		'Thank you for participating in our study.'
 	]
+}
+function randomInt( min, max ) {
+	return Math.floor( Math.random() * ( max - min ) + min );
+}
+
+// get a random item from the context list and delete it from the list
+function randomItem( context ) {
+	var contextRan = randomInt( 0, context.length ), // get random item
+		contextItem = context[contextRan];
+
+	context.splice( contextRan, 1);
+	return contextItem;
 }
 
 // get a random group of politician
@@ -585,31 +632,34 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 	return out;
 });
 
-// get a random item from the context list and delete it from the list
-function randomItem( context ) {
-	var contextLen = context.length,
-		contextRan = Math.floor( Math.random() * contextLen ), // get random item
-		contextItem = context[contextRan];
-
-	context.splice( contextRan, 1);
-	return contextItem;
-}
-
 // set random token value and function to token value and corresponding text
 (function() {
 	var yourTokenVal = null,
 		otherTokenVal = null,
 		tokenList = null,
 		order = null,
-		choseText = 'choose to '
+		take = 'take ',
+		make = 'make ',
+
+		// text for transfer range
+		beginRange = 'Worker A was able to ',
+		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
+		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
+		endRangeTo = ' to worker B',
+		endRangeFrom = ' from worker B',
+
+		// transform text
+		spanBold = '<span class="heavy taking-tokens">',
+		govtInvolved = 'got the government involved',
+		govtNotInvolved = 'did not want the government involved',
+		choseText = ' and chose to ',
 		taxTrans = ' a tax transfer of '
-		makeTrans = choseText + 'make' + taxTrans,
-		takeTrans = choseText + 'take' + taxTrans,
-		makeTransEnd = ' to his match',
-		takeTransEnd = ' for himself',
-		nothing = 'chose NOT to take or make a tax transfer.',
-		spanBold = '<span class="heavy border-bottom">',
+		takeTrans = choseText + spanBold + take + taxTrans,
+		makeTrans = choseText + spanBold + make + taxTrans,
+		transEnd = ' worker B.',
+		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
+
 		count = 0,
 		curToken = null;// keep track of where we are in 5 list
 
@@ -631,27 +681,64 @@ function randomItem( context ) {
 		return otherTokenVal;
 	});
 
-	Handlebars.registerHelper('transferText', function() {
-		var out = '';
-		curToken = tokenList[0];
+	Handlebars.registerHelper('getYourPostTax', function() {
+		if ( yourTokenVal === 5 && count < 5 ) {
+			return yourTokenVal + curToken;
+		}
+		return Math.abs( yourTokenVal - curToken );
+	});
+
+	Handlebars.registerHelper('getOtherPostTax', function() {
+		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
+			return otherTokenVal + curToken;
+		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
+			console.log( 'count is less than 5' );
+			return otherTokenVal - curToken;
+		}
+
+	});
+
+	Handlebars.registerHelper('transferRange', function() {
+		var out = beginRange;
+
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
-		} else if ( yourTokenVal === 5 ) {
-			if ( count < 5 ) {
-				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
-			} else if ( count === 5 ) {
-				out += nothing;
-			} else {
-				out += makeTrans + spanBold + curToken + spanEnd + makeTransEnd;
-			}
-			count++;
+			out += make + zeroTenRange + endRangeTo;
+		} else if ( yourTokenVal === 0 ) {
+			out += take + zeroTenRange + endRangeFrom;
 		} else {
-			if ( yourTokenVal === 0 && curToken === 0 ) {
-				out += nothing;
+			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
+		}
+
+		out += '.'
+
+		return out;
+	});
+
+	Handlebars.registerHelper('transferText', function() {
+		var out = 'Worker A ';
+		curToken = tokenList[0];
+
+		if ( curToken === 0 ) {
+			out += govtNotInvolved;
+		} else {
+			out += govtInvolved;
+		}
+
+		if ( yourTokenVal === 10 ) {
+			out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+		} else if ( yourTokenVal === 0 ) {
+			out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+		} else {
+			if ( count >= 5 ) {
+				out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanBold + curToken + spanEnd + takeTransEnd;
+				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
+
+		console.log( yourTokenVal );
+
+		out += transEnd;
 		tokenList.splice(0, 1);
 		return out;
 	});
@@ -659,27 +746,35 @@ function randomItem( context ) {
 	Handlebars.registerHelper('selectName', function() {
 		var name = '';
 		if ( yourTokenVal === 5 ) {
-			name = yourTokenVal + '_norm_' + (10 - count + 1);
+			name = yourTokenVal + '_norm_' + (10 - count);
+			count++;
 		} else {
 			name = yourTokenVal + '_norm_' + curToken;
 		}
+
 		return name;
 	});
 })();
-
 $(function() {
 	$('main').nextQuestion();
 });
 // methods that don't seem to logically fit in other classes go here
 !(function($) {
-	function Misc( $elt ) {
+	function Misc( $elt, $mturkForm ) {
 		this.$main = $elt;
+		this.$mturkForm = $mturkForm;
 		this.$pageNumber = $( '.page-number [data-current-page]' );
 		this.image = 'img';
+		this.polInpSelector = 'input[name="pol-classification"]';
+		this.polClassSelector = '.pol-class'
 		this.inp = 'input';
 
 		// data attr selectors
 		this.dataName = 'data-name';
+
+		this.dem = 'Democrat';
+		this.rep = 'Republican';
+		this.polClass = null;
 
 		return this;
 	};
@@ -712,7 +807,7 @@ $(function() {
 			});
 		},
 
-		
+
 		clearCheckedValues: function() {
 			$( this.inp ).prop('checked', false);
 		},
@@ -729,11 +824,31 @@ $(function() {
 					$( 'input[type="text"][id="other-text"]' ).prop('disabled', true);
 				}
 			});
+		},
+
+		// add the political classification text of the study participant
+		fixPolClass: function() {
+			var $polClass = $( this.polClassSelector );
+				polClassVal = null;
+
+			// if we don't currently have the policitical classification of
+			// the individual get it
+			if ( !this.polClass ) {
+				polClassVal = parseInt( this.$mturkForm.find( this.polInpSelector ).val() );
+				if ( polClassVal === 1 || polClassVal === 2 ) {
+					this.polClass = this.dem;
+				} else {
+					this.polClass = this.rep;
+				}
+			}
+
+			$polClass.text( this.polClass );
+
 		}
 	};
 
-	$.fn.misscelanious = function() {
-		var msc = new Misc( this );
+	$.fn.misscelanious = function( $mturkForm ) {
+		var msc = new Misc( this, $mturkForm );
 		return msc;
 	}
 })(window.jQuery);
@@ -743,6 +858,7 @@ $(function() {
 		this.$main = $elt;
 		this.$nextButton = this.$main.find('.button[data-next="question"]');
 		this.$mturkForm = $( '#mturk_form' );
+		this.$select = $( 'select' );
 		// strings for selectors
 		this.header = 'header';
 		this.inp = 'input';
@@ -779,7 +895,7 @@ $(function() {
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjTWJNREZEcDN5NUE/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -789,7 +905,7 @@ $(function() {
 		];
 
 		// other classes
-		this.misc = $( 'main' ).misscelanious();
+		this.misc = $( 'main' ).misscelanious( this.$mturkForm );
 		this.addInpts = $( 'main' ).addInputs( this.$mturkForm );
 	}
 
@@ -832,6 +948,14 @@ $(function() {
 			this.$nextButton.on('click', function(){
 				that.nextButtonClicked();
 			});
+
+			$(document).on('change', '.select-appropriate', function() {
+				if ( this.value !== 0 ) {
+					that.enableNextButton();
+				} else {
+					that.disableNextButton();
+				}
+			});
 		},
 
 		// driver for whether to continue to next question or not
@@ -858,42 +982,55 @@ $(function() {
 			if ( pageNum === 1 ) {
 				this.addHeader( contextIntro );
 			} else if ( pageNum === 2 ) {
+				this.addHeader( contextPartOne )
+			} else if ( pageNum === 3 ) {
 // 				survey intro
 				this.addHeader( contextSurveyIntro );
-			} else if ( pageNum === 3 ) {
+			} else if ( pageNum === 4 ) {
 // 				survey
 				this.$main.find( this.header ).after( this.templates.survey(contextSurvey) );
 				this.misc.radioOther();
-			} else if ( pageNum >= 4  && pageNum <= 8 ) {
+			} else if ( pageNum === 5 ) {
+				this.addHeader( contextNextSteps );
+			} else if ( pageNum >= 6  && pageNum <= 8 ) {
 // 				intro and pol intro
 				// this is done to show the desc on seperate pages
-				var desc = contextPolIntro.descAll[0];
-				contextPolIntro.desc = []
+
+				var desc = contextExplain.descAll[0];
+				contextExplain.desc = []
 				// contextIntro.desc.desc;
 				for (var i = 0; i < desc.length; i++) {
-					contextPolIntro.desc[i] = desc[i];
+					contextExplain.desc[i] = desc[i];
 				}
-				contextPolIntro.descAll.splice(0, 1);
-				this.addHeader( contextPolIntro );
-			} else if ( pageNum >= 9 && pageNum <= 13 ) {
+				contextExplain.descAll.splice(0, 1);
+
+				this.addHeader( contextExplain );
+				// some of the intro's require knowing whether a person is a dem or rep
+				// since strings from the data file is used, can't call a handlebar function and must alter via jQuery
+				this.findPolClass( pageNum );
+			} else if ( pageNum === 9 ) {
+				this.addHeader( contextPartTwo );
+			} else if ( pageNum === 10 ) {
+				this.addHeader( contextPolIntro)
+			} else if ( pageNum >= 11 && pageNum <= 15 ) {
 				// poltician photos
-				if ( pageNum === 9 ) {
+				if ( pageNum === 11 ) {
 					this.addQuestionDesc( contextPol );
 				}
 				this.addQuestion( this.templates.twoPic, contextPol );
-			} else if ( pageNum === 14 ) {
+			} else if ( pageNum === 16 ) {
 				// voting line intro
 				this.addHeader( contextVotingLineIntro );
-			} else if ( pageNum === 15 ) {
+			} else if ( pageNum === 17 ) {
 				// voting line question
 				this.addQuestionDesc( contextVotingLine );
 				this.addQuestion( this.templates.twoPic, contextVotingLine );
-			} else if ( pageNum === 16 ) {
+			} else if ( pageNum === 18 ) {
 				// obama, romney, state intro
 				this.addHeader( contextStatesIntro );
-			} else if ( pageNum >= 17 && pageNum <= 20 ) {
+			} else if ( pageNum >= 19 && pageNum <= 22 ) {
 				// obama, romney, state dedc
-				if ( pageNum === 17 ) {
+				if ( pageNum === 19 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
@@ -906,22 +1043,26 @@ $(function() {
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 17 ) {
+				if ( pageNum === 19 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
 				}
 
 				// fix radio names of inputs
 				this.misc.fixInputName();
-			} else if ( pageNum === 21 ) {
+			} else if ( pageNum === 23 ) {
+				this.addHeader( contextPartThree );
+ 		} else if ( pageNum === 24 ) {
 				// token intro
 				this.addHeader( contextTokenIntro );
-			} else if ( pageNum >= 22 && pageNum <= 54 ) {
+				this.findPolClass( pageNum );
+			} else if ( pageNum >= 25 && pageNum <= 57 ) {
 				// token questions
 				// add the token base
+				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
 
 				// last question add submit button
-				if ( pageNum === 54 ) {
+				if ( pageNum === 57 ) {
 					this.$nextButton.text( 'Submit Answers' );
 				}
 			} else {
@@ -930,7 +1071,7 @@ $(function() {
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				// this.$mturkForm.submit();
+				this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
@@ -971,6 +1112,24 @@ $(function() {
 		removeHeader: function() {
 			$( this.header ).remove();
 			$( this.question ).remove();
+		},
+
+		changeHeader: function( text ) {
+			$( this.header ).text( text );
+		},
+
+		findPolClass: function( pageNum ) {
+			// if ( pageNum === 8 || pageNum === 21 ) {
+			this.misc.fixPolClass();
+		},
+
+		disableNextButton: function() {
+			this.$nextButton.addClass( 'disable' );
+		},
+
+		enableNextButton: function() {
+			$( this.err ).remove();
+			this.$nextButton.removeClass( 'disable' );
 		}
 	}
 
@@ -980,7 +1139,6 @@ $(function() {
 		return nextQ;
 	}
 }(window.jQuery);
-
 !(function($) {
 	var ValidateForm = function( $elt ) {
 		this.$validate = $elt;

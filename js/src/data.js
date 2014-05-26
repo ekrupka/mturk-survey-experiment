@@ -6,38 +6,168 @@ var contextIntro = {
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
 			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
-			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with. You can earn up to $3.30 in bonus pay.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with makes. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
 	]
 }
 
-var contextPolIntro = {
-	header: 'Tell us what you think',
+var contextPartOne = {
+	header: 'Ready to start part one!',
+
+	desc: [
+		'We are ready to start the first part: This is where you tell us about yourself.'
+	]
+}
+
+var contextSurveyIntro = {
+	header: 'Tell us about yourself',
+
+	desc: [
+		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.'
+	]
+}
+
+var contextSurvey = {
+	politics: {
+		question: 'In politics, as of today, do you consider yourself:',
+		name: 'pol-classification',
+		error: 'political classifications',
+		inputs: [
+			{
+				id: 'republican',
+				label: 'a Republican'
+			},
+			{
+				id: 'democrat',
+				label: 'a Democrat'
+			},
+			{
+				id: 'democratish',
+				label: 'leaning more towards the Democratic party'
+			},
+			{
+				id: 'republicanish',
+				label: 'leaning more towards the Republican party'
+			}
+		]
+	},
+
+	age: {
+		error: 'age'
+	},
+
+	gender: {
+		question: 'What is your gender?',
+		name: 'gender',
+		inputs: [
+			{
+				id: 'male',
+				label: 'male'
+			},
+			{
+				id: 'female',
+				label: 'female'
+			}
+		],
+		error: 'genders'
+	},
+
+	race: {
+		question: 'Which of the following best describes your racial or ethnic background?',
+		name: 'race',
+		inputs: [
+			{
+				id: 'asian',
+				label: 'Asian/Pacific Islander'
+			},
+			{
+				id: 'black',
+				label: 'Black'
+			},
+			{
+				id: 'latino',
+				label: 'Hispanic/Latino'
+			},
+			{
+				id: 'white',
+				label: 'white'
+			}
+		],
+		other: {
+			id: 'other',
+			label: 'other',
+			use: {},
+			idText: 'other-text'
+		},
+		error: 'ethnicities'
+	},
+
+	voted: {
+		question: 'Have you ever voted in a government election?',
+		name: 'voted',
+		inputs: [
+			{
+				id: 'yes',
+				label: 'yes'
+			},
+			{
+				id: 'no',
+				label: 'no'
+			}
+		],
+		error: 'selections'
+	}
+}
+
+var contextNextSteps = {
+	header: 'Next Steps',
+
+	desc: [
+		'You have completed the first part!',
+		'For the second part of the study, we will ask you to tell us what you think about various images.',
+		'For the third part of the study, you have a chance to earn a bonus.  We will describe the bonus task and how you get paid and then you will complete parts two and three.',
+	]
+}
+
+var contextExplain = {
+	header: 'Explaining how you will earn money in the bonus task',
 
 	descAll: [
 		[
-			'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
+			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Some times people earn lots in our economy and sometimes people earn little in our economy.',
+			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
 			'Taxes are a way to redistribute money between citizens.',
 			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted to tax transfer to be between themselves and another Mturker.'
+			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
 		],
 		[
-			'Your job is to rate the Mturker\'s tax transfer decision based on whether you think the tax transfer decision was',
+			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think the Mturker OUGHT to transfer".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker who is like you.',
-			'To pick a match who is like you, we will match you with another Mturker whow is also another [XXXX Democrate/Republic]. To increases the chances that you earn the bonus, you should try to imagine what another Mturker who is a [XXX REP or DEM] would say.',
-		],
-		[
-			'We are ready to start!'
-		],
-		['You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.']
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker "your match."',
+			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+		]
+	]
+}
+
+var contextPartTwo = {
+	header: 'Ready to start part two!',
+
+	desc: [
+		'We are ready to start the second part of the study where we will ask you to tell us what you think about various images.'
+	]
+}
+
+var contextPolIntro = {
+	header: 'tell us what you think',
+
+	desc: [
+		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
 	]
 }
 
@@ -193,16 +323,16 @@ var contextStatesIntro = {
 	header: 'Tell us what you think',
 
 	desc: [
-		'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+		'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state\'s electoral votes in the 2012 presidential election?',
 	]
 }
 
 var contextStates = {
 	validateType: 'radio',
 
-	question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+	question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state\'s electoral votes in the 2012 presidential election?',
 
-	errorText: 'Please select one of the presdential candidates above',
+	errorText: 'Please select one of the presidential candidates above',
 
 	states: [
 		{
@@ -247,13 +377,21 @@ var contextStates = {
 	]
 }
 
+var contextPartThree = {
+	header: 'Ready to start part three- the Bonus Task!',
+
+	desc: [
+		'We are ready to start part three: This is where you can earn a bonus!'
+	]
+}
+
 var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that another Mturker made.  The description will include possible actions available to the Mturker.',
-		'Your task is to rate the Mturker\'s tax transfer decision based on your guess of whether another Mturker who is a [XX Rep Dem] like you would think the tax transfer decision was "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".',
-'Remember that you will only earn the bonus if your "social appropriateness" rating MATCHES another Mturker\'s ratings who is a [XXX REP DEM].',
+		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
@@ -296,106 +434,6 @@ var contextTokens = {
 			val: '1'
 		},
 	]
-}
-
-var contextSurveyIntro = {
-	header: 'Tell us about yourself',
-
-	desc: [
-		'Please complete the following demographic survey.  Your responses will not be connected to your worker ID.'
-	]
-}
-
-var contextSurvey = {
-	politics: {
-		question: 'In politics, as of today, do you consider yourself:',
-		name: 'pol-classification',
-		error: 'political classifications',
-		inputs: [
-			{
-				id: 'republican',
-				label: 'a Republican'
-			},
-			{
-				id: 'democrat',
-				label: 'a Democrat'
-			},
-			{
-				id: 'democratish',
-				label: 'leaning more towards the Democratic party'
-			},
-			{
-				id: 'republicanish',
-				label: 'leaning more towards the Republican party'
-			}
-		]
-	},
-
-	age: {
-		error: 'age'
-	},
-
-	gender: {
-		question: 'What is your gender?',
-		name: 'gender',
-		inputs: [
-			{
-				id: 'male',
-				label: 'male'
-			},
-			{
-				id: 'female',
-				label: 'female'
-			}
-		],
-		error: 'genders'
-	},
-
-	race: {
-		question: 'Which of the following best describes your racial or ethnic background?',
-		name: 'race',
-		inputs: [
-			{
-				id: 'asian',
-				label: 'Asian/Pacific Islander'
-			},
-			{
-				id: 'black',
-				label: 'Black'
-			},
-			{
-				id: 'latino',
-				label: 'Hispanic/Latino'
-			},
-			{
-				id: 'white',
-				label: 'white'
-			}
-		],
-		other: {
-			id: 'other',
-			label: 'other',
-			use: {},
-			idText: 'other-text'
-		},
-		error: 'ethnicities'
-	},
-
-	voted: {
-		question: 'Have you ever voted in a government election?',
-		name: 'voted',
-		inputs: [
-			{
-				id: 'yes',
-				label: 'yes'
-			},
-			{
-				id: 'no',
-				label: 'no'
-			}
-		],
-		error: 'selections'
-	}
 }
 
 var contextThankYou = {
