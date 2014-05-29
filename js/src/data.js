@@ -138,19 +138,16 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
+			'Mturkers in a previous Hit faced several different situations in which they had to decide whether they would like to give some tokens to another Mturker, take some tokens from another Mturker or do nothing.'
 		],
 		[
-			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
+			'Your job is to rate worker A\'s decision based on whether you think their decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker “your match."',
-			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today.  We will call this Mturker "your match".',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span> would say.',
 		]
 	]
 }
@@ -167,7 +164,7 @@ var contextPolIntro = {
 	header: 'tell us what you think',
 
 	desc: [
-		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+		'You will now be show several pairs of pictures of people.  Please indicate which person in each pair you find more attractive.'
 	]
 }
 
@@ -284,16 +281,16 @@ var contextVotingLineIntro = {
 	header: 'Tell us what you think',
 
 	desc: [
-		'On the next screen you will see two images of voting lines.  Please indicate which voting line you think is the longest.'
+		'On the next screen you will see two images of people waiting in lines.  Please indicate which line you think is the longest.'
 	]
 }
 
 var contextVotingLine = {
 	validateType: 'radio',
 
-	question: 'Please indicate which voting line you think is longest.',
+	question: 'Please indicate which line you think is the longest.',
 
-	errorText: 'Please select one of the voting lines above',
+	errorText: 'Please select one of the lines above',
 
 	photos: [
 		{
@@ -438,7 +435,7 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
+		'Your task is to rate worker A\'s decision based on your guess of whether your MATCH would think the decision was "socially appropriate" and "consistent with what a worker A ought to do".',
 		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }

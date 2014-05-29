@@ -274,19 +274,16 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Sometimes people earn lots in our economy and sometimes people earn little in our economy.',
-			'Taxes are a way to redistribute money between citizens.',
-			'Mturkers in a previous Hit were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
+			'Mturkers in a previous Hit faced several different situations in which they had to decide whether they would like to give some tokens to another Mturker, take some tokens from another Mturker or do nothing.'
 		],
 		[
-			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
+			'Your job is to rate worker A\'s decision based on whether you think their decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker “your match."',
-			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today.  We will call this Mturker "your match".',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span> would say.',
 		]
 	]
 }
@@ -303,7 +300,7 @@ var contextPolIntro = {
 	header: 'tell us what you think',
 
 	desc: [
-		'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+		'You will now be show several pairs of pictures of people.  Please indicate which person in each pair you find more attractive.'
 	]
 }
 
@@ -420,16 +417,16 @@ var contextVotingLineIntro = {
 	header: 'Tell us what you think',
 
 	desc: [
-		'On the next screen you will see two images of voting lines.  Please indicate which voting line you think is the longest.'
+		'On the next screen you will see two images of people waiting in lines.  Please indicate which line you think is the longest.'
 	]
 }
 
 var contextVotingLine = {
 	validateType: 'radio',
 
-	question: 'Please indicate which voting line you think is longest.',
+	question: 'Please indicate which line you think is the longest.',
 
-	errorText: 'Please select one of the voting lines above',
+	errorText: 'Please select one of the lines above',
 
 	photos: [
 		{
@@ -574,7 +571,7 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
+		'Your task is to rate worker A\'s decision based on your guess of whether your MATCH would think the decision was "socially appropriate" and "consistent with what a worker A ought to do".',
 		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
@@ -717,16 +714,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 			out += options.fn( item );
 		}
 
-
-		/*while ( state.length > 0 ) {
-			item = randomItem( state );
-			// if its the std randomly add or subtract from the avg for the alt text
-			if ( item.id === 'std' ) {
-				item.text = (item.avg + item.std * add).toFixed(2);
-			}
-			out += options.fn( item );
-		}*/
-
 		return out;
 	});
 })();
@@ -738,23 +725,22 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		tokenList = null,
 		order = null,
 		take = 'take ',
-		make = 'make ',
+		give = 'give ',
 
 		// text for transfer range
-		beginRange = 'Worker A was able to ',
-		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
-		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
-		endRangeTo = ' to worker B',
+		beginRange = 'Worker A had the opportunity to ',
+		zeroTenRange = 'any amount between 0 tokens and 10 tokens',
+		fiveRange = 'any amount between 0 tokens and 5 tokens',
+		endRangeTo = ' of his or her tokens to worker B',
 		endRangeFrom = ' from worker B',
 
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
-		govtInvolved = 'got the government involved',
-		govtNotInvolved = 'did not want the government involved',
+		govtInvolved = 'wanted to take tokens',
+		notInvolved = 'wanted to give tokens',
 		choseText = ' and chose to ',
-		taxTrans = ' a tax transfer of '
-		takeTrans = choseText + spanBold + take + taxTrans,
-		makeTrans = choseText + spanBold + make + taxTrans,
+		takeTrans = choseText + spanBold + take,
+		giveTrans = choseText + spanBold + give,
 		transEnd = ' worker B.',
 		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
@@ -801,11 +787,11 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		var out = beginRange;
 
 		if ( yourTokenVal === 10 ) {
-			out += make + zeroTenRange + endRangeTo;
+			out += give + zeroTenRange + endRangeTo;
 		} else if ( yourTokenVal === 0 ) {
 			out += take + zeroTenRange + endRangeFrom;
 		} else {
-			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
+			out += give + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
 		}
 
 		out += '.'
@@ -817,21 +803,21 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		var out = 'Worker A ';
 		curToken = tokenList[0];
 
-		if ( curToken === 0 ) {
-			out += govtNotInvolved;
-		} else {
-			out += govtInvolved;
-		}
+		// if ( curToken === 0 ) {
+		// 	out += notInvolved;
+		// } else {
+		// 	out += govtInvolved;
+		// }
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+			out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+			out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+				out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+				out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
 
@@ -992,7 +978,7 @@ $(function() {
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVFdSMXRSSEgycFU/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{

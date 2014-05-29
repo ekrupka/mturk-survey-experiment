@@ -1,7 +1,7 @@
 <!-- Token Template -->
 <section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} >
   <h2>
-    In this economy worker A’s wealth was <span class="heavy border-bottom">{{ getYourToken }}</span> and worker B’s wealth was <span class="heavy border-bottom">{{ getOtherToken }}.
+    For this decision worker A owns <span class="heavy border-bottom">{{ getYourToken }}</span> and worker B owns <span class="heavy border-bottom">{{ getOtherToken }}.
   </h2>
 
   <h2>
@@ -14,16 +14,16 @@
 
   <h2>
     As a result:<br>
-    Worker A’s post - tax wealth for this decision was <span class="heavy border-bottom">{{getYourPostTax}}</span> tokens.<br>
-    Worker B’s post - tax wealth for this decision was <span class="heavy border-bottom">{{getOtherPostTax}}</span> tokens.
+    Worker A’s post - earnings for this decision were <span class="heavy border-bottom">{{getYourPostTax}}</span> tokens.<br>
+    Worker B’s post - earnings for this decision were <span class="heavy border-bottom">{{getOtherPostTax}}</span> tokens.
   </h2>
 
   <h2 class="big-text">
-    TASK: Your task is to rate worker A’s tax transfer decision based on your guess of whether your <span class="border-bottom">MATCH</span> would think the tax transfer is "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".
+    TASK: Your task is to rate worker A’s decision transfer decision based on your guess of whether your <span class="border-bottom">MATCH</span> would think the decision transfer is "socially appropriate" and "consistent with what an Mturker OUGHT to transfer".
   </h2>
 
   <h2>
-    I think that my <span class="border-bottom">MATCH</span> would rate this tax transfer as
+    I think that my <span class="border-bottom">MATCH</span> would rate this decision as
     <select class="select-appropriate" name="{{selectName}}">
       {{#each tokenLabel}}
         <option value="{{val}}">{{text}}</option>

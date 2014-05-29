@@ -37,7 +37,7 @@
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVFdSMXRSSEgycFU/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{

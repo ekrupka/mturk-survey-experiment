@@ -87,16 +87,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 			out += options.fn( item );
 		}
 
-
-		/*while ( state.length > 0 ) {
-			item = randomItem( state );
-			// if its the std randomly add or subtract from the avg for the alt text
-			if ( item.id === 'std' ) {
-				item.text = (item.avg + item.std * add).toFixed(2);
-			}
-			out += options.fn( item );
-		}*/
-
 		return out;
 	});
 })();
@@ -108,23 +98,22 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		tokenList = null,
 		order = null,
 		take = 'take ',
-		make = 'make ',
+		give = 'give ',
 
 		// text for transfer range
-		beginRange = 'Worker A was able to ',
-		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
-		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
-		endRangeTo = ' to worker B',
+		beginRange = 'Worker A had the opportunity to ',
+		zeroTenRange = 'any amount between 0 tokens and 10 tokens',
+		fiveRange = 'any amount between 0 tokens and 5 tokens',
+		endRangeTo = ' of his or her tokens to worker B',
 		endRangeFrom = ' from worker B',
 
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
-		govtInvolved = 'got the government involved',
-		govtNotInvolved = 'did not want the government involved',
+		govtInvolved = 'wanted to take tokens',
+		notInvolved = 'wanted to give tokens',
 		choseText = ' and chose to ',
-		taxTrans = ' a tax transfer of '
-		takeTrans = choseText + spanBold + take + taxTrans,
-		makeTrans = choseText + spanBold + make + taxTrans,
+		takeTrans = choseText + spanBold + take,
+		giveTrans = choseText + spanBold + give,
 		transEnd = ' worker B.',
 		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
@@ -171,11 +160,11 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		var out = beginRange;
 
 		if ( yourTokenVal === 10 ) {
-			out += make + zeroTenRange + endRangeTo;
+			out += give + zeroTenRange + endRangeTo;
 		} else if ( yourTokenVal === 0 ) {
 			out += take + zeroTenRange + endRangeFrom;
 		} else {
-			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
+			out += give + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
 		}
 
 		out += '.'
@@ -187,21 +176,21 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		var out = 'Worker A ';
 		curToken = tokenList[0];
 
-		if ( curToken === 0 ) {
-			out += govtNotInvolved;
-		} else {
-			out += govtInvolved;
-		}
+		// if ( curToken === 0 ) {
+		// 	out += notInvolved;
+		// } else {
+		// 	out += govtInvolved;
+		// }
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+			out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+			out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+				out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+				out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
 
