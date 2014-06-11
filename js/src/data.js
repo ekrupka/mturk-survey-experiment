@@ -138,7 +138,7 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Mturkers in a previous Hit faced several different situations in which they had to decide whether they would like to give some tokens to another Mturker, take some tokens from another Mturker or do nothing.'
+			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which her or she was holding some number of tokens, where every 10 tokens was worth $1. Worker A then had to decide whether he or she would like to give some tokens to worker B, take some tokens from worker B, or do nothing.'
 		],
 		[
 			'Your job is to rate worker A\'s decision based on whether you think their decision was',
@@ -434,9 +434,9 @@ var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s decision based on your guess of whether your MATCH would think the decision was "socially appropriate" and "consistent with what a worker A ought to do".',
-		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
+		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\’s decision based on your guess of whether your MATCH would think the decision was “socially appropriate” and “consistent with what worker A OUGHT to do.”',
+		'Remember that you will only earn the bonus if your “social appropriateness” rating is the same as your MATCH\’s rating. For each rating that is the same, you will earn 10 cents.',
 	]
 }
 

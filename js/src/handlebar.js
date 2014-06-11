@@ -102,18 +102,17 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 
 		// text for transfer range
 		beginRange = 'Worker A had the opportunity to ',
-		zeroTenRange = 'any amount between 0 tokens and 10 tokens',
-		fiveRange = 'any amount between 0 tokens and 5 tokens',
-		endRangeTo = ' of his or her tokens to worker B',
+		zeroTenRangeGive = 'any amount of his or her <span class="border-bottom">10</span> tokens',
+		zeroTenRangeTake = 'any amount of worker B\'s <span class="border-bottom">10</span> tokens',
+		fiveRangeGive = 'any amount of his or her <span class="border-bottom">5</span> tokens',
+		fiveRangeTake = 'any amount of worker B\'s <span class="border-bottom">5</span> tokens',
+		endRangeTo = ' to worker B',
 		endRangeFrom = ' from worker B',
 
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
-		govtInvolved = 'wanted to take tokens',
-		notInvolved = 'wanted to give tokens',
-		choseText = ' and chose to ',
-		takeTrans = choseText + spanBold + take,
-		giveTrans = choseText + spanBold + give,
+		takeTrans = spanBold + take,
+		giveTrans = spanBold + give,
 		transEnd = ' worker B.',
 		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
@@ -160,11 +159,11 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		var out = beginRange;
 
 		if ( yourTokenVal === 10 ) {
-			out += give + zeroTenRange + endRangeTo;
+			out += give + zeroTenRangeGive + endRangeTo;
 		} else if ( yourTokenVal === 0 ) {
-			out += take + zeroTenRange + endRangeFrom;
+			out += take + zeroTenRangeTake + endRangeFrom;
 		} else {
-			out += give + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
+			out += give + fiveRangeGive + endRangeTo + ' or to ' + take + fiveRangeTake + endRangeFrom;
 		}
 
 		out += '.'
@@ -173,24 +172,18 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 	});
 
 	Handlebars.registerHelper('transferText', function() {
-		var out = 'Worker A ';
+		var out = 'Worker A choose to ';
 		curToken = tokenList[0];
 
-		// if ( curToken === 0 ) {
-		// 	out += notInvolved;
-		// } else {
-		// 	out += govtInvolved;
-		// }
-
 		if ( yourTokenVal === 10 ) {
-			out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+			out += giveTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+			out += takeTrans + spanUL + curToken + spanEnd + ' tokens ' +spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += notInvolved + giveTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+				out += giveTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' to ';
 			} else {
-				out += govtInvolved + takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+				out += takeTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' from ';
 			}
 		}
 
