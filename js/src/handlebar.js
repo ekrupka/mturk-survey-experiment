@@ -63,13 +63,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		take = 'take ',
 		make = 'make ',
 
-		// text for transfer range
-		beginRange = 'Worker A was able to ',
-		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
-		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
-		endRangeTo = ' to worker B',
-		endRangeFrom = ' from worker B',
-
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
 		govtInvolved = 'got the government involved',
@@ -114,26 +107,9 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
 			return otherTokenVal + curToken;
 		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
-			console.log( 'count is less than 5' );
 			return otherTokenVal - curToken;
 		}
 
-	});
-
-	Handlebars.registerHelper('transferRange', function() {
-		var out = beginRange;
-
-		if ( yourTokenVal === 10 ) {
-			out += make + zeroTenRange + endRangeTo;
-		} else if ( yourTokenVal === 0 ) {
-			out += take + zeroTenRange + endRangeFrom;
-		} else {
-			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
-		}
-
-		out += '.'
-
-		return out;
 	});
 
 	Handlebars.registerHelper('transferText', function() {
@@ -157,8 +133,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
-
-		console.log( yourTokenVal );
 
 		out += transEnd;
 		tokenList.splice(0, 1);

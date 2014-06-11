@@ -271,17 +271,16 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth.  The government\'s role is redistributing this wealth can be larger or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
-			'Mturkers in a previous HIT were asked to determine the tax transfer between themselves and another Mturker.',
-			'The Mturker faced several different situations in which they had to decide what they wanted the tax transfer to be between themselves and another Mturker.'
+			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth. The government\'s role in redistributing this wealth can be large or small. Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
 		],
 		[
-			'Your job is to rate worker A\'s tax transfer decision based on whether you think the tax transfer decision was',
+			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to transfer".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker "your match."',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>. We will call this Mturker “your match."',
 			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
 		]
 	]
@@ -521,9 +520,9 @@ var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that worker A made.  The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s tax transfer decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> like you, would think the tax transfer decision was "socially appropriate" and "consistent with what worker A OUGHT to transfer".',
-		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your Match\'s rating.  For each rating that is the same, you will earn 10 cents.',
+		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is like you, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your MATCH\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
@@ -640,13 +639,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		take = 'take ',
 		make = 'make ',
 
-		// text for transfer range
-		beginRange = 'Worker A was able to ',
-		zeroTenRange = 'a tax transfer that ranged between 0 tokens and 10 tokens',
-		fiveRange = 'a tax transfer that ranged between 0 tokens and 5 tokens',
-		endRangeTo = ' to worker B',
-		endRangeFrom = ' from worker B',
-
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
 		govtInvolved = 'got the government involved',
@@ -691,26 +683,9 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
 			return otherTokenVal + curToken;
 		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
-			console.log( 'count is less than 5' );
 			return otherTokenVal - curToken;
 		}
 
-	});
-
-	Handlebars.registerHelper('transferRange', function() {
-		var out = beginRange;
-
-		if ( yourTokenVal === 10 ) {
-			out += make + zeroTenRange + endRangeTo;
-		} else if ( yourTokenVal === 0 ) {
-			out += take + zeroTenRange + endRangeFrom;
-		} else {
-			out += make + fiveRange + endRangeTo + ' or to ' + take + fiveRange + endRangeFrom;
-		}
-
-		out += '.'
-
-		return out;
 	});
 
 	Handlebars.registerHelper('transferText', function() {
@@ -734,8 +709,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
 			}
 		}
-
-		console.log( yourTokenVal );
 
 		out += transEnd;
 		tokenList.splice(0, 1);
@@ -894,7 +867,7 @@ $(function() {
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVENJTmo2aXI4aVk/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -1059,6 +1032,7 @@ $(function() {
 				// add the token base
 				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
+				this.findPolClass( pageNum );
 
 				// last question add submit button
 				if ( pageNum === 57 ) {

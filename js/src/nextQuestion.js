@@ -41,7 +41,7 @@
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVWppeFFxLUo5c2M/tokens.html',
+				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVENJTmo2aXI4aVk/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -206,6 +206,7 @@
 				// add the token base
 				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
+				this.findPolClass( pageNum );
 
 				// last question add submit button
 				if ( pageNum === 57 ) {
