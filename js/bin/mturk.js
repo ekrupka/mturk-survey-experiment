@@ -955,27 +955,27 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjWE94aHpkZ2E0MUE/one-pic.html',
+				url: 'https://cbb811bf83fd6a515d41c97795d4e5f50cc9d8f4.googledrive.com/host/0B3xp5m4ZxljjWE94aHpkZ2E0MUE/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjVFdSMXRSSEgycFU/tokens.html',
+				url: 'https://d4ce74a335859222607263cc090b55cfb7db690f.googledrive.com/host/0B3xp5m4ZxljjVFdSMXRSSEgycFU/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
 				dataName: 'survey'
 			}
 		];
