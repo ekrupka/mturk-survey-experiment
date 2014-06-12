@@ -141,12 +141,12 @@ var contextExplain = {
 			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which her or she was holding some number of tokens, where every 10 tokens was worth $1. Worker A then had to decide whether he or she would like to give some tokens to worker B, take some tokens from worker B, or do nothing.'
 		],
 		[
-			'Your job is to rate worker A\'s decision based on whether you think their decision was',
+			'Your job is to rate worker A\'s decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what A OUGHT to do".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today.  We will call this Mturker "your match".',
+			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today.  We will call this Mturker "your match."',
 			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span> would say.',
 		]
 	]

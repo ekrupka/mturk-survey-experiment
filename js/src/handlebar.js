@@ -172,7 +172,7 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 	});
 
 	Handlebars.registerHelper('transferText', function() {
-		var out = 'Worker A choose to ';
+		var out = 'Worker A chose to ';
 		curToken = tokenList[0];
 
 		if ( yourTokenVal === 10 ) {
