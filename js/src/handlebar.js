@@ -123,14 +123,14 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+			out += makeTrans + spanUL + curToken + spanEnd + ' tokens' +spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+			out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + spanEnd + ' to ';
+				out += makeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + spanEnd + ' from ';
+				out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
 			}
 		}
 
