@@ -37,7 +37,7 @@
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://d4ce74a335859222607263cc090b55cfb7db690f.googledrive.com/host/0B3xp5m4ZxljjVFdSMXRSSEgycFU/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
@@ -149,7 +149,7 @@
 				this.addHeader( contextExplain );
 				// some of the intro's require knowing whether a person is a dem or rep
 				// since strings from the data file is used, can't call a handlebar function and must alter via jQuery
-				this.findPolClass( pageNum );
+				this.findPolClass();
 			} else if ( pageNum === 9 ) {
 				this.addHeader( contextPartTwo );
 			} else if ( pageNum === 10 ) {
@@ -196,13 +196,13 @@
  		} else if ( pageNum === 24 ) {
 				// token intro
 				this.addHeader( contextTokenIntro );
-				this.findPolClass( pageNum );
+				this.findPolClass();
 			} else if ( pageNum >= 25 && pageNum <= 57 ) {
 				// token questions
 				// add the token base
 				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
-
+				this.findPolClass();
 				// last question add submit button
 				if ( pageNum === 57 ) {
 					this.$nextButton.text( 'Submit Answers' );
@@ -260,8 +260,7 @@
 			$( this.header ).text( text );
 		},
 
-		findPolClass: function( pageNum ) {
-			// if ( pageNum === 8 || pageNum === 21 ) {
+		findPolClass: function() {
 			this.misc.fixPolClass();
 		},
 

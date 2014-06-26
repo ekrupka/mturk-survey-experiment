@@ -68,7 +68,7 @@
 
 		// add the political classification text of the study participant
 		fixPolClass: function() {
-			var $polClass = $( this.polClassSelector );
+			var $polClass = $( this.polClassSelector ),
 				polClassVal = null;
 
 			// if we don't currently have the policitical classification of
