@@ -123,14 +123,14 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + ' tokens' +spanEnd + ' to ';
+			out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
+			out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' to ';
+				out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
+				out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 			}
 		}
 
@@ -149,5 +149,11 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		return name;
+	});
+
+	Handlebars.registerHelper('updateTokenText', function() {
+		if ( curToken === 1 ) {
+			$('.update-token').text()
+		}
 	});
 })();
