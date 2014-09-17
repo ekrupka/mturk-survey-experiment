@@ -1,3 +1,5 @@
+// Add data inputs to mturk form data
+
 !(function($) {
 	function AddInputs( $elt, $mturkForm ) {
 		this.$main = $elt;
@@ -280,7 +282,7 @@ var contextExplain = {
 			'Your job is to rate worker A\'s decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">""consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
 			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>.  We will call this Mturker "your match."',
 			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.'
@@ -313,7 +315,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjSi03Z3BWeUM1T2M',
+					src: '/images/male1.png',
 					alt: 'male photo',
 					id: 'male1',
 					label: 'I think this person is more attractive',
@@ -321,7 +323,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjQk5zb2VDeFBTTEE',
+					src: '/images/male2.png',
 					alt: 'male Photo',
 					id: 'male2',
 					label: 'I think this person is more attractive',
@@ -333,7 +335,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjbEV3V3UxTVFURHc',
+					src: '/images/male3.png',
 					alt: 'male photo',
 					id: 'male3',
 					label: 'I think this person is more attractive',
@@ -341,7 +343,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjNUUxdkdIajNrLW8',
+					src: '/images/male4.png',
 					alt: 'Male Photo',
 					id: 'male4',
 					label: 'I think this person is more attractive',
@@ -353,7 +355,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjZTRxSUR0eXZ5STA',
+					src: '/images/female1.png',
 					alt: 'female photo',
 					id: 'female1',
 					label: 'I think this person is more attractive',
@@ -361,7 +363,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjcXRzTHE3YnA5ZHM',
+					src: '/images/female2.png',
 					alt: 'female Photo',
 					id: 'female2',
 					label: 'I think this person is more attractive',
@@ -373,7 +375,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjS1hLUmEtYU9kUUE',
+					src: '/images/female3.png',
 					alt: 'female photo',
 					id: 'female3',
 					label: 'I think this person is more attractive',
@@ -381,7 +383,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjWVU3R1RkS1NJLXc',
+					src: '/images/female4.png',
 					alt: 'female Photo',
 					id: 'female4',
 					label: 'I think this person is more attractive',
@@ -393,7 +395,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjdjlsVi1QdXFETHc',
+					src: '/images/male5.png',
 					alt: 'male photo',
 					id: 'male5',
 					label: 'I think this person is more attractive',
@@ -401,7 +403,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjTWtyc01PRDNmTEE',
+					src: '/images/male6.png',
 					alt: 'male Photo',
 					id: 'male6',
 					label: 'I think this person is more attractive',
@@ -432,7 +434,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjWHZ1VkFqRzJaZ3c',
+					src: '/images/line1.png',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this line is longest',
@@ -440,7 +442,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: 'https://googledrive.com/host/0B3xp5m4ZxljjRDdmZHR3cEhnOHc',
+					src: '/images/line2.png',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this line is longest',
@@ -469,25 +471,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: 'https://googledrive.com/host/0B3xp5m4ZxljjWXRlaXR1UEZLbUU',
+			src: '/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: 'https://googledrive.com/host/0B3xp5m4ZxljjdGNqcUc4SkRadTQ',
+			src: '/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: 'https://googledrive.com/host/0B3xp5m4ZxljjbFpYMEEwUjB5azg',
+			src: '/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: 'https://googledrive.com/host/0B3xp5m4ZxljjRGpxV21EVGhPNjg',
+			src: '/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -624,6 +626,8 @@ var contextThankYou = {
 		'Thank you for participating in our study.'
 	]
 }
+
+/* Functions for handlebars  */
 
 function randomInt( min, max ) {
 	return Math.floor( Math.random() * ( max - min ) + min );
@@ -932,6 +936,8 @@ $(function() {
 	}
 })(window.jQuery);
 
+/* Driver for webapp */
+
 !function($) {
 	function NextQuestion( $elt ) {
 		// jquery selectors
@@ -955,27 +961,27 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: '/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: '/templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: '/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://cbb811bf83fd6a515d41c97795d4e5f50cc9d8f4.googledrive.com/host/0B3xp5m4ZxljjWE94aHpkZ2E0MUE/one-pic.html',
+				url: '/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://505f79690e2369655a689165e2cae73b0cce0287.googledrive.com/host/0B3xp5m4ZxljjRjQ1aXAyOFBWMnM/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: '/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
@@ -1214,6 +1220,8 @@ $(function() {
 		return nextQ;
 	}
 }(window.jQuery);
+
+/* Validator and error message display for input fields */
 
 !(function($) {
 	var ValidateForm = function( $elt ) {

@@ -1,3 +1,5 @@
+// Add data inputs to mturk form data
+
 !(function($) {
 	function AddInputs( $elt, $mturkForm ) {
 		this.$main = $elt;

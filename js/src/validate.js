@@ -1,3 +1,5 @@
+/* Validator and error message display for input fields */
+
 !(function($) {
 	var ValidateForm = function( $elt ) {
 		this.$validate = $elt;

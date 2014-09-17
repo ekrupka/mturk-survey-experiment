@@ -1,3 +1,5 @@
+/* Driver for webapp */
+
 !function($) {
 	function NextQuestion( $elt ) {
 		// jquery selectors
@@ -21,27 +23,27 @@
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: '/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: '/templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: '/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://cbb811bf83fd6a515d41c97795d4e5f50cc9d8f4.googledrive.com/host/0B3xp5m4ZxljjWE94aHpkZ2E0MUE/one-pic.html',
+				url: '/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://505f79690e2369655a689165e2cae73b0cce0287.googledrive.com/host/0B3xp5m4ZxljjRjQ1aXAyOFBWMnM/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: '/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
