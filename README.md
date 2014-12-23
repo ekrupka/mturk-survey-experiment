@@ -24,3 +24,6 @@ The CSS of the site is built using LESS as a CSS Preprocessor. Similar to the Ja
 
 ## How to Publish
 In order to run the site you need to put the content in index.html in a mturk HTML structure file and upload it to mturk. You will also need to host all the javascript, css, images, and templates on your own servers. 
+
+## NOTE
+Before you publish make sure to uncomment line 218 in nextQuestion.js `this.$mturkForm.submit();` or the form will not submit. If this line is active when you are developing locally it will try to submit the mturk form and error out.
