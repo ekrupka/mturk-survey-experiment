@@ -64,7 +64,7 @@
 			if ( !this.onePicCalled ) {
 				// get the side of the page that the pres-nominee is on
 				// and create hidden input with val to append to mturk data
-				sideChoice = this.generateHiddenInput( 'obama-LR', this.$main.find( this.inp + '[id="obama"]').data( 'indx' ) );
+				sideChoice = this.generateHiddenInput( 'obama-LR', this.$main.find( this.inp + '[id="avg"]').data( 'indx' ) );
 				this.onePicCalled = true;
 			}
 
@@ -1150,10 +1150,10 @@ $(function() {
 			} else {
 				// thank the user and remove paegnumber counter
 				this.misc.removePageNumber();
-				this.addHeader ( contextThankYou );
+				this.addHeader( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+				// this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added

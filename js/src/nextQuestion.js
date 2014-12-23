@@ -212,10 +212,10 @@
 			} else {
 				// thank the user and remove paegnumber counter
 				this.misc.removePageNumber();
-				this.addHeader ( contextThankYou );
+				this.addHeader( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+				// this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
