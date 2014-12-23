@@ -2137,31 +2137,31 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: 'templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: 'templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: 'templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic.html',
+				url: 'templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic-radio-opts.html',
+				url: 'templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjM280Q2ZhYmpidVk/tokens.html',
+				url: 'templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: 'templates/survey.html',
 				dataName: 'survey'
 			}
 		];
