@@ -1,6 +1,6 @@
 # Mturk Experiment Survey
 
-This study utilizes the Amazon Mechanical Turk HTML question structure. The website is a single page JavaScript applicathttp://handlebarsjs.com/ion, uses [grunt](http://gruntjs.com/) for task management, [handlebars]() as a templating engine, and [less](http://lesscss.org/) as a CSS preprocessor. 
+This study utilizes the Amazon Mechanical Turk HTML question structure. The website is a single page JavaScript application, uses [grunt](http://gruntjs.com/) for task management, [handlebars](http://handlebarsjs.com/) as a templating engine, and [less](http://lesscss.org/) as a CSS preprocessor. 
 
 ## Run Locally 
 In order to run the website locally you will need to run a local server. If you have python on your system (if you have a mac you do), you can run python's simple server via `python -m SimpleHTTPServer`.
