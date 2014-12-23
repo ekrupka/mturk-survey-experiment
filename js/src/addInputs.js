@@ -62,7 +62,7 @@
 			if ( !this.onePicCalled ) {
 				// get the side of the page that the pres-nominee is on
 				// and create hidden input with val to append to mturk data
-				sideChoice = this.generateHiddenInput( 'obama-LR', this.$main.find( this.inp + '[id="obama"]').data( 'indx' ) );
+				sideChoice = this.generateHiddenInput( 'obama-LR', this.$main.find( this.inp + '[id="avg"]').data( 'indx' ) );
 				this.onePicCalled = true;
 			}
 

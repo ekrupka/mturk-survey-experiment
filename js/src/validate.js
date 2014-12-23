@@ -119,7 +119,6 @@ ValidateForm.prototype = {
 				if ( !dataText ) {
 					dataText = 'Please select one of the ' + $err.data( 'error' ) + ' above';
 				}
-				// console.log(dataText);
 				$err.text( dataText );
 				$err.show();
 			}

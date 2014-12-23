@@ -149,7 +149,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
 			return otherTokenVal + curToken;
 		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
-			console.log( 'count is less than 5' );
 			return otherTokenVal - curToken;
 		}
 
@@ -187,7 +186,6 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 			}
 		}
 
-		console.log( yourTokenVal );
 
 		out += transEnd;
 		tokenList.splice(0, 1);
