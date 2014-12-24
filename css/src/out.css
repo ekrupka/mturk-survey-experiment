@@ -21,6 +21,10 @@ button:hover,
   background-color: #6a51b7;
   color: #fff;
 }
+button.disable,
+.button.disable {
+  opacity: 0.5;
+}
 h1 {
   font-size: 3.5em;
   text-transform: capitalize;

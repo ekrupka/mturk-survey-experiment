@@ -311,7 +311,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/BillClinton.jpg',
+					src: '/images/BillClinton.jpg',
 					alt: 'Bill Clinton photo',
 					id: 'bill-clinton',
 					label: 'Bill Clinton',
@@ -319,7 +319,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/RonaldReagan.jpg',
+					src: '/images/RonaldReagan.jpg',
 					alt: 'Ronald Reagan Photo',
 					id: 'ronald-reagan',
 					label: 'Ronald Reagan',
@@ -331,7 +331,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MitchMcConnell.jpg',
+					src: '/images/MitchMcConnell.jpg',
 					alt: 'Mitch McConnell photo',
 					id: 'mitch-mcconnell',
 					label: 'Mitch McConnell',
@@ -339,7 +339,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/HarryReid.jpg',
+					src: '/images/HarryReid.jpg',
 					alt: 'Harry Reid Photo',
 					id: 'harry-reid',
 					label: 'Harry Reid',
@@ -351,7 +351,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JanBrewer.jpg',
+					src: '/images/JanBrewer.jpg',
 					alt: 'Jan Brewer photo',
 					id: 'jan-brewer',
 					label: 'Jan Brewer',
@@ -359,7 +359,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/KathleenSebelius.jpg',
+					src: '/images/KathleenSebelius.jpg',
 					alt: 'Kathleen Sebelius Photo',
 					id: 'kathleen-sebelius',
 					label: 'Kathleen Sebelius',
@@ -371,7 +371,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MicheleBachmann.jpg',
+					src: '/images/MicheleBachmann.jpg',
 					alt: 'Michelle Bachmann photo',
 					id: 'michelle-bachmann',
 					label: 'Michelle Bachmann',
@@ -379,7 +379,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/NancyPelosi.jpg',
+					src: '/images/NancyPelosi.jpg',
 					alt: 'Nancy Pelosi  Photo',
 					id: 'nancy-pelosi',
 					label: ' Nancy Pelosi',
@@ -391,7 +391,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JoeBiden.jpg',
+					src: '/images/JoeBiden.jpg',
 					alt: 'Joe Biden photo',
 					id: 'joe-biden',
 					label: 'Joe Biden',
@@ -399,7 +399,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/DickCheney.jpg',
+					src: '/images/DickCheney.jpg',
 					alt: 'Dick Cheney Photo',
 					id: 'Dick-Cheney',
 					label: 'Dick Cheney',
@@ -430,7 +430,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine1.jpg',
+					src: '/images/VotingLine1.jpg',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this voting line is longest',
@@ -438,7 +438,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine2.jpg',
+					src: '/images/VotingLine2.jpg',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this voting line is longest',
@@ -467,25 +467,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/NorthCarolina.png',
+			src: '/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Georgia.png',
+			src: '/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Florida.png',
+			src: '/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Ohio.png',
+			src: '/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -699,14 +699,14 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + ' tokens' +spanEnd + ' to ';
+			out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
+			out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' to ';
+				out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + ' tokens' + spanEnd + ' from ';
+				out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 			}
 		}
 
@@ -725,6 +725,12 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		return name;
+	});
+
+	Handlebars.registerHelper('updateTokenText', function() {
+		if ( curToken === 1 ) {
+			$('.update-token').text()
+		}
 	});
 })();
 $(function() {
@@ -847,31 +853,31 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: '/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: '/templates/question.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: '/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic.html',
+				url: '/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic-radio-opts.html',
+				url: '/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://4d96b0e0ede6270b1a617478b01710bdbc20d3b8.googledrive.com/host/0B3xp5m4ZxljjVENJTmo2aXI4aVk/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: '/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
@@ -902,7 +908,7 @@ $(function() {
 						that.compileTemplate( template, that.templateNames[i].dataName );
 					},
 					error: function( e ) {
-						console.log( 'error ' + e);
+						console.error( 'error ' + e);
 					}
 				});
 			}
@@ -1233,7 +1239,6 @@ ValidateForm.prototype = {
 				if ( !dataText ) {
 					dataText = 'Please select one of the ' + $err.data( 'error' ) + ' above';
 				}
-				// console.log(dataText);
 				$err.text( dataText );
 				$err.show();
 			}

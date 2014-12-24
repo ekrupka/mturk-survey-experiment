@@ -21,31 +21,31 @@
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/intro.html',
+				url: '/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/question-header.html',
+				url: '/templates/question.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/two-question.html',
+				url: '/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic.html',
+				url: '/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/one-pic-radio-opts.html',
+				url: '/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://4d96b0e0ede6270b1a617478b01710bdbc20d3b8.googledrive.com/host/0B3xp5m4ZxljjVENJTmo2aXI4aVk/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://3ade34c61fbc14a334e363f5f6e07080f79b49cd.googledrive.com/host/0B3xp5m4ZxljjT2p0VzFxTjFlMm8/survey.html',
+				url: '/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
@@ -76,7 +76,7 @@
 						that.compileTemplate( template, that.templateNames[i].dataName );
 					},
 					error: function( e ) {
-						console.log( 'error ' + e);
+						console.error( 'error ' + e);
 					}
 				});
 			}

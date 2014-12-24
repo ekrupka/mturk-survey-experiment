@@ -178,7 +178,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/BillClinton.jpg',
+					src: '/images/BillClinton.jpg',
 					alt: 'Bill Clinton photo',
 					id: 'bill-clinton',
 					label: 'Bill Clinton',
@@ -186,7 +186,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/RonaldReagan.jpg',
+					src: '/images/RonaldReagan.jpg',
 					alt: 'Ronald Reagan Photo',
 					id: 'ronald-reagan',
 					label: 'Ronald Reagan',
@@ -198,7 +198,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MitchMcConnell.jpg',
+					src: '/images/MitchMcConnell.jpg',
 					alt: 'Mitch McConnell photo',
 					id: 'mitch-mcconnell',
 					label: 'Mitch McConnell',
@@ -206,7 +206,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/HarryReid.jpg',
+					src: '/images/HarryReid.jpg',
 					alt: 'Harry Reid Photo',
 					id: 'harry-reid',
 					label: 'Harry Reid',
@@ -218,7 +218,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JanBrewer.jpg',
+					src: '/images/JanBrewer.jpg',
 					alt: 'Jan Brewer photo',
 					id: 'jan-brewer',
 					label: 'Jan Brewer',
@@ -226,7 +226,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/KathleenSebelius.jpg',
+					src: '/images/KathleenSebelius.jpg',
 					alt: 'Kathleen Sebelius Photo',
 					id: 'kathleen-sebelius',
 					label: 'Kathleen Sebelius',
@@ -238,7 +238,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/MicheleBachmann.jpg',
+					src: '/images/MicheleBachmann.jpg',
 					alt: 'Michelle Bachmann photo',
 					id: 'michelle-bachmann',
 					label: 'Michelle Bachmann',
@@ -246,7 +246,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/NancyPelosi.jpg',
+					src: '/images/NancyPelosi.jpg',
 					alt: 'Nancy Pelosi  Photo',
 					id: 'nancy-pelosi',
 					label: ' Nancy Pelosi',
@@ -258,7 +258,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/JoeBiden.jpg',
+					src: '/images/JoeBiden.jpg',
 					alt: 'Joe Biden photo',
 					id: 'joe-biden',
 					label: 'Joe Biden',
@@ -266,7 +266,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/DickCheney.jpg',
+					src: '/images/DickCheney.jpg',
 					alt: 'Dick Cheney Photo',
 					id: 'Dick-Cheney',
 					label: 'Dick Cheney',
@@ -297,7 +297,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine1.jpg',
+					src: '/images/VotingLine1.jpg',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this voting line is longest',
@@ -305,7 +305,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: 'http://www-personal.umich.edu/~shondal/mturk/images/VotingLine2.jpg',
+					src: '/images/VotingLine2.jpg',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this voting line is longest',
@@ -334,25 +334,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/NorthCarolina.png',
+			src: '/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Georgia.png',
+			src: '/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Florida.png',
+			src: '/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: 'http://www-personal.umich.edu/~shondal/mturk/images/Ohio.png',
+			src: '/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
