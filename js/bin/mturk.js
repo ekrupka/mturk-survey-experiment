@@ -2174,7 +2174,7 @@ $(function() {
 			this.bind();
 		},
 
-		// get handlebar templates from Google Drive
+		// get handlebar templates 
 		getTemplates: function() {
 			var that = this;
 

@@ -1,20 +1,29 @@
-Mturk Experiment Survey
-================================
+# Mturk Experiment Survey
 
-This site is a site used for a study on Amazon Mechanical Turk. It uses the Mturk HTML Question structure which is hosted by Amazon. The website is a single page app driven by JavaScript and utilized Handlebar templates. The project uses Grunt to watch the LESS and JavaScript files and concatonates them. Google Drive is used to serve the JS, CSS, and images for the site. 
+This study utilizes the Amazon Mechanical Turk HTML question structure. The website is a single page JavaScript application, uses [grunt](http://gruntjs.com/) for task management, [handlebars](http://handlebarsjs.com/) as a templating engine, and [less](http://lesscss.org/) as a CSS preprocessor. 
 
-The survey has 5 categories of questions. The study follows these 5 categorizes in order, but within each category the order of the questions are randomized. Only one question is displayed to the user at a time - except for the survey question at the conclusion of the study.
+## Run Locally 
+In order to run the website locally you will need to run a local server. If you have python on your system (if you have a mac you do), you can run python's simple server via `python -m SimpleHTTPServer`.
 
-The first category asks the user to identify whom of two politicians that they find more attractive. The politicians are grouped into Republicans and Democrats and the side of the page in which the Republican or Democrat appears is randomized. 
+## Structure
+`index.html` is the html file that needs to be included in the Mturk HTML question file. It contains the mturk form and renders all the SPA.
 
-The second category asks the user to identify which voting line they think is longer between two different voting lines. Again, the voting line images are randomly displayed on either side.
+### Grunt 
+In order to see the updates you have made to the JavaScript files and the less you have to run `grunt watch`. This will tell grunt to watch all the JavaScript and less files in `js/src/*.js and css/src/*.less` and concatenate the files on each change. You can change the structure of how the builds occur via the `Gruntfile.js`.
 
-The third category asks the user to identify who won the election of a State in 2012 Obama or Romney. The side on which the radio input for the Obama or Romney is displayed is randomly chosen when a user first reaches this section and stays on that respective side for the duration of these questions.
+If you do not have grunt installed, follow the [grunt installation guide](http://gruntjs.com/getting-started). If you do not have npm, you will need to install node.js on your system in order to build the JavaScript and css files. 
 
-The fourth category asks the user to distribute tokens. This category uses the [jQuery NoUiSlider plugin](https://github.com/leongersen/noUiSlider) as a way to allow users to distribute tokens. The token order is randomly chosen from four possible token orders.
+### JavaScript
+The JavaScript on the site is located in the `/js/src` folder. Each file in `js/src` is a different component of the site and they are all concatenated together to `js/bin/mturk.js`. The mturk.js file is the JavaScript file that is rendered in `index.html`. Please look at the comments in the files of `js/src/` in order to see what each file does. 
 
-The fifth category is a survey questionnaire. 
+### Less
+The CSS of the site is built using LESS as a CSS Preprocessor. Similar to the JavaScript files, the less files are located in `css/src` and are separated out into different components. The Less is concatenated to one less file `css/bin/main.less` which is converted to css and concatenated with all dependent css files to `css/bin/style.css`.
 
-Throughout the study when a user clicks to see the next question, the inputs they entered are grabbed and append to the Mturk form that is used by Amazon Mechanical Turk. There are input validations throughout the survey.
+### Templates
+`templates/` contain all the handlebar templates that are all requested via JavaScript. 
 
-Feel free to check out the [site](http://sdalezman.github.io/mturk-survey-expirment/).
+## How to Publish
+In order to run the site you need to put the content in index.html in a mturk HTML structure file and upload it to mturk. You will also need to host all the JavaScript, css, images, and templates on your own servers. 
+
+## NOTE
+Before you publish make sure to uncomment line 218 in nextQuestion.js `this.$mturkForm.submit();` or the form will not submit. If this line is active when you are developing locally it will try to submit the mturk form and error out.
