@@ -1581,22 +1581,22 @@ var contextPol = {
 
     errorText: 'Please select one of the politicians above',
 
-    photos: [
+photos: [
         {
             images: [
                 {
-                    src: '/images/BillClinton.jpg',
-                    alt: 'Bill Clinton photo',
-                    id: 'bill-clinton', 
-                    label: 'Bill Clinton',
+                    src: '/images/male1.png',
+                    alt: 'male photo',
+                    id: 'male1',
+                    label: 'I think this person is more attractive',
                     name: 'ex-presidents',
                     value: '0'
                 },
                 {
-                    src: '/images/RonaldReagan.jpg',
-                    alt: 'Ronald Reagan Photo',
-                    id: 'ronald-reagan',
-                    label: 'Ronald Reagan',
+                    src: '/images/male2.png',
+                    alt: 'male Photo',
+                    id: 'male2',
+                    label: 'I think this person is more attractive',
                     name: 'ex-presidents',
                     value: '1'
                 }
@@ -1605,18 +1605,18 @@ var contextPol = {
         {
             images: [
                 {
-                    src: '/images/MitchMcConnell.jpg',
-                    alt: 'Mitch McConnell photo',
-                    id: 'mitch-mcconnell', 
-                    label: 'Mitch McConnell',
+                    src: '/images/male3.png',
+                    alt: 'male photo',
+                    id: 'male3',
+                    label: 'I think this person is more attractive',
                     name: 'senators',
                     value: '1'
                 },
                 {
-                    src: '/images/HarryReid.jpg',
-                    alt: 'Harry Reid Photo',
-                    id: 'harry-reid',
-                    label: 'Harry Reid',
+                    src: '/images/male4.png',
+                    alt: 'Male Photo',
+                    id: 'male4',
+                    label: 'I think this person is more attractive',
                     name: 'senators',
                     value: '0'
                 }
@@ -1625,18 +1625,18 @@ var contextPol = {
         {
             images: [
                 {
-                    src: '/images/JanBrewer.jpg',
-                    alt: 'Jan Brewer photo',
-                    id: 'jan-brewer', 
-                    label: 'Jan Brewer',
+                    src: '/images/female1.png',
+                    alt: 'female photo',
+                    id: 'female1',
+                    label: 'I think this person is more attractive',
                     name: 'governors',
                     value: '1'
                 },
                 {
-                    src: '/images/KathleenSebelius.jpg',
-                    alt: 'Kathleen Sebelius Photo',
-                    id: 'kathleen-sebelius',
-                    label: 'Kathleen Sebelius',
+                    src: '/images/female2.png',
+                    alt: 'female Photo',
+                    id: 'female2',
+                    label: 'I think this person is more attractive',
                     name: 'governors',
                     value: '0'
                 }
@@ -1645,18 +1645,18 @@ var contextPol = {
         {
             images: [
                 {
-                    src: '/images/MicheleBachmann.jpg',
-                    alt: 'Michelle Bachmann photo',
-                    id: 'michelle-bachmann', 
-                    label: 'Michelle Bachmann',
+                    src: '/images/female3.png',
+                    alt: 'female photo',
+                    id: 'female3',
+                    label: 'I think this person is more attractive',
                     name: 'house-reps',
                     value: '1'
                 },
                 {
-                    src: '/images/NancyPelosi.jpg',
-                    alt: 'Nancy Pelosi  Photo',
-                    id: 'nancy-pelosi',
-                    label: ' Nancy Pelosi',
+                    src: '/images/female4.png',
+                    alt: 'female Photo',
+                    id: 'female4',
+                    label: 'I think this person is more attractive',
                     name: 'house-reps',
                     value: '0'
                 }
@@ -1665,18 +1665,18 @@ var contextPol = {
         {
             images: [
                 {
-                    src: '/images/JoeBiden.jpg',
-                    alt: 'Joe Biden photo',
-                    id: 'joe-biden', 
-                    label: 'Joe Biden',
+                    src: '/images/male5.png',
+                    alt: 'male photo',
+                    id: 'male5',
+                    label: 'I think this person is more attractive',
                     name: 'vice-presidents',
                     value: '0'
                 },
                 {
-                    src: '/images/DickCheney.jpg',
-                    alt: 'Dick Cheney Photo',
-                    id: 'Dick-Cheney',
-                    label: 'Dick Cheney',
+                    src: '/images/male6.png',
+                    alt: 'male Photo',
+                    id: 'male6',
+                    label: 'I think this person is more attractive',
                     name: 'vice-presidents',
                     value: '1'
                 }
@@ -1706,18 +1706,18 @@ var contextVotingLine = {
         {
             images: [
                 {
-                    src: '/images/VotingLine1.jpg',
+                    src: '/images/line1.png',
                     alt: 'Voting line photo',
-                    id: 'voting-line-1', 
-                    label: 'I think this voting line is longest',
+                    id: 'voting-line-1',
+                    label: 'I think this line is longest',
                     name: 'voting-line',
                     value: 0
                 },
                 {
-                    src: '/images/VotingLine2.jpg',
+                    src: '/images/line2.png',
                     alt: 'Voting Line Photo',
                     id: 'voting-line-2',
-                    label: 'I think this voting line is longest',
+                    label: 'I think this line is longest',
                     name: 'voting-line',
                     value: 1
                 }
