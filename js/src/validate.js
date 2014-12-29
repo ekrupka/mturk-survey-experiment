@@ -111,9 +111,6 @@ ValidateForm.prototype = {
 
 		// display radio error
 		radioError: function( error ) {
-
-			console.log( 'in radio errors' )
-
 			// used to display errors on survey page
 			// errors currently are hidden and displayed when needed
 			// html for errors on other pages is created and appended
@@ -123,10 +120,11 @@ ValidateForm.prototype = {
 			} else if ( this.$survey.length !== 0 ) {
 				var $err = $( this.dataError + error + this.dataErrorEnd ),
 					dataText = $err.data( 'errorText' );
+					
 				if ( !dataText ) {
 					dataText = 'Please select one of the ' + $err.data( 'error' ) + ' above';
 				}
-				console.log(dataText);
+
 				$err.text( dataText );
 				$err.show();
 			}

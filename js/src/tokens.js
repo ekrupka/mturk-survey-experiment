@@ -135,7 +135,6 @@
 
 		// update token text for one token or multiple tokens
 		updateTokensText: function( tokenVal, $elt ) {
-			console.log( $elt )
 			if ( tokenVal === 1 ) {
 				$elt.text( 'token' );
 			} else {
@@ -173,35 +172,25 @@
 				handleWidth = parseInt( this.$noUiTokenHandle.width() ),
 				marginLeft = 0;  
 
-			/*(console.log('left toke slider ' + leftTokenSlider);
-			console.log('default width ' + defaultWidth);
-			console.log('handle width ' + handleWidth );*/
-
 			if ( this.defaultSliderSide === 0 ) {
-				// console.log( 'in left side' );
 				marginLeft = leftTokenSlider - defaultWidth + handleWidth/2;
-				// console.log('margin left '+ marginLeft);
 				this.$sliderText.removeClass( 'float-right' );
 
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
 				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
-					// console.log('adjusting left of text');
 				} else {
 					this.$sliderText.css('left', 0);
 					this.$sliderText.removeClass('col-md-12').addClass( 'float-right' );
 				}
 			} else {
-				// console.log(marginLeft);
 				marginLeft = leftTokenSlider - 	this.sliderTextWidth/2;
-				// console.log(marginLeft);
 				this.$sliderText.removeClass( 'float-right' );
 				if ( marginLeft < 0 ) {
 					this.$sliderText.css('left', 0);
 				} else if ( marginLeft < 600 ) {
 					this.$sliderText.css('left', marginLeft);
-					// console.log('adjusting left of text');
 				} else {
 					this.$sliderText.css('left', 0);
 					this.$sliderText.removeClass('col-md-12').addClass( 'float-right' );

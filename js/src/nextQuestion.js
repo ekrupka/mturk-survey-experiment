@@ -20,31 +20,31 @@
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'templates/intro.html',
+				url: '/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'templates/question-header.html',
+				url: '/templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'templates/two-question.html',
+				url: '/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'templates/one-pic.html',
+				url: '/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'templates/one-pic-radio-opts.html',
+				url: '/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'templates/tokens.html',
+				url: '/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'templates/survey.html',
+				url: '/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
@@ -75,7 +75,7 @@
 						that.compileTemplate( template, that.templateNames[i].dataName );
 					},
 					error: function( e ) {
-						console.log( 'error ' + e);
+						console.error( 'error ' + e);
 					}
 				});
 			}
@@ -184,7 +184,7 @@
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+				// this.$mturkForm.submit();
 			}
 
 			// scroll to top of page after everything is added
