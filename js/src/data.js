@@ -135,13 +135,14 @@ var contextExplain = {
 
 	descAll: [
 		[
-			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
+			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which her or she was holding some number of tokens, where every 10 tokens was worth $1. Worker A then had to decide whether he or she would like to give some tokens to worker B, take some tokens from worker B, or do nothing.'
+			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth. The government\'s role in redistributing this wealth can be large or small. Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
 		],
 		[
-			'Your job is to rate worker A\'s decision based on whether you think the decision was',
+			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what worker A OUGHT to do".</span></h2>',
@@ -171,7 +172,7 @@ var contextPolIntro = {
 var contextPol = {
 	question: 'Please indicate which person in each pair you find more attractive',
 
-	errorText: 'Please select which person you think is more attractive',
+	errorText: 'Please select one of the people above',
 
 	photos: [
 		{
@@ -435,7 +436,7 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\’s decision based on your guess of whether your MATCH would think the decision was “socially appropriate” and “consistent with what worker A OUGHT to do.”',
+		'Your task is to rate worker A\’s wealth redistribution decision based on your guess of whether your MATCH would think the decision was “socially appropriate” and “consistent with what worker A OUGHT to do.”',
 		'Remember that you will only earn the bonus if your “social appropriateness” rating is the same as your MATCH\’s rating. For each rating that is the same, you will earn 10 cents.',
 	]
 }
