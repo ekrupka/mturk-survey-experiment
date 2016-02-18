@@ -24,9 +24,9 @@ var contextPolIntro = {
 
 // politician data
 var contextPol = {
-    question: 'Please indicate which politician in each pair you find more attractive',
+    question: 'Please indicate which person in each pair you find more attractive',
 
-    errorText: 'Please select one of the politicians above',
+    errorText: 'Please select one of the people above',
 
 photos: [
         {
