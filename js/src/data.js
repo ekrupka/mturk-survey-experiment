@@ -131,26 +131,26 @@ var contextNextSteps = {
 }
 
 var contextExplain = {
-	header: 'Explaining how you will earn money in the bonus task',
+    header: 'Explaining how you will earn money in the bonus task',
 
-	descAll: [
-		[
-			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
-		],
-		[
-			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth. The government\'s role in redistributing this wealth can be large or small. Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
-			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
-		],
-		[
-			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
-				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what worker A OUGHT to do".</span></h2>',
-			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn this bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today.  We will call this Mturker "your match."',
-			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span> would say.',
-		]
-	]
+    descAll: [
+        [
+            'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
+        ],
+        [
+            'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth. The government\'s role in redistributing this wealth can be large or small. Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
+            'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
+        ],
+        [
+            'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
+                '<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
+                '<h2 class="col-md-12 heavy center">and</h2>',
+                '<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what someone who is like you think that worker A OUGHT to do".</span></h2>',
+            'That sounds simple, but it is only half the story!',
+            'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>. We will call this Mturker “your match."',
+            'We will match you with another Mturker who is like you. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is like you, would say.',
+        ]
+    ]
 }
 
 var contextPartTwo = {
