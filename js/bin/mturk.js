@@ -1717,7 +1717,7 @@ var contextVotingLine = {
             images: [
                 {
                     src: '/images/line1.png',
-                    alt: 'Voting line photo',
+                    alt: 'Line photo',
                     id: 'voting-line-1',
                     label: 'I think this line is longest',
                     name: 'voting-line',
@@ -1725,7 +1725,7 @@ var contextVotingLine = {
                 },
                 {
                     src: '/images/line2.png',
-                    alt: 'Voting Line Photo',
+                    alt: 'Line Photo',
                     id: 'voting-line-2',
                     label: 'I think this line is longest',
                     name: 'voting-line',
@@ -1736,22 +1736,21 @@ var contextVotingLine = {
     ]
 }
 
-// state questions intro
+// states data intro
 var contextStatesIntro = {
     header: 'Tell us what you think',
 
     desc: [
-        'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+        'You will now be shown several states.  For each state, please answer the following question: What was the state’s average temperature in 2013?',
     ]
 }
 
-// states data intro
 var contextStates = {
     validateType: 'radio',
 
-    question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
+    question: 'What was the state’s average temperature in 2013?',
 
-    errorText: 'Please select one of the presdential candidates above',
+    errorText: 'Please select one of the temperatures above',
 
     states: [
         {
@@ -1780,21 +1779,70 @@ var contextStates = {
         }
     ],
 
-    options: [
-        {
-            name: 'obama',
-            id: 'obama',
-            text: 'Barack Obama',
-            value: 0
-        },
-        {
-            name: 'obama',
-            id: 'Romney',
-            text: 'Mitt Romney',
-            value: 1
-        }
-    ]
+    statesTemp: {
+        'north-carolina': [
+            {
+                name: 'north-carolina',
+                text: '59.77',
+                value: '1',
+                id: 'avg'
+            },
+            {
+                name: 'north-carolina',
+                std: 0.73,
+                value: 0,
+                avg: 59.77,
+                id: 'std'
+            }
+        ],
+        'georgia': [
+            {
+                name: 'georgia',
+                text: '63.99',
+                value: '1',
+                id: 'avg'
+            },
+            {
+                name: 'georgia',
+                std: 0.88,
+                value: 0,
+                avg: 63.99,
+                id: 'std'
+            }
+        ],
+        'florida': [
+            {
+                name: 'florida',
+                text: '71.04',
+                value: '1',
+                id: 'avg'
+            },
+            {
+                name: 'florida',
+                std: 0.77,
+                value: 0,
+                avg: 71.04,
+                id: 'std'
+            }
+        ],
+        'ohio': [
+            {
+                name: 'ohio',
+                text: '51.85',
+                value: '1',
+                id: 'avg'
+            },
+            {
+                name: 'ohio',
+                std: 1.12,
+                value: 0,
+                avg: 51.85,
+                id: 'std'
+            }
+        ]
+    }
 }
+
 
 // token intro
 var contextTokenIntro = {

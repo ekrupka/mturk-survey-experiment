@@ -172,14 +172,6 @@ var contextVotingLine = {
     ]
 }
 
-// state questions intro
-var contextStatesIntro = {
-    header: 'Tell us what you think',
-
-    desc: [
-        'You will now be shown several states.  For each state, please answer the following question: Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
-    ]
-}
 
 // states data intro
 var contextStatesIntro = {
