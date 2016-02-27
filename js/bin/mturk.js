@@ -1576,10 +1576,20 @@ var contextPolIntro = {
 }
 
 // politician data
-var contextPol = {
-    question: 'Please indicate which politician in each pair you find more attractive',
+// politician intro
+var contextPolIntro = {
+    header: 'Tell us what you think',
 
-    errorText: 'Please select one of the politicians above',
+    desc: [
+        'You will now be shown several pairs of pictures of people.  Please indicate which person in each pair you find more attractive.'
+    ]
+}
+
+// politician data
+var contextPol = {
+    question: 'Please indicate which person in each pair you find more attractive',
+
+    errorText: 'Please select one of the people above',
 
 photos: [
         {
@@ -1686,21 +1696,21 @@ photos: [
 }
 
 // voting line intro
+// voting line intro
 var contextVotingLineIntro = {
     header: 'Tell us what you think',
 
     desc: [
-        'On the next screen you will see two images of voting lines.  Please indicate which voting line you think is the longest.'
+        'On the next screen you will see two images of people waiting in lines.  Please indicate which line you think is the longest.'
     ]
 }
 
-// voting line data
 var contextVotingLine = {
     validateType: 'radio',
 
-    question: 'Please indicate which voting line you think is longest.',
+    question: 'Please indicate which line you think is the longest.',
 
-    errorText: 'Please select one of the voting lines above',
+    errorText: 'Please select one of the lines above',
 
     photos: [
         {
