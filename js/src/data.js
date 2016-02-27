@@ -18,7 +18,7 @@ var contextPolIntro = {
     header: 'Tell us what you think',
 
     desc: [
-        'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
+        'You will now be shown several pairs of pictures of people.  Please indicate which person in each pair you find more attractive.'
     ]
 }
 
