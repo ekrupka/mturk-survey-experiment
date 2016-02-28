@@ -572,8 +572,8 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\’s decision based on your guess of whether your MATCH would think the decision was “socially appropriate” and “consistent with what worker A OUGHT to do.”',
-		'Remember that you will only earn the bonus if your “social appropriateness” rating is the same as your MATCH\’s rating. For each rating that is the same, you will earn 10 cents.',
+		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is like you, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your MATCH\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
