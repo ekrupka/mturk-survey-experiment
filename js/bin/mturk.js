@@ -1979,6 +1979,47 @@ var contextThankYou = {
         'Thank you for participating in our study.' 
     ]
 }
+
+
+// get stateTemp
+// (function stateTemp() {
+// 	var avgSide = randomInt( 0, 2 ),
+// 	stateName = null;
+
+// 	Handlebars.registerHelper('randomState', function( context, options ) {
+// 		var state = randomItem( context );
+
+// 		stateName = state.name;
+// 		return options.fn( state );
+// 	});
+
+// 	Handlebars.registerHelper('getStateTemp', function( context, options ) {
+// 		var out = '',
+// 			randAdd = randomInt( 0, 2 ), // randomly get 0 or 1 to determine whether to add or subtract std devitation from avg for alt choice
+// 			add = randAdd > 0 ? 1 : -1, //
+// 			state = context[stateName],
+// 			item = null;
+
+// 		for ( var i = 0; i < 2; i++ ) {
+// 			// in order to set which side the avg is on
+// 			if ( i === avgSide ) {
+// 				item = state[0];
+// 				item.indx = i;
+// 				// out += options.fn( state[0] );
+// 			} else {
+// 				item = state[1];
+// 				item.indx = i;
+// 				// set temp opt for std dev
+// 				item.text = (item.avg + item.std * add).toFixed(2);
+// 			}
+// 			out += options.fn( item );
+// 		}
+
+// 		return out;
+// 	});
+// })();
+
+
 // get a random group of politician 
 // and place one of the sets of politicians on a random side of the page (left, right)
 Handlebars.registerHelper('randomPol', function( context, options ) {
