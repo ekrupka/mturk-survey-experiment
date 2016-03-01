@@ -725,8 +725,8 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		otherTokenVal = null,
 		tokenList = null,
 		order = null,
-		take = 'take ',
-		give = 'give ',
+		take = 'get the government involved and take a tax transfer from ',
+		give = 'get the government involved and make a tax transfer of ',
 
 		// text for transfer range
 		beginRange = 'Worker A had the opportunity to ',
