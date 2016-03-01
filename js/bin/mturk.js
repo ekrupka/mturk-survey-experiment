@@ -2051,6 +2051,39 @@ Handlebars.registerHelper('randomItem', function(context, options) {
 	return options.fn( item );
 });
 
+Handlebars.registerHelper('randomState', function( context, options ) {
+	var state = randomItem( context );
+
+	stateName = state.name;
+	return options.fn( state );
+});
+
+Handlebars.registerHelper('getStateTemp', function( context, options ) {
+	var out = '',
+		randAdd = randomInt( 0, 2 ), // randomly get 0 or 1 to determine whether to add or subtract std devitation from avg for alt choice
+		add = randAdd > 0 ? 1 : -1, //
+		state = context[stateName],
+		item = null;
+
+	for ( var i = 0; i < 2; i++ ) {
+		// in order to set which side the avg is on
+		if ( i === avgSide ) {
+			item = state[0];
+			item.indx = i;
+			// out += options.fn( state[0] );
+		} else {
+			item = state[1];
+			item.indx = i;
+			// set temp opt for std dev
+			item.text = (item.avg + item.std * add).toFixed(2);
+		}
+		out += options.fn( item );
+	}
+
+	return out;
+});
+
+
 // random input for one pic with two input options
 Handlebars.registerHelper('randomInput', function(context, options) {
 	var out = '';
@@ -2350,11 +2383,12 @@ $(function() {
 			} else if ( pageNum === 10 ) {
 				this.addHeader( contextStatesIntro );
 			} else if ( pageNum >= 11 && pageNum <= 14 ) {	
+				// obama, romney, state dedc
 				if ( pageNum === 11 ) {
 					this.addQuestionDesc( contextStates );
 				}
 
-				// clear checked values from previous input state 
+				// clear checked values from previous input state
 				// this done because the input fields are not removed from the page
 				// but just copied to mturk form
 				// input labels shouldn't change sides so instead of removing input from page to page it is just renamed
@@ -2363,12 +2397,14 @@ $(function() {
 				this.addQuestion( this.templates.onePic, contextStates );
 
 				// add radio buttons - only done once
-				if ( pageNum === 11 ) {
+				/*if ( pageNum === 19 ) {
 					this.appendAfter( this.questionContent, this.templates.onePicInput, contextStates );
-				}
-				
+				}*/
+
 				// fix radio names of inputs
 				this.misc.fixInputName();
+
+
 			} else if ( pageNum >= 15 && pageNum <= 17 ) {
 				// this is done to show the desc on three seperate pages
 				var desc = contextTokenIntro.descAll[0];
