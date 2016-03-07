@@ -790,12 +790,10 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		if ( yourTokenVal === 10 ) {
 			out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 		} else if ( yourTokenVal === 0 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
+			out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-
-					out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
-
+				out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
 			} else {
 				out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
 			}
