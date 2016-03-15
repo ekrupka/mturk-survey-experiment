@@ -2271,31 +2271,31 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: '/templates/intro.html',
+				templateName: 'intro',
 				dataName: 'intro'
 			},
 			{
-				url: '/templates/question-header.html',
+				templateName: 'question-header',
 				dataName: 'question'
 			},
 			{
-				url: '/templates/two-question.html',
+				templateName: 'two-question',
 				dataName: 'twoPic'
 			},
 			{
-				url: '/templates/one-pic.html',
+				templateName: 'one-pic',
 				dataName: 'onePic'
 			},
 			{
-				url: '/templates/one-pic-radio-opts.html',
+				templateName: 'one-pic-radio-opts',
 				dataName: 'onePicInput'
 			},
 			{
-				url: '/templates/tokens.html',
+				templateName: 'tokens',
 				dataName: 'tokenBase'
 			},
 			{
-				url: '/templates/survey.html',
+				templateName: 'survey',
 				dataName: 'survey'
 			}
 		];
@@ -2318,17 +2318,18 @@ $(function() {
 
 			// loop over all the handlebar files and get them
 			for ( var i = 0; i < this.templateNames.length; i++ ) {
-				$.ajax({
-					url: that.templateNames[i].url,
-					method: 'GET',
-					async: false,
-					success: function( template ) {
-						that.compileTemplate( template, that.templateNames[i].dataName );
-					},
-					error: function( e ) {
-						console.error( 'error ' + e);
-					}
-				});
+				// $.ajax({
+				// 	url: that.templateNames[i].url,
+				// 	method: 'GET',
+				// 	async: false,
+				// 	success: function( template ) {
+				// 		that.compileTemplate( template, that.templateNames[i].dataName );
+				// 	},
+				// 	error: function( e ) {
+				// 		console.error( 'error ' + e);
+				// 	}
+				// });
+				this.compileTemplate($("#" + this.templateNames[i].templateName).html(), this.templateNames[i].dataName);
 			}
 		},
 
