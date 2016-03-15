@@ -7,7 +7,7 @@
 
 // ==ClosureCompiler==
 // @externs_url http://refreshless.com/externs/jquery-1.8.js
-// @compilation_level ADVANCED_OPTIMIZATIONS
+// @compilation_level ADVANCED_OPTIMIZATIONSm
 // @warning_level VERBOSE
 // ==/ClosureCompiler==
 
@@ -2439,7 +2439,7 @@ $(function() {
                 this.addHeader ( contextThankYou );
                 this.$nextButton.remove();
                 // once all the questions have been used submit to mturk
-                // this.$mturkForm.submit();
+                this.$mturkForm.submit();
             }
 
             // scroll to top of page after everything is added
