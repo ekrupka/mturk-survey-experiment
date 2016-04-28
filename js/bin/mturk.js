@@ -311,7 +311,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_random_matched/images/BillClinton.jpg',
+					src: 'https://rawgit.com/mlhess/mturk-survey-experiment/base_norms_unconditional/images/male1.png',
 					alt: 'Bill Clinton photo',
 					id: 'bill-clinton',
 					label: 'Bill Clinton',
