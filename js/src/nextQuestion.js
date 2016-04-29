@@ -211,6 +211,8 @@
 				// last question add submit button
 				if ( pageNum === 57 ) {
 					this.$nextButton.text( 'Submit Answers' );
+					
+					this.$mturkForm.submit();
 				}
 			} else {
 				// thank the user and remove paegnumber counter
@@ -218,7 +220,7 @@
 				this.addHeader ( contextThankYou );
 				this.$nextButton.remove();
 				// once all the questions have been used submit to mturk
-				this.$mturkForm.submit();
+			
 			}
 
 			// scroll to top of page after everything is added
