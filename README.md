@@ -8,6 +8,7 @@ In order to find the different experiments that were ran on Mturk please navigat
 - [Base Behavior](https://github.com/ekrupka/mturk-survey-experiment/tree/base_behavior)
 - [Base Norms Conditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_conditional)
 - [Base Norms Unconditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_unconditional)
+- [Treat Norms with Random Matching] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_random_matched)
 
 The code architecture is explained below.
 
