@@ -61,16 +61,21 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		tokenList = null,
 		order = null,
 		take = 'take ',
-		make = 'make ',
+		give = 'give ',
+
+		// text for transfer range
+		beginRange = 'Worker A had the opportunity to ',
+		zeroTenRangeGive = 'any amount of his or her <span class="border-bottom">10</span> tokens',
+		zeroTenRangeTake = 'any amount of worker B\'s <span class="border-bottom">10</span> tokens',
+		fiveRangeGive = 'any amount of his or her <span class="border-bottom">5</span> tokens',
+		fiveRangeTake = 'any amount of worker B\'s <span class="border-bottom">5</span> tokens',
+		endRangeTo = ' to worker B',
+		endRangeFrom = ' from worker B',
 
 		// transform text
 		spanBold = '<span class="heavy taking-tokens">',
-		govtInvolved = 'got the government involved',
-		govtNotInvolved = 'did not want the government involved',
-		choseText = ' and chose to ',
-		taxTrans = ' a tax transfer of '
-		takeTrans = choseText + spanBold + take + taxTrans,
-		makeTrans = choseText + spanBold + make + taxTrans,
+		takeTrans = spanBold + take,
+		giveTrans = spanBold + give,
 		transEnd = ' worker B.',
 		spanUL = '<span class="border-bottom">',
 		spanEnd = '</span>',
@@ -107,32 +112,45 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		if ( yourTokenVal === 10 || (yourTokenVal === 5 && count > 5 ) ) {
 			return otherTokenVal + curToken;
 		} else if ( yourTokenVal === 0 || ( yourTokenVal === 5 && count <= 5 ) ) {
+			console.log( 'count is less than 5' );
 			return otherTokenVal - curToken;
 		}
 
 	});
 
-	Handlebars.registerHelper('transferText', function() {
-		var out = 'Worker A ';
-		curToken = tokenList[0];
-
-		if ( curToken === 0 ) {
-			out += govtNotInvolved;
-		} else {
-			out += govtInvolved;
-		}
+	Handlebars.registerHelper('transferRange', function() {
+		var out = beginRange;
 
 		if ( yourTokenVal === 10 ) {
-			out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
+			out += give + zeroTenRangeGive + endRangeTo;
 		} else if ( yourTokenVal === 0 ) {
-			out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
+			out += take + zeroTenRangeTake + endRangeFrom;
+		} else {
+			out += give + fiveRangeGive + endRangeTo + ' or to ' + take + fiveRangeTake + endRangeFrom;
+		}
+
+		out += '.'
+
+		return out;
+	});
+
+	Handlebars.registerHelper('transferText', function() {
+		var out = 'Worker A chose to ';
+		curToken = tokenList[0];
+
+		if ( yourTokenVal === 10 ) {
+			out += giveTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' to ';
+		} else if ( yourTokenVal === 0 ) {
+			out += takeTrans + spanUL + curToken + spanEnd + ' tokens ' +spanEnd + ' from ';
 		} else {
 			if ( count >= 5 ) {
-				out += makeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' to ';
+				out += giveTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' to ';
 			} else {
-				out += takeTrans + spanUL + curToken + spanEnd + ' <span class="update-token">tokens' + spanEnd + spanEnd + ' from ';
+				out += takeTrans + spanUL + curToken + spanEnd + ' tokens ' + spanEnd + ' from ';
 			}
 		}
+
+		console.log( yourTokenVal );
 
 		out += transEnd;
 		tokenList.splice(0, 1);
@@ -149,11 +167,5 @@ Handlebars.registerHelper('randomInput', function(context, options) {
 		}
 
 		return name;
-	});
-
-	Handlebars.registerHelper('updateTokenText', function() {
-		if ( curToken === 1 ) {
-			$('.update-token').text()
-		}
 	});
 })();
