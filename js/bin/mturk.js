@@ -265,7 +265,7 @@ var contextNextSteps = {
 
 var contextExplain = {
 	header: 'Explaining how you will earn money in the bonus task',
-
+ 
 	descAll: [
 		[
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
