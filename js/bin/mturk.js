@@ -280,7 +280,7 @@ var contextExplain = {
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
 			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today. We will call this Mturker “your match."',
-			'We will match you with another Mturker who is like you. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, would say.',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span> would say.',
 		]
 	]
 }
