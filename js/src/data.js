@@ -138,17 +138,16 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker "worker A".  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'In our economy one way the government uses taxes is to generate revenue from its citizens\' earnings to redistribute wealth. The government\'s role in redistributing this wealth can be large or small. Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
-			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
+			'Mturkers in a previous Hit faced several different situations in which they had to decide whether they would like to give some tokens to another Mturker, take some tokens from another Mturker or do nothing.'
 		],
 		[
-			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
+			'Your job is to rate worker A\'s decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what someone who is like you think that worker A OUGHT to do".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>. We will call this Mturker “your match."',
-			'We will match you with another Mturker who is like you. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is like you, would say.',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today. We will call this Mturker “your match."',
+			'We will match you with another Mturker who is like you. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, would say.',
 		]
 	]
 }
@@ -387,8 +386,8 @@ var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is like you, would think the decision was "socially appropriate" and "consistent with what someone who is like you would think worker A OUGHT to do".',
+		'On the next screens you will read about decisions that worker A made. The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s decision based on your guess of whether your MATCH, would think the decision was "socially appropriate" and "consistent with what worker A OUGHT to do".',
 		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your MATCH\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
