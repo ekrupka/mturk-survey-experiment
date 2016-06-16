@@ -1,3 +1,5 @@
+Testing the no-framed js out
+
 !(function($) {
 	function AddInputs( $elt, $mturkForm ) {
 		this.$main = $elt;
