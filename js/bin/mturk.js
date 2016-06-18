@@ -488,7 +488,7 @@ var contextStates = {
 			state: 'Florida'
 		},
 		{
-			https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/Ohio.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
