@@ -143,12 +143,12 @@ var contextExplain = {
         ],
         [
             'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
-                '<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
-                '<h2 class="col-md-12 heavy center">and</h2>',
-                '<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what someone who is like you think that worker A OUGHT to do".</span></h2>',
-            'That sounds simple, but it is only half the story!',
-            'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>. We will call this Mturker “your match."',
-            'We will match you with another Mturker who is like you. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is like you, would say.',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
+				'<h2 class="col-md-12 heavy center">and</h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
+			'That sounds simple, but it is only half the story!',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today <span class="border-bottom">who is like you</span>. We will call this Mturker “your match."',
+			'To pick a match who is like you, we will match you with another Mturker who is also another <span class="pol-class"></span>. To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
         ]
     ]
 }
@@ -178,7 +178,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/male1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male1.png',
 					alt: 'male photo',
 					id: 'male1',
 					label: 'I think this person is more attractive',
@@ -186,7 +186,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: '/images/male2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male2.png',
 					alt: 'male Photo',
 					id: 'male2',
 					label: 'I think this person is more attractive',
@@ -198,7 +198,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/male3.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male3.png',
 					alt: 'male photo',
 					id: 'male3',
 					label: 'I think this person is more attractive',
@@ -206,7 +206,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/male4.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male4.png',
 					alt: 'Male Photo',
 					id: 'male4',
 					label: 'I think this person is more attractive',
@@ -218,7 +218,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/female1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/female1.png',
 					alt: 'female photo',
 					id: 'female1',
 					label: 'I think this person is more attractive',
@@ -226,7 +226,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/female2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/female2.png',
 					alt: 'female Photo',
 					id: 'female2',
 					label: 'I think this person is more attractive',
@@ -238,7 +238,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/female3.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/female3.png',
 					alt: 'female photo',
 					id: 'female3',
 					label: 'I think this person is more attractive',
@@ -246,7 +246,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/female4.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/female4.png',
 					alt: 'female Photo',
 					id: 'female4',
 					label: 'I think this person is more attractive',
@@ -258,7 +258,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/male5.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male5.png',
 					alt: 'male photo',
 					id: 'male5',
 					label: 'I think this person is more attractive',
@@ -266,7 +266,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: '/images/male6.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/male6.png',
 					alt: 'male Photo',
 					id: 'male6',
 					label: 'I think this person is more attractive',
@@ -297,7 +297,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: '/images/line1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/line1.png',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this line is longest',
@@ -305,7 +305,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: '/images/line2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/line2.png',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this line is longest',
@@ -334,25 +334,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: '/images/NorthCarolina.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: '/images/Georgia.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: '/images/Florida.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: '/images/Ohio.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -436,8 +436,8 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A, an Mturker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\’s wealth redistribution decision based on your guess of whether your MATCH would think the decision was “socially appropriate” and “consistent with what worker A OUGHT to do.”',
-		'Remember that you will only earn the bonus if your “social appropriateness” rating is the same as your MATCH\’s rating. For each rating that is the same, you will earn 10 cents.',
+		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is like you, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your MATCH\'s rating.  For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
