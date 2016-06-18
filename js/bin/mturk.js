@@ -943,27 +943,27 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/templates/intro.html',
+				url: 'templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/templates/question.html',
+				url: 'templates/question.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/templates/two-question.html',
+				url: 'templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/templates/one-pic.html',
+				url: 'templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matched/templates/tokens.html',
+				url: 'templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_framed_matche/templates/survey.html',
+				url: 'templates/survey.html',
 				dataName: 'survey'
 			}
 		];
