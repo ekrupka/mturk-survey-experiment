@@ -1124,7 +1124,8 @@ $(function() {
 				// add the token base
 				this.disableNextButton();
 				this.$main.find( this.header ).after( this.templates.tokenBase(contextTokens) );
-
+				this.findPolClass( pageNum ); // new addition to call pol-class to page
+				
 				// last question add submit button
 				if ( pageNum === 57 ) {
 					this.$nextButton.text( 'Submit Answers' );
