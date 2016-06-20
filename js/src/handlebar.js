@@ -87,7 +87,7 @@ function randomItem( context ) {
 		return otherTokenVal === 1 ? 'token' : 'tokens';
 	});
 	
-	Handlebars.registerHelper('transferRange', function() {
+	Handlebars.registerHelper('transferText', function() {
 		var out = 'You have the opportunity to ';
 		
 		if ( yourTokenVal == 10) {
