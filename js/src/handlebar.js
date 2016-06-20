@@ -58,7 +58,7 @@ function randomItem( context ) {
 		randomTokenList = null; //get random token order
 		
 		// text for end of the transfer range
-		endRange = 'If this decision is selected for payment this will determine how many tokens each person gets.'
+		endRange = ' If this decision is selected for payment this will determine how many tokens each person gets'
 		
 	Handlebars.registerHelper('setRandomToken', function( context ) {
 		if ( !randomTokenList ) {
@@ -88,16 +88,16 @@ function randomItem( context ) {
 	});
 	
 	Handlebars.registerHelper('transferRange', function() {
-		var out = 'You have the opportunity to';
+		var out = 'You have the opportunity to ';
 		
 		if ( yourTokenVal == 10) {
-			out += 'give any amount of your' + yourTokenVal + 'tokens to the other person' + endRange;
+			out += ' give any amount of your ' + yourTokenVal + ' tokens to the other person ' + endRange;
 		}
 		else if ( yourTokenVal == 0 ) {
-			out += 'take any of the' +otherTokenVal + 'tokens from the other person' + endRange;
+			out += ' take any of the ' +otherTokenVal + ' tokens from the other person ' + endRange;
 		}
 		else {
-			out += 'give any amount of your' + yourTokenVal + 'or to take any amount of the' + otherTokenVal + 'tokens from the other person for yourself.' + endRange;
+			out += ' give any amount of your ' + yourTokenVal + ' or to take any amount of the ' + otherTokenVal + ' tokens from the other person for yourself. ' + endRange;
 		}
 		
 		out += '.'
