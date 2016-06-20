@@ -9,6 +9,14 @@ In order to find the different experiments that were ran on Mturk please navigat
 - [Base Norms Conditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_conditional)
 - [Base Norms Unconditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_unconditional)
 - [Treat Norms with Random Matching] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_random_matched)
+Note for treat norms with random matching: This has since been updated to the Primed + Framed + Random-Matched condition below.
+
+NEW CONDITIONS
+- [NORMS: Primed + No Frame + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_matched)
+- [NORMS: Primed + No Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_random)
+- [NORMS: No Prime + Framed + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_matched)
+- [NORMS: Primed + Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_framed_random)
+
 
 The code architecture is explained below.
 
