@@ -315,7 +315,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male1.png',
 					alt: 'male photo',
 					id: 'male1',
 					label: 'I think this person is more attractive',
@@ -323,7 +323,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male2.png',
 					alt: 'male Photo',
 					id: 'male2',
 					label: 'I think this person is more attractive',
@@ -335,7 +335,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male3.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male3.png',
 					alt: 'male photo',
 					id: 'male3',
 					label: 'I think this person is more attractive',
@@ -343,7 +343,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male4.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male4.png',
 					alt: 'Male Photo',
 					id: 'male4',
 					label: 'I think this person is more attractive',
@@ -355,7 +355,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/female1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/female1.png',
 					alt: 'female photo',
 					id: 'female1',
 					label: 'I think this person is more attractive',
@@ -363,7 +363,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/female2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/female2.png',
 					alt: 'female Photo',
 					id: 'female2',
 					label: 'I think this person is more attractive',
@@ -375,7 +375,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/female3.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/female3.png',
 					alt: 'female photo',
 					id: 'female3',
 					label: 'I think this person is more attractive',
@@ -383,7 +383,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/female4.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/female4.png',
 					alt: 'female Photo',
 					id: 'female4',
 					label: 'I think this person is more attractive',
@@ -395,7 +395,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male5.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male5.png',
 					alt: 'male photo',
 					id: 'male5',
 					label: 'I think this person is more attractive',
@@ -403,7 +403,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/male6.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/male6.png',
 					alt: 'male Photo',
 					id: 'male6',
 					label: 'I think this person is more attractive',
@@ -434,7 +434,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/line1.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/line1.png',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this line is longest',
@@ -442,7 +442,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/line2.png',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/line2.png',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this line is longest',
@@ -471,25 +471,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/NorthCarolina.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/Georgia.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/Florida.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/images/Ohio.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -961,27 +961,27 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/intro.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/question-header.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/two-question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/one-pic.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/tokens.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_conditional/templates/survey.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/base_norms_no-frame_matched/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
