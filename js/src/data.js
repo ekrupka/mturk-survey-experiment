@@ -138,7 +138,7 @@ var contextExplain = {
 			'On the next screens you will read about decisions that another Mturker made in a previous Hit.  We will call this Mturker “worker A”.  Worker A is NOT participating today, but made choices in a previous Hit.  You will read about the decisions worker A faced and what actions worker A had to choose between.',
 		],
 		[
-			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which her or she was holding some number of tokens, where every 10 tokens was worth $1. Worker A then had to decide whether he or she would like to give some tokens to worker B, take some tokens from worker B, or do nothing.'
+			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she was holding some number of tokens, where every 10 tokens was worth $1. Worker A then had to decide whether he or she would like to give some tokens to worker B, take some tokens from worker B, or do nothing.'
 		],
 		[
 			'Your job is to rate worker A\'s decision based on whether you think the decision was',
