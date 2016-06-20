@@ -56,7 +56,10 @@ function randomItem( context ) {
 	var yourTokenVal = null,
 		otherTokenVal = null,
 		randomTokenList = null; //get random token order
-
+		
+		// text for end of the transfer range
+		endRange = 'If this decision is selected for payment this will determine how many tokens each person gets.'
+		
 	Handlebars.registerHelper('setRandomToken', function( context ) {
 		if ( !randomTokenList ) {
 			randomTokenList = randomItem( context );
@@ -83,6 +86,25 @@ function randomItem( context ) {
 	Handlebars.registerHelper('getOtherTokenText', function() {
 		return otherTokenVal === 1 ? 'token' : 'tokens';
 	});
+	
+	Handlebars.registerHelper('transferRange', function() {
+		var out = 'You have the opportunity to';
+		
+		if ( yourTokenVal == 10) {
+			out += 'give any amount of your' + yourTokenVal + 'tokens to the other person' + endRange;
+		}
+		else if ( yourTokenVal == 0 ) {
+			out += 'take any of the' +otherTokenVal + 'tokens from the other person' + endRange;
+		}
+		else {
+			out += 'give any amount of your' + yourTokenVal + 'or to take any amount of the' + otherTokenVal + 'tokens from the other person for yourself.' + endRange;
+		}
+		
+		out += '.'
+		
+		return out;
+	});
+	
 })();
 
 // create the random slider side
