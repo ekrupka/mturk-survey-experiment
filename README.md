@@ -6,17 +6,18 @@ In order to find the different experiments that were ran on Mturk please navigat
 - [Treat Behavior](https://github.com/ekrupka/mturk-survey-experiment/tree/treat_behavior)
 - [Treat Norms](https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms)
 - [Base Behavior](https://github.com/ekrupka/mturk-survey-experiment/tree/base_behavior)
-- [Base Norms Conditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_conditional)
-- [Base Norms Unconditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_unconditional)
+- [Base Norms Conditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_conditional) Note: Same as the No Prime + No Frame + Id-Matched condition below.
+- [Base Norms Unconditional](https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_unconditional) Note: This was rewritten over to the No Prime + Framed + Random-Matched condition and is NO LONGER the ORIGINAL baseline norms we had.
 - [Treat Norms with Random Matching] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_random_matched)
-Note for treat norms with random matching: This has since been updated to the Primed + Framed + Random-Matched condition below.
+Note: This has since been updated to the Primed + Framed + Random-Matched condition below.
 
 NEW CONDITIONS
 - [NORMS: Primed + No Frame + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_matched)
-- [NORMS: Primed + No Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_random)
-- [NORMS: No Prime + Framed + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_matched)
+- [NORMS: Primed + No Frame + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_random)
 - [NORMS: Primed + Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_framed_random)
+- [NORMS: No Prime + Framed + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_matched)
 - [NORMS: No Prime + Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_random)
+- [NORMS: No Prime + No Frame + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_no-frame_matched)
 
 
 The code architecture is explained below.
