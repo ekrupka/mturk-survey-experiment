@@ -3,45 +3,43 @@
     <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
         <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 
-        <link rel="stylesheet" href="/css/bin/style.css">
-
+        <link rel="stylesheet" href="https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/css/bin/style.css">
     </head>
     <body>
         <!-- page counter to indicate to users how many pages there are -->
         <nav class="container">
-            <div class="page-number row">
-                <span data-current-page>0</span>/57
-            </div>
+        <div class="page-number row">
+            <span data-current-page>0</span>/57
+        </div>
         </nav>
 
         <main class="container">
-
             <button class="button col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" type="button" data-next="question">Next</button>
         </main>
 
         <!-- mturk form where input is appended to -->
-        <form class="container" name='mturk_form' method='post' id='mturk_form' action='http://workersandbox.mturk.com/mturk/externalSubmit'>
+        <form class="container" name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
             <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
-
         </form>
+        
         <!-- mturk js -->
         <script language='Javascript'>turkSetAssignmentID();</script>
 
         <!-- handlebars.js -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
 
         <!-- jQuery -->
         <!--[if lt IE 9]>
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <![endif]-->
         <!--[if gte IE 9]><!-->
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <!--<![endif]-->
 
-        <script src="/js/bin/mturk.js"></script>
+        <script src="https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/js/bin/mturk.js"></script>
 
     </body>
 </html>

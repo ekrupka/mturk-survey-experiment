@@ -311,7 +311,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/BillClinton.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/BillClinton.jpg',
 					alt: 'Bill Clinton photo',
 					id: 'bill-clinton',
 					label: 'Bill Clinton',
@@ -319,7 +319,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: '/images/RonaldReagan.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/RonaldReagan.jpg',
 					alt: 'Ronald Reagan Photo',
 					id: 'ronald-reagan',
 					label: 'Ronald Reagan',
@@ -331,7 +331,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/MitchMcConnell.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/MitchMcConnell.jpg',
 					alt: 'Mitch McConnell photo',
 					id: 'mitch-mcconnell',
 					label: 'Mitch McConnell',
@@ -339,7 +339,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/HarryReid.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/HarryReid.jpg',
 					alt: 'Harry Reid Photo',
 					id: 'harry-reid',
 					label: 'Harry Reid',
@@ -351,7 +351,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/JanBrewer.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/JanBrewer.jpg',
 					alt: 'Jan Brewer photo',
 					id: 'jan-brewer',
 					label: 'Jan Brewer',
@@ -359,7 +359,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/KathleenSebelius.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/KathleenSebelius.jpg',
 					alt: 'Kathleen Sebelius Photo',
 					id: 'kathleen-sebelius',
 					label: 'Kathleen Sebelius',
@@ -371,7 +371,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/MicheleBachmann.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/MicheleBachmann.jpg',
 					alt: 'Michelle Bachmann photo',
 					id: 'michelle-bachmann',
 					label: 'Michelle Bachmann',
@@ -379,7 +379,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: '/images/NancyPelosi.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/NancyPelosi.jpg',
 					alt: 'Nancy Pelosi  Photo',
 					id: 'nancy-pelosi',
 					label: ' Nancy Pelosi',
@@ -391,7 +391,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: '/images/JoeBiden.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/JoeBiden.jpg',
 					alt: 'Joe Biden photo',
 					id: 'joe-biden',
 					label: 'Joe Biden',
@@ -399,7 +399,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: '/images/DickCheney.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/DickCheney.jpg',
 					alt: 'Dick Cheney Photo',
 					id: 'Dick-Cheney',
 					label: 'Dick Cheney',
@@ -430,7 +430,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: '/images/VotingLine1.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/VotingLine1.jpg',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this voting line is longest',
@@ -438,7 +438,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: '/images/VotingLine2.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/VotingLine2.jpg',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this voting line is longest',
@@ -467,25 +467,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: '/images/NorthCarolina.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: '/images/Georgia.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: '/images/Florida.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: '/images/Ohio.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -853,31 +853,31 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: '/templates/intro.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: '/templates/question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/question.html',
 				dataName: 'question'
 			},
 			{
-				url: '/templates/two-question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: '/templates/one-pic.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: '/templates/one-pic-radio-opts.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: '/templates/tokens.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: '/templates/survey.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
