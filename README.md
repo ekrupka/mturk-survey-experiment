@@ -16,6 +16,7 @@ NEW CONDITIONS
 - [NORMS: Primed + No Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_no-frame_random)
 - [NORMS: No Prime + Framed + Id-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_matched)
 - [NORMS: Primed + Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/treat_norms_framed_random)
+- [NORMS: No Prime + Framed + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_framed_random)
 
 
 The code architecture is explained below.
