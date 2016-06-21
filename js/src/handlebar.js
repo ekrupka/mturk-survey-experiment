@@ -91,13 +91,13 @@ function randomItem( context ) {
 		var out = 'You have the opportunity to ';
 		
 		if ( yourTokenVal == 10) {
-			out += ' give any amount of your ' +   '<span class="you-own-tokens">' + getYourToken + '</span>' + getYourTokenText + ' tokens to the other person ' + endRange;
+			out += ' give any amount of your ' +  '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person ' + endRange;
 		}
 		else if ( yourTokenVal == 0 ) {
-			out += ' take any of the ' + '<span class="other-own-tokens">' + getOtherToken + '</span>' + getOtherTokenText + ' from the other person ' + endRange;
+			out += ' take any of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person ' + endRange;
 		}
 		else {
-			out += ' give any amount of your ' + '<span class="you-own-tokens">' + getYourToken + '</span>' + getYourTokenText + ' or to take any amount of the ' + '<span class="other-own-tokens">' + getOtherToken + '</span>' + getOtherTokenText + ' from the other person for yourself. ' + endRange;
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
 		}
 		
 		out += '.'
