@@ -97,10 +97,10 @@ function randomItem( context ) {
 			out += ' take any of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person. ' + endRange;
 		}
 		else if ( yourTokenVal == 9 ) {
-			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' token from the other person for yourself. ' + endRange;
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' token from the other person for yourself. ' + endRange;
 		}
 		else if ( yourTokenVal == 1 ) {
-			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' token or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' token to the other person or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
 		}
 		else {
 			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
