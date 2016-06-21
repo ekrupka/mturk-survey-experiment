@@ -38,8 +38,8 @@
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
 		this.tokenSliderText = 'You are currently ';
-		this.takingText = ' taking';
-		this.givingText = ' giving';
+		this.takingText = ' taking ';
+		this.givingText = ' giving ';
 		this.tokenEndText = '</span> ';
 		this.nothingText = 'You are not giving or taking any tokens';
 
@@ -150,11 +150,23 @@
 			// taking more tokens that started with
 			if ( yourTokenVal > this.numTokensYouOwn ) {
 				tokens = yourTokenVal - this.numTokensYouOwn;
-				text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText;
+				// if giving 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' token';	
+				}
+				else {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' tokens';	
+				}
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText;
+				// if taking 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' token';
+				}
+				else {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' tokens';
+				}
 			} else {
 				text = this.nothingText;
 			}
