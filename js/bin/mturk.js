@@ -2014,10 +2014,16 @@ function randomItem( context ) {
 		var out = 'You have the opportunity to ';
 		
 		if ( yourTokenVal == 10) {
-			out += ' give any amount of your ' +  '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person ' + endRange;
+			out += ' give any amount of your ' +  '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person. ' + endRange;
 		}
 		else if ( yourTokenVal == 0 ) {
-			out += ' take any of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person ' + endRange;
+			out += ' take any of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person. ' + endRange;
+		}
+		else if ( yourTokenVal == 9 ) {
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' token from the other person for yourself. ' + endRange;
+		}
+		else if ( yourTokenVal == 1 ) {
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' token or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
 		}
 		else {
 			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
@@ -2408,11 +2414,11 @@ $(function() {
 		// html strings used for moving slider text
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
-		this.tokenSliderText = 'Involve the government and transfer ';
-		this.takingEndText = ' to myself';
-		this.givingEndText = 'to my match';
+		this.tokenSliderText = 'You are currently ';
+		this.takingText = ' taking';
+		this.givingText = ' giving';
 		this.tokenEndText = '</span> ';
-		this.nothingText = 'Do not involve the government and make no transfers';
+		this.nothingText = 'You are not giving or taking any tokens';
 
 		// used to calculate moving slider text
 		this.sliderTextWidth = 452;
@@ -2521,11 +2527,11 @@ $(function() {
 			// taking more tokens that started with
 			if ( yourTokenVal > this.numTokensYouOwn ) {
 				tokens = yourTokenVal - this.numTokensYouOwn;
-				text += this.tokenSpanTaking + tokens + this.tokenEndText + this.takingEndText;
+				text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText;
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
+				text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText;
 			} else {
 				text = this.nothingText;
 			}
