@@ -1571,16 +1571,6 @@ var contextPolIntro = {
     header: 'Tell us what you think',
 
     desc: [
-        'You will now be shown several pairs of pictures of politicians.  Please indicate which politician in each pair you find more attractive.'
-    ]
-}
-
-// politician data
-// politician intro
-var contextPolIntro = {
-    header: 'Tell us what you think',
-
-    desc: [
         'You will now be shown several pairs of pictures of people.  Please indicate which person in each pair you find more attractive.'
     ]
 }
@@ -1853,8 +1843,8 @@ var contextTokenIntro = {
             'For the following task, you will be randomly paired with another person, whom we will call your match.  The match will be randomly selected from the other workers.',
         ],
         [
-            'In our economy one way the government uses taxes is to generate revenue from its citizens’ earnings to redistribute wealth. The government’s role in redistributing this wealth can be large or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
-            'You have the opportunity to tell the government if it should get involved in wealth redistribution between you and your match and, if so, how large or small the redistribution should be.  If your decision is selected for payment, it will determine how many tokens each person gets paid in this task.'
+            'You will be shown 11 situations. In each situation, at least one of you will be holding some number of tokens. You will then decide whether you would like to give some tokens to your match, take some tokens from your match or do nothing.',
+            
         ],
         [
             'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'
@@ -2144,6 +2134,31 @@ function randomItem( context ) {
 	Handlebars.registerHelper('getOtherTokenText', function() {
 		return otherTokenVal === 1 ? 'token' : 'tokens';
 	});
+	
+	Handlebars.registerHelper('transferText', function() {
+		var out = 'You have the opportunity to ';
+		
+		if ( yourTokenVal == 10) {
+			out += ' give any amount of your ' +  '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person. ' + endRange;
+		}
+		else if ( yourTokenVal == 0 ) {
+			out += ' take any of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person. ' + endRange;
+		}
+		else if ( yourTokenVal == 9 ) {
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' token from the other person for yourself. ' + endRange;
+		}
+		else if ( yourTokenVal == 1 ) {
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' token to the other person or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
+		}
+		else {
+			out += ' give any amount of your ' + '<span class="you-own-tokens">' + yourTokenVal + '</span>' + ' tokens to the other person or to take any amount of the ' + '<span class="other-own-tokens">' + otherTokenVal + '</span>' + ' tokens from the other person for yourself. ' + endRange;
+		}
+		
+		out += '.'
+		
+		return out;
+	});	
+	
 })();
 
 // create the random slider side
@@ -2528,11 +2543,11 @@ $(function() {
 		// html strings used for moving slider text
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
-		this.tokenSliderText = 'Involve the government and transfer ';
-		this.takingEndText = ' to myself';
-		this.givingEndText = 'to my match';
+		this.tokenSliderText = 'You are currently ';
+		this.takingText = ' taking ';
+		this.givingText = ' giving ';
 		this.tokenEndText = '</span> ';
-		this.nothingText = 'Do not involve the government and make no transfers';
+		this.nothingText = 'You are not giving or taking any tokens';
 
 		// used to calculate moving slider text
 		this.sliderTextWidth = 452;
@@ -2641,11 +2656,23 @@ $(function() {
 			// taking more tokens that started with
 			if ( yourTokenVal > this.numTokensYouOwn ) {
 				tokens = yourTokenVal - this.numTokensYouOwn;
-				text += this.tokenSpanTaking + tokens + this.tokenEndText + this.takingEndText;
+				// if giving 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' token';	
+				}
+				else {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' tokens';	
+				}
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
+				// if taking 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' token';
+				}
+				else {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' tokens';
+				}	
 			} else {
 				text = this.nothingText;
 			}

@@ -6,7 +6,7 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
         <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 
-        <link rel="stylesheet" href="https://rawgit.com/ekrupka/mturk-survey-experiment/base_behavior_framed/css/bin/style.css">
+        <link rel="stylesheet" href="https://rawgit.com/ekrupka/mturk-survey-experiment/base_behavior_no-frame/css/bin/style.css">
     </head>
     <body>
         <!-- page counter to indicate to users how many pages there are -->
@@ -102,31 +102,36 @@
             </div>
         </script>
         <script id="tokens" type="text/x-handlebars-template">
-            <section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} data-default-slider-moved=false >
-              <h2>
-                In this economy your wealth is <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and your match’s wealth is <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}.
-              </h2>
-              <h2>
-                Use the slider to indicate whether you want the government involved and how large or small the redistribution should be.
-              </h2>
+		<section class="question-content tokens row" data-you-own-tokens={{setRandomToken this}} data-default-slider-moved=false >
+		  <h2>
+			For this decision you own <span class="you-own-tokens">{{ getYourToken }}</span> {{ getYourTokenText }} and the other person owns <span class="other-own-tokens">{{ getOtherToken }}</span> {{ getOtherTokenText }}.
+		  </h2>
+		  
+		  <h2>
+			{{{transferText}}}
+		  </h2>
+		  
+		  <h2>
+			Use the slider to indicate how many tokens you wish to take or give.
+		  </h2>
 
-              <div class="row overflow-hidden">
-                <p class="token-slider-text col-md-12">Make a decision by moving the slider</p>
-              </div>
+		  <div class="row overflow-hidden">
+			<p class="token-slider-text col-md-12">Make a decision by moving the slider</p>
+		  </div>
 
-              <div class="token-slider-wrapper" data-side="{{setSliderSide}}">
-                {{generateSliderDivs}}
-              </div>
+		  <div class="token-slider-wrapper" data-side="{{setSliderSide}}">
+			{{generateSliderDivs}}
+		  </div>
 
-              <h2>
-                To confirm, your post-tax wealth for this decision is <span class="you-own-tokens" data-dynamic>{{getYourToken}}</span> <span data-tokens="you">{{ getYourTokenText }}</span>
-              </h2>
+		  <h2>
+			To confirm, your earnings for this decision will be <span class="you-own-tokens" data-dynamic>{{getYourToken}}</span> <span data-tokens="you">{{ getYourTokenText }}</span>
+		  </h2>
 
-              <h2>
-                To confirm, your match's post-tax wealth for this decision is <span class="other-own-tokens" data-dynamic>{{getOtherToken}}</span> <span data-tokens="other">{{ getOtherTokenText }}</span>
-              </h2>
+		  <h2>
+			To confirm, the other person's earnings for this decision will be <span class="other-own-tokens" data-dynamic>{{getOtherToken}}</span> <span data-tokens="other">{{ getOtherTokenText }}</span>
+		  </h2>
 
-            </section>
+		</section>
         </script>
         <script id="survey" type="text/x-handlebars-template">
             <section class="question survey">
@@ -188,7 +193,7 @@
             </section>
         </script>
 
-        <script src="https://rawgit.com/ekrupka/mturk-survey-experiment/base_behavior_framed/js/bin/mturk.js"></script>
+        <script src="https://rawgit.com/ekrupka/mturk-survey-experiment/base_behavior_no-frame/js/bin/mturk.js"></script>
 
     </body>
 </html>

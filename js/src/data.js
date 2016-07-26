@@ -289,8 +289,7 @@ var contextTokenIntro = {
             'For the following task, you will be randomly paired with another person, whom we will call your match.  The match will be randomly selected from the other workers.',
         ],
         [
-            'In our economy one way the government uses taxes is to generate revenue from its citizens’ earnings to redistribute wealth. The government’s role in redistributing this wealth can be large or small.  Sometimes people have a lot of wealth in our economy and sometimes people have little wealth in our economy.',
-            'You have the opportunity to tell the government if it should get involved in wealth redistribution between you and your match and, if so, how large or small the redistribution should be.  If your decision is selected for payment, it will determine how many tokens each person gets paid in this task.'
+            'You will be shown 11 situations. In each situation, at least one of you will be holding some number of tokens. You will then decide whether you would like to give some tokens to your match, take some tokens from your match or do nothing.',
         ],
         [
             'When you and your match have entered all of your decisions, we will then randomly pick one of the decisions from the set that you and your match made.  The selected decision will determine the final token split between you and your match and will be paid out to you as a bonus for this task.'

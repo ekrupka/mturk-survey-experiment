@@ -37,11 +37,11 @@
 		// html strings used for moving slider text
 		this.tokenSpanTaking = '<span class="you-own-tokens" data-dynamic>';
 		this.tokenSpanGiving = '<span class="other-own-tokens" data-dynamic>';
-		this.tokenSliderText = 'Involve the government and transfer ';
-		this.takingEndText = ' to myself';
-		this.givingEndText = 'to my match';
+		this.tokenSliderText = 'You are currently ';
+		this.takingText = ' taking ';
+		this.givingText = ' giving ';
 		this.tokenEndText = '</span> ';
-		this.nothingText = 'Do not involve the government and make no transfers';
+		this.nothingText = 'You are not giving or taking any tokens';
 
 		// used to calculate moving slider text
 		this.sliderTextWidth = 452;
@@ -141,20 +141,32 @@
 				$elt.text( 'tokens' );
 			}
 		},
-
+		
 		// update slider text to reflect whether a user is taking or giving tokens
 		updateSliderText: function( yourTokenVal ) {
 			var tokens = null,
 				text = this.tokenSliderText;
-
+				
 			// taking more tokens that started with
 			if ( yourTokenVal > this.numTokensYouOwn ) {
 				tokens = yourTokenVal - this.numTokensYouOwn;
-				text += this.tokenSpanTaking + tokens + this.tokenEndText + this.takingEndText;
+				// if giving 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' token';	
+				}
+				else {
+					text += this.takingText + this.tokenSpanTaking + tokens + this.tokenEndText + ' tokens';	
+				}
 			} else if ( yourTokenVal < this.numTokensYouOwn ) {
 				// giving more tokens that started with
 				tokens = this.numTokensYouOwn - yourTokenVal;
-				text += this.tokenSpanGiving + tokens + this.tokenEndText + this.givingEndText;
+				// if taking 1 token vs. multiple tokens
+				if ( tokens == 1 ) {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' token';
+				}
+				else {
+					text += this.givingText + this.tokenSpanGiving + tokens + this.tokenEndText + ' tokens';
+				}
 			} else {
 				text = this.nothingText;
 			}
