@@ -2107,6 +2107,9 @@ function randomItem( context ) {
 	var yourTokenVal = null,
 		otherTokenVal = null,
 		randomTokenList = null; //get random token order
+		
+		// text for end of the transfer range
+		endRange = ' If this decision is selected for payment this will determine how many tokens each person gets'
 
 	Handlebars.registerHelper('setRandomToken', function( context ) {
 		if ( !randomTokenList ) {
