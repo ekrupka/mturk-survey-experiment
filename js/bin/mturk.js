@@ -139,7 +139,7 @@ var contextIntro = {
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
 			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
-			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make and on the decisions that the other worker you are paired with makes. You can earn up to $3.30 in bonus pay.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make. You can earn up to $3.30 in bonus pay.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
 	]
@@ -275,7 +275,7 @@ var contextExplain = {
 			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
 		],
 		[
-			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
+			'A group of MTurkers, who are all <span class="pol-class"></span>, rated worker A\'s wealth redistribution decision based on how socially appropriate they thought the decision was.',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
