@@ -813,10 +813,11 @@ $(function() {
 			// the individual get it
 			if ( !this.polClass ) {
 				polClassVal = parseInt( this.$mturkForm.find( this.polInpSelector ).val() );
+			// Set to show cross-identity
 				if ( polClassVal === 1 || polClassVal === 2 ) {
-					this.polClass = this.dem;
-				} else {
 					this.polClass = this.rep;
+				} else {
+					this.polClass = this.dem;
 				}
 			}
 
