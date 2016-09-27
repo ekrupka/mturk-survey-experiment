@@ -146,9 +146,9 @@ var contextExplain = {
 			'Your job is to guess whether most of those MTurkers, who are <span class="pol-class"></span>s, rated each decision as',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people <span class="pol-class"></span>s think that worker A OUGHT to do".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most <span class="pol-class"></span>s would think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of those MTurkers.',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of most of those MTurkers.',
 			'To increase the chances that you earn the bonus, you should try to imagine what most of those MTurkers, who are a <span class="pol-class"></span>s, would say.',
 		]
 	]
