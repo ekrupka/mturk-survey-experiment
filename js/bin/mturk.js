@@ -275,7 +275,7 @@ var contextExplain = {
 			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
 		],
 		[
-			'A group of MTurkers, who are all <span class="pol-class"></span>, rated worker A\'s wealth redistribution decision based on how socially appropriate they thought the decision was.',
+			'A group of MTurkers, who are all <span class="pol-class"></span>s, rated worker A\'s wealth redistribution decision based on how socially appropriate they thought the decision was.',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most people who are like you think that worker A OUGHT to do".</span></h2>',
