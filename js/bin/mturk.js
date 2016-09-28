@@ -312,7 +312,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/BillClinton.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/BillClinton.jpg',
 					alt: 'Bill Clinton photo',
 					id: 'bill-clinton',
 					label: 'Bill Clinton',
@@ -320,7 +320,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/RonaldReagan.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/RonaldReagan.jpg',
 					alt: 'Ronald Reagan Photo',
 					id: 'ronald-reagan',
 					label: 'Ronald Reagan',
@@ -332,7 +332,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/MitchMcConnell.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/MitchMcConnell.jpg',
 					alt: 'Mitch McConnell photo',
 					id: 'mitch-mcconnell',
 					label: 'Mitch McConnell',
@@ -340,7 +340,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/HarryReid.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/HarryReid.jpg',
 					alt: 'Harry Reid Photo',
 					id: 'harry-reid',
 					label: 'Harry Reid',
@@ -352,7 +352,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/JanBrewer.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/JanBrewer.jpg',
 					alt: 'Jan Brewer photo',
 					id: 'jan-brewer',
 					label: 'Jan Brewer',
@@ -360,7 +360,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/KathleenSebelius.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/KathleenSebelius.jpg',
 					alt: 'Kathleen Sebelius Photo',
 					id: 'kathleen-sebelius',
 					label: 'Kathleen Sebelius',
@@ -372,7 +372,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/MicheleBachmann.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/MicheleBachmann.jpg',
 					alt: 'Michelle Bachmann photo',
 					id: 'michelle-bachmann',
 					label: 'Michelle Bachmann',
@@ -380,7 +380,7 @@ var contextPol = {
 					value: '1'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/NancyPelosi.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/NancyPelosi.jpg',
 					alt: 'Nancy Pelosi  Photo',
 					id: 'nancy-pelosi',
 					label: ' Nancy Pelosi',
@@ -392,7 +392,7 @@ var contextPol = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/JoeBiden.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/JoeBiden.jpg',
 					alt: 'Joe Biden photo',
 					id: 'joe-biden',
 					label: 'Joe Biden',
@@ -400,7 +400,7 @@ var contextPol = {
 					value: '0'
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/DickCheney.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/DickCheney.jpg',
 					alt: 'Dick Cheney Photo',
 					id: 'Dick-Cheney',
 					label: 'Dick Cheney',
@@ -431,7 +431,7 @@ var contextVotingLine = {
 		{
 			images: [
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/VotingLine1.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/VotingLine1.jpg',
 					alt: 'Voting line photo',
 					id: 'voting-line-1',
 					label: 'I think this voting line is longest',
@@ -439,7 +439,7 @@ var contextVotingLine = {
 					value: 0
 				},
 				{
-					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/VotingLine2.jpg',
+					src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/VotingLine2.jpg',
 					alt: 'Voting Line Photo',
 					id: 'voting-line-2',
 					label: 'I think this voting line is longest',
@@ -468,25 +468,25 @@ var contextStates = {
 
 	states: [
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/NorthCarolina.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/NorthCarolina.png',
 			alt: 'North Carolina photo',
 			name: 'north-carolina',
 			state: 'North Carolina'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/Georgia.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/Georgia.png',
 			alt: 'Georgia photo',
 			name: 'georgia',
 			state: 'Georgia'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/Florida.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/Florida.png',
 			alt: 'Florida photo',
 			name: 'florida',
 			state: 'Florida'
 		},
 		{
-			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/images/Ohio.png',
+			src: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/images/Ohio.png',
 			alt: 'Ohio photo',
 			name: 'ohio',
 			state: 'Ohio'
@@ -521,7 +521,7 @@ var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that worker A, an MTurker from another HIT, made. The description will include possible actions available to worker A.',
+		'On the next screens you will read about decisions that worker A, a MTurker from another HIT, made. The description will include possible actions available to worker A.',
 		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether most <span class="pol-class"></span>s would think the decision was "socially appropriate" and "consistent with what most <span class="pol-class"></span>s would think worker A OUGHT to do".',
 		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as what most <span class="pol-class"></span>s rated.  For each rating that is the same, you will earn 10 cents.',
 	]
@@ -855,31 +855,31 @@ $(function() {
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/intro.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/question.html',
 				dataName: 'question'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/two-question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/one-pic.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/one-pic-radio-opts.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/tokens.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_norms_framed_matched/templates/survey.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/NEP_treat_cross_ID/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
