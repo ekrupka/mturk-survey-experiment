@@ -6,7 +6,7 @@ var contextIntro = {
 			'This is a study in decision making that has three parts.  You will earn a 50 cent base pay for completing the study.',
 			'In the first part, we will ask you to tell us about yourself.',
 			'In the second part, we will ask you to tell us what you think about various images.',
-			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make. You can earn up to $3.30 in bonus pay.',
+			'In the third part, you will have a chance to earn a bonus. Your earnings for this part will depend on the decisions you make. You can earn up to $3.30 in bonus pay and on the decisions that the other worker you are paired with makes.',
 			'You will be paid the base plus the bonus within 3 days after you complete this task.',
 			'<h2 class="error display heavy">Note: If you are using Internet Explorer you will not be able to complete the survey. Please try using Safari, Firefox, or Chrome.</h2>'
 	]
@@ -142,14 +142,13 @@ var contextExplain = {
 			'Worker A was randomly paired with another Mturker, called worker B. Worker A faced several different situations in which he or she had the opportunity to tell the government if it should get involved in wealth redistribution between them and worker B and, if so, how large or small the redistribution should be. Their wealth was represented by tokens, where every 10 tokens was worth $1.'
 		],
 		[
-			'A group of MTurkers, who are all <span class="border-bottom"><span class="pol-class"></span>s</span>, rated worker A\'s wealth redistribution decisions based on how socially appropriate they thought each decision was.',
-			'Your job is to guess whether most of those MTurkers, who are <span class="pol-class"></span>s, rated each decision as',
+			'Your job is to rate worker A\'s wealth redistribution decision based on whether you think the decision was',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"socially appropriate"</span></h2>',
 				'<h2 class="col-md-12 heavy center">and</h2>',
-				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most  <span class="pol-class"></span>s would think that worker A OUGHT to do".</span></h2>',
+				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most <span class="pol-class"></span>s would think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of most of those MTurkers.',
-			'To increase the chances that you earn the bonus, you should try to imagine what most of those MTurkers, who are <span class="border-bottom"><span class="pol-class"></span>s</span>, would say.',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today who is a <span class="border-bottom"><span class="pol-class"></span></span>. We will call this Mturker "your match."',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
 		]
 	]
 }
@@ -388,9 +387,9 @@ var contextTokenIntro = {
 	header: "Bonus Task",
 
 	desc: [
-		'On the next screens you will read about decisions that worker A, a MTurker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether most <span class="border-bottom"><span class="pol-class"></span>s</span> would think the decision was "socially appropriate" and "consistent with what most <span class="pol-class"></span>s would think worker A OUGHT to do".',
-		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as what most <span class="border-bottom"><span class="pol-class"></span>s</span> rated.  For each rating that is the same, you will earn 10 cents.',
+		'On the next screens you will read about decisions that worker A, an MTurker from another HIT, made. The description will include possible actions available to worker A.',
+		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span>, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
+		'Remember that you will only earn the bonus if your "social appropriateness" rating is that same as your MATCH\' rating. For each rating that is the same, you will earn 10 cents.',
 	]
 }
 
