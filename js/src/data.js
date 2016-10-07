@@ -148,7 +148,7 @@ var contextExplain = {
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most <span class="pol-class"></span>s would think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
 			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT previously who is a <span class="border-bottom"><span class="pol-class"></span> playing this matching game with other <span class="pol-class"></span>s</span>. We will call this Mturker "your match."',
-			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span> guessing what other <span class="pol-class"></span> believe, would say.',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span> guessing what other <span class="pol-class">s</span> believe, would say.',
 		]
 	]
 }
@@ -388,7 +388,7 @@ var contextTokenIntro = {
 
 	desc: [
 		'On the next screens you will read about decisions that worker A, an MTurker from another HIT, made. The description will include possible actions available to worker A.',
-		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span>, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
+		'Your task is to rate worker A\'s wealth redistribution decision based on your guess of whether your MATCH, who is a <span class="pol-class"></span> who had played this matching game with other <span class="pol-class"></span>s, would think the decision was "socially appropriate" and "consistent with what a <span class="pol-class"></span> would think worker A OUGHT to do".',
 		'Remember that you will only earn the bonus if your "social appropriateness" rating is the same as your MATCH\'s rating. For each rating that is the same, you will earn 10 cents.',
 	]
 }
