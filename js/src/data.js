@@ -147,8 +147,8 @@ var contextExplain = {
 				'<h2 class="col-md-12 heavy center">and</h2>',
 				'<h2 class="col-md-12 italic center"><span class="border-bottom">"consistent with what most <span class="pol-class"></span>s would think that worker A OUGHT to do".</span></h2>',
 			'That sounds simple, but it is only half the story!',
-			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT today who is a <span class="border-bottom"><span class="pol-class"></span></span>. We will call this Mturker "your match."',
-			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span>, would say.',
+			'Specifically, you will only earn the bonus if your "social appropriateness" rating MATCHES the rating of another Mturker working on this HIT previously who is a <span class="border-bottom"><span class="pol-class"></span> playing this matching game with other <span class="pol-class"></span>s</span>. We will call this Mturker "your match."',
+			'To increase the chances that you earn the bonus, you should try to imagine what <span class="border-bottom">your match</span>, who is a <span class="pol-class"></span> guessing what other <span class="pol-class"></span> believe, would say.',
 		]
 	]
 }
