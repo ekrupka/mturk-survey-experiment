@@ -117,7 +117,36 @@ var contextSurvey = {
 			}
 		],
 		error: 'selections'
+	},
+	
+	standards: {
+		question: 'Compared to your parents when they were the age you are now, do you think your own standard of living now is much better, somewhat better, about the same, somewhat worse, or much worse than theirs was?',
+		name: 'race',
+		inputs: [
+			{
+				id: 'better',
+				label: 'Much better'
+			},
+			{
+				id: 'semi-better',
+				label: 'Somewhat better'
+			},
+			{
+				id: 'same',
+				label: 'About the same'
+			},
+			{
+				id: 'semi-worse',
+				label: 'Somewhat worse'
+			},
+			{
+				id: 'worse',
+				label: 'Much worse'
+			}
+		],
+		error: 'standards'
 	}
+	
 }
 
 var contextNextSteps = {
