@@ -277,7 +277,7 @@ var contextSurvey = {
 				label: 'Much worse'
 			}
 		],
-		error: 'standards'
+		error: 'responses'
 	}
 }
 
