@@ -255,6 +255,7 @@ var contextSurvey = {
 	standards: {
 		question: 'Compared to your parents when they were the age you are now, do you think your own standard of living now is much better, somewhat better, about the same, somewhat worse, or much worse than theirs was?',
 		name: 'race',
+		error: 'responses',
 		inputs: [
 			{
 				id: 'better',
@@ -277,7 +278,6 @@ var contextSurvey = {
 				label: 'Much worse'
 			}
 		],
-		error: 'responses'
 	}
 }
 
