@@ -1911,7 +1911,56 @@ var contextSurvey = {
             }
         ],
         error: 'selections'
+    },
+	
+    standards: {
+        question: 'Compared to your parents when they were the age you are now, do you think your own standard of living now is much better, somewhat better, about the same, somewhat worse, or much worse than theirs was?',
+        name: 'standards',
+        error: 'responses',
+        inputs: [
+            {
+                id: 'republican',
+                label: 'a Republican'
+            },
+            {
+                id: 'democrat',
+                label: 'a Democrat'
+            },
+            {
+                id: 'democratish',
+                label: 'leaning more towards the Democratic party'
+            },
+            {
+                id: 'republicanish',
+                label: 'leaning more towards the Republican party'
+            }
+        ]
+    },
+	
+    politics: {
+        question: 'In politics, as of today, do you consider yourself:',
+        name: 'pol-classification',
+        error: 'political classifications',
+        inputs: [
+            {
+                id: 'republican',
+                label: 'a Republican'
+            },
+            {
+                id: 'democrat',
+                label: 'a Democrat'
+            },
+            {
+                id: 'democratish',
+                label: 'leaning more towards the Democratic party'
+            },
+            {
+                id: 'republicanish',
+                label: 'leaning more towards the Republican party'
+            }
+        ]
     }
+	
 }
 
 var contextThankYou = {
