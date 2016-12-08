@@ -358,6 +358,62 @@ var contextSurvey = {
             }
         ],
         error: 'selections'
+    },
+	
+    standards: {
+        question: 'Compared to your parents when they were the age you are now, do you think your own standard of living now is much better, somewhat better, about the same, somewhat worse, or much worse than theirs was?',
+        name: 'standards',
+        error: 'responses',
+        inputs: [
+            {
+                id: 'better',
+                label: 'Much better'
+            },
+            {
+                id: 'semi-better',
+                label: 'Somewhat better'
+            },
+			{
+                id: 'same',
+                label: 'About the same'
+            },
+            {
+                id: 'semi-worse',
+                label: 'Somewhat worse'
+            },
+            {
+                id: 'worse',
+                label: 'Much worse'
+            }
+        ],
+    },
+	
+    social: {
+        question: 'If you were asked to use one of these five names for your social class, which would you say you belong in?',
+        name: 'social',
+        error: 'responses',
+        inputs: [
+            {
+                id: 'upper',
+                label: 'Upper class'
+            },
+            {
+                id: 'upper-middle',
+                label: 'Upper-middle class'
+            },
+            {
+                id: 'middle',
+                label: 'Middle class'
+            },
+            {
+                id: 'working',
+                label: 'Working class'
+            },
+            {
+                id: 'lower',
+                label: 'Lower class'
+            }
+        ],
     }
 }
 

@@ -54,5 +54,29 @@
       {{/each}}
       <h3 class="error hide col-xs-12 col-sm-12 col-md-12" data-error="{{voted.error}}" data-error-text="{{voted.errorText}}"></h3>
     </li>
+	<li class="col-md-12 survey-list-item">
+      <p class="survey-question">{{standards.question}}</p>
+      {{#each standards.inputs}}
+        <div class="row">
+          <input class="survey-input" type="radio" name="{{../standards.name}}" id="{{id}}" value="{{@index}}" data-error="{{../standards.error}}" >
+          <label class="survey-label" for="{{id}}">{{label}}</label>
+        </div>
+      {{/each}}
+      <div class="row">
+        <h3 class="error hide col-xs-12 col-sm-12 col-md-12" data-error="{{standards.error}}" data-error-text="{{standards.errorText}}"></h3>
+      </div>
+    </li>
+	<li class="col-md-12 survey-list-item">
+      <p class="survey-question">{{social.question}}</p>
+      {{#each social.inputs}}
+        <div class="row">
+          <input class="survey-input" type="radio" name="{{../social.name}}" id="{{id}}" value="{{@index}}" data-error="{{../social.error}}" >
+          <label class="survey-label" for="{{id}}">{{label}}</label>
+        </div>
+      {{/each}}
+      <div class="row">
+        <h3 class="error hide col-xs-12 col-sm-12 col-md-12" data-error="{{social.error}}" data-error-text="{{social.errorText}}"></h3>
+      </div>
+    </li>
   </ol>
 </section>

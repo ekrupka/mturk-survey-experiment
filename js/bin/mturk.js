@@ -1919,46 +1919,54 @@ var contextSurvey = {
         error: 'responses',
         inputs: [
             {
-                id: 'republican',
-                label: 'a Republican'
+                id: 'better',
+                label: 'Much better'
             },
             {
-                id: 'democrat',
-                label: 'a Democrat'
+                id: 'semi-better',
+                label: 'Somewhat better'
+            },
+			{
+                id: 'same',
+                label: 'About the same'
             },
             {
-                id: 'democratish',
-                label: 'leaning more towards the Democratic party'
+                id: 'semi-worse',
+                label: 'Somewhat worse'
             },
             {
-                id: 'republicanish',
-                label: 'leaning more towards the Republican party'
+                id: 'worse',
+                label: 'Much worse'
             }
-        ]
+        ],
     },
 	
-    politics: {
-        question: 'In politics, as of today, do you consider yourself:',
-        name: 'pol-classification',
-        error: 'political classifications',
+    social: {
+        question: 'If you were asked to use one of these five names for your social class, which would you say you belong in?',
+        name: 'social',
+        error: 'responses',
         inputs: [
             {
-                id: 'republican',
-                label: 'a Republican'
+                id: 'upper',
+                label: 'Upper class'
             },
             {
-                id: 'democrat',
-                label: 'a Democrat'
+                id: 'upper-middle',
+                label: 'Upper-middle class'
             },
             {
-                id: 'democratish',
-                label: 'leaning more towards the Democratic party'
+                id: 'middle',
+                label: 'Middle class'
             },
             {
-                id: 'republicanish',
-                label: 'leaning more towards the Republican party'
+                id: 'working',
+                label: 'Working class'
+            },
+            {
+                id: 'lower',
+                label: 'Lower class'
             }
-        ]
+        ],
     }
 	
 }
