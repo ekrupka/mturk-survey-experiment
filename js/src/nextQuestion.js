@@ -20,31 +20,31 @@
 		// templates urls for requesting template files and names to store templates
 		this.templateNames = [
 			{
-				url: '/templates/intro.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/intro.html',
 				dataName: 'intro'
 			},
 			{
-				url: '/templates/question-header.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/question-header.html',
 				dataName: 'question'
 			},
 			{
-				url: '/templates/two-question.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/two-question.html',
 				dataName: 'twoPic'
 			},
 			{
-				url: '/templates/one-pic.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/one-pic.html',
 				dataName: 'onePic'
 			},
 			{
-				url: '/templates/one-pic-radio-opts.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/one-pic-radio-opts.html',
 				dataName: 'onePicInput'
 			},
 			{
-				url: '/templates/tokens.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/tokens.html',
 				dataName: 'tokenBase'
 			},
 			{
-				url: '/templates/survey.html',
+				url: 'https://rawgit.com/ekrupka/mturk-survey-experiment/treat_behavior/templates/survey.html',
 				dataName: 'survey'
 			}
 		];
