@@ -22,6 +22,10 @@ NEW CONDITIONS
 - [NORMS: No Prime + No Frame + Random-Matched] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_norms_no-frame_random)
 - [BEHAVIOR: No Prime + Framed] (https://github.com/ekrupka/mturk-survey-experiment/tree/base_behavior_framed)
 
+NEP - MATCHING CONDITIONS
+- [NORMS: Primed + Framed + Id-matched + Cross matched]
+https://github.com/ekrupka/mturk-survey-experiment/tree/NEP_treat_cross_ID
+
 
 The code architecture is explained below.
 
