@@ -188,7 +188,7 @@ var contextStates = {
 
     question: 'Which presidential candidate, Barack Obama or Mitt Romney, won this state’s electoral votes in the 2012 presidential election?',
 
-    errorText: 'Please select one of the presdential candidates above',
+    errorText: 'Please select one of the presidential candidates above',
 
     states: [
         {
